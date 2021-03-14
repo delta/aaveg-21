@@ -1,0 +1,25 @@
+{
+  "name": "aaveg-21",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm run client-install && npm run server-install && npm run db-install",
+    "server-install": "cd server && npm install && cd ..",
+    "client-install": "cd client && npm install && cd ..",
+    "server": "cd server && npm run start && cd ..",
+    "client": "cd client && npm run start && cd ..",
+    "start": "cd server && npm run server-start && cd ..",
+    "client-build": "cd client && npm run build && cd ..",
+    "post-install": "npm run client-install && npm run server-install",
+    "heroku-postbuild": "npm run post-install",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "mkcert": "^1.4.0"
+  }
+}
