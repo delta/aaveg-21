@@ -1,5 +1,6 @@
 import { WastePage } from '../containers/WastePage'
 import { HomePage } from '../containers/HomePage'
+import { Login } from '../components/Login'
 
 export const publicRoutes = [
     {
@@ -9,6 +10,10 @@ export const publicRoutes = [
     {
         url: "/",
         component: HomePage
+    },
+    {
+        url: "/login",
+        component: Login
     }
 ];
 
