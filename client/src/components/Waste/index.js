@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BACKEND_API } from '../../config'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
-import { online, offline } from '../../redux/offline'
+import { network } from '../../actions/network'
 
 
 export const Waste = () => {
@@ -13,7 +13,7 @@ export const Waste = () => {
         axios.get(`${BACKEND_API}${route}`)
             .then(res => {
                 if (res.status === 200) {
-                    dispatch(online())
+                    dispatch(network({ network: true }))
                     setmsg(res.data)
                 }
                 else {
@@ -22,7 +22,7 @@ export const Waste = () => {
                 }
             })
             .catch((err) => {
-                dispatch(offline())
+                dispatch(network({ network: false }))
                 console.error(1, err)
                 setmsg("Connect to internet")
             })
