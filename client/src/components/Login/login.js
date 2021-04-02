@@ -7,6 +7,7 @@ import { useStyles } from "./styles";
 import { BACKEND_API } from "../../config";
 import { toast } from "react-toastify";
 import { loginSuccess } from "../../actions/user";
+import logo from '../../assets/Aaveg Glyph - Black.png';
 
 export const Login = (props) => {
   const history = useHistory();
@@ -53,36 +54,40 @@ export const Login = (props) => {
       direction="row"
       justify="center"
       alignItems="center"
-      className={classes.paper}
+      className={classes.container}
     >
-      <Grid container item direction="column" lg={6} md={6} alignItems="center">
-        <Paper elevation={6} className={classes.paper}>
+      <Grid container item direction="row" lg={9} md={9} alignItems="center">
+        <Paper elevation={3} className={classes.paper}>
           <Grid
             container
             direction="column"
             alignItems="center"
             justify="space-between"
           >
+            <Grid item>
+						  <img src={logo} alt="logo" width={150} />
+					  </Grid>
             <Typography variant="h2" component="h2" className={classes.title}>
               Login
             </Typography>
             <TextField
               label="Webmail ID"
-              variant="outlined"
+              variant="filled"
+              size=""
               onChange={(e) => setWebmail(e.target.value)}
               className={classes.TextFields}
             />
             <TextField
               label="Password"
-              variant="outlined"
+              variant="filled"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               className={classes.TextFields}
             />
-
             <Button
               className={classes.Button}
               variant="contained"
+              size="large"
               color="primary"
               onClick={handleLogin}
             >
