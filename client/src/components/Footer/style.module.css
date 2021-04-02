@@ -1,0 +1,55 @@
+.footer {
+  height: fit-content !important;
+  text-align: center;
+  background-color: rgba(17, 17, 17, 0.95);
+  color: #eee;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 28px;
+  font-family: "Montserrat", "Raleway", sans-serif;
+}
+
+.footer_content {
+  margin-top: 5px;
+}
+
+.atag {
+  text-decoration: none;
+  color: blueviolet;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    font-size: 16px;
+  }
+}
+
+.heart {
+  display:inline-block;
+  animation: animateHeart 1.2s infinite;
+}
+
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.8);
+  }
+  5% {
+    transform: scale(0.9);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  15% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}

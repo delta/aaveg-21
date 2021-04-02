@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: rgb(22, 21, 21);
+  -webkit-animation: fadein 3s;
+  -moz-animation: fadein 3s;
+  animation: fadein 3s;
+  overflow: hidden;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    stransform: scale(1);
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
