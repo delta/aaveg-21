@@ -1,0 +1,1 @@
+export { QnAPage} from "./qna";
