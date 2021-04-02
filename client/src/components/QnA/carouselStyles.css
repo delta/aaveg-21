@@ -1,0 +1,43 @@
+.rec.rec-arrow, .rec.rec-arrow:hover:enabled, .rec.rec-arrow:focus:enabled{
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    color: #ffffff86;
+    user-select: none;
+}
+
+.rec.rec-arrow:hover:enabled {
+    color: white;
+}
+
+.rec.rec-arrow:disabled {
+    opacity: 0;
+}
+
+.rec.rec-carousel-wrapper {
+    max-width: 800px;
+    margin: auto;
+    color: #8865b1
+}
+
+.rec.rec-slider-container {
+    background-color: #8a809433;
+    height: 400px;
+    border-radius: 10px;
+    height: inherit;
+}
+
+.rec.rec-dot {
+    box-shadow: none !important;
+    background-color: #ffffff1f;
+    height: 15px;
+    width: 15px;
+}
+
+.rec.rec-dot.rec-dot_active {
+    background-color: #8865b1;
+}
+
+.rec.rec-pagination {
+    margin-top: 25px;
+}
