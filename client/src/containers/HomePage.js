@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
 
-import { Home } from '../components/Home'
+import { Footer } from "../components/Footer";
+import { Home } from "../components/Home";
+import { SocialIcons } from "../components/SocialMedia";
 
 export const HomePage = () => {
-    return (
-        <Home />
-    )
-}
+  return (
+    <>
+      <Home />
+      <Footer />
+      <SocialIcons/>
+    </>
+  );
+};
