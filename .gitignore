@@ -1,8 +1,9 @@
 node_modules/
-package-lock.json
 build/
 config.js
 *.pem
 .firebaserc
 firebase.json
 .firebase/
+logs
+.vscode
