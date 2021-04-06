@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useStyles } from "./styles";
-import { BACKEND_API } from "../../config";
+import { BACKEND_API } from "../../config/config";
 import { toast } from "react-toastify";
 import { loginSuccess } from "../../actions/user";
-import logo from '../../assets/Aaveg Glyph - Black.png';
+import logo from '../../assets/images/Aaveg Glyph - Black.png';
 
 export const Login = (props) => {
   const history = useHistory();

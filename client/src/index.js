@@ -7,6 +7,7 @@ import { Routes } from './routes';
 import store from './store';
 import { persist } from './store';
 import { ToastContainer } from 'react-toastify';
+import {NavBar} from './components/NavBar';
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css'
 
@@ -14,8 +15,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persist}>
-        <Routes />
-        <ToastContainer />
+        <NavBar>
+          <Routes />
+          <ToastContainer />
+        </NavBar>
       </PersistGate>
     </Provider>
   </React.StrictMode>,

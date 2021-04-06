@@ -1,17 +1,13 @@
 import { WastePage } from '../containers/WastePage'
 import { HomePage } from '../containers/HomePage'
-import { Login } from '../components/Login'
-import { QnAPage } from '../components/QnA'
+import { Login } from '../pages/Login'
+import { QnAPage } from '../pages/QnA'
 
 export const publicRoutes = [
     {
         url: "/waste",
         component: WastePage
     },
-    // {
-    //     url: "/quiz",
-    //     component: QnAPage
-    // },
     {
         url: "/",
         component: HomePage
@@ -23,6 +19,10 @@ export const publicRoutes = [
 ];
 
 export const privateRoutes = [
+    {
+        url: "/quiz",
+        component: QnAPage
+    }
 
 ];
 
