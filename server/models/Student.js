@@ -10,6 +10,10 @@ const studentSchema = mongoose.Schema({
   },
   isFilled: {
     type: Boolean
+  },
+  quizId:{
+	type:mongoose.Schema.Types.ObjectId,
+	default:null
   }
 })
 
