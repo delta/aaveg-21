@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Carousel, { consts } from 'react-elastic-carousel'
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
-import { FormControlLabel, FormLabel, Radio, RadioGroup, Typography, Button } from '@material-ui/core'
+import { FormControlLabel, FormLabel, Radio, RadioGroup, Typography } from '@material-ui/core'
 import './carouselStyles.css'
 import { useStyles } from "./styles";
 import bg from '../../assets/bg.mp4'
@@ -50,6 +50,7 @@ export const QnAPage = () => {
 
     useEffect(() => {
         setQuestions()
+        // eslint-disable-next-line
     }, [])
 
     const handleChange = e => {

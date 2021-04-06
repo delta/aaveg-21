@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BACKEND_API } from '../../config'
+import { BACKEND_API } from '../../config/config'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import { network } from '../../actions/network'
