@@ -7,6 +7,7 @@ const mongoose = require('mongoose')
 const config = require('./config/config.js')
 
 const studentAuth = require('./routes/studentAuth')
+const quizRoutes = require('./routes/quizRoutes')
 
 app.use(cors())
 app.use(function (req, res, next) {
@@ -36,6 +37,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Router
+app.use('/api/quiz',quizRoutes);
 app.use(studentAuth)
 
 // Production Requirements
