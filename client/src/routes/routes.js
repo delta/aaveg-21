@@ -1,16 +1,11 @@
-import { WastePage } from '../containers/WastePage'
-import { HomePage } from '../containers/HomePage'
+import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { QnAPage } from '../pages/QnA'
 
 export const publicRoutes = [
     {
-        url: "/waste",
-        component: WastePage
-    },
-    {
         url: "/",
-        component: HomePage
+        component: Home
     },
     {
         url: "/login",
