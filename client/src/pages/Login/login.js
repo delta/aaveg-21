@@ -37,7 +37,7 @@ export const Login = (props) => {
           toast.success("logged in/ get from res", {
             position: "bottom-center",
           });
-          history.push("/");
+          history.push("/quiz");
         } else {
           toast.error("error/get from res", { position: "bottom-center" });
         }

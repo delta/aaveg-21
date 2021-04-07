@@ -7,15 +7,15 @@ import { publicRoutes, privateRoutes, adminRoutes } from "./routes";
 export const Routes = () => {
   const online =
     useSelector((state) => state.network).network || navigator.onLine;
-  // React.useEffect(() => {
-  //     const msg = firebase.messaging();
-  //     msg.requestPermission().then(() => {
-  //         return msg.getToken();
-  //     }).then((data) => {
-  //         console.warn("token", data)
-  //     })
-  // })
-  console.log(online);
+  React.useEffect(() => {
+      // const msg = firebase.messaging();
+      // msg.requestPermission().then(() => {
+      //     return msg.getToken();
+      // }).then((data) => {
+      //     console.warn("token", data)
+      // })
+      console.clear()
+  })
   return (
     <Switch>
       {online ? null : <div>You are offline</div>}

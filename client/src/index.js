@@ -10,6 +10,8 @@ import { ToastContainer } from 'react-toastify';
 import {NavBar} from './components/NavBar';
 import 'react-toastify/dist/ReactToastify.css';
 import './index.css'
+import { SocialIcons } from './components/SocialMedia';
+import { Footer } from './components/Footer';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +20,8 @@ ReactDOM.render(
         <NavBar>
           <Routes />
           <ToastContainer />
+          <SocialIcons/>
+          <Footer/>
         </NavBar>
       </PersistGate>
     </Provider>

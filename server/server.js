@@ -28,10 +28,6 @@ mongoose.connect(config.db, {
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.log(err))
 
-app.get('/check', (req, res) => {
-  res.status(200).send('Server Working')
-})
-
 // Body Parser
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
