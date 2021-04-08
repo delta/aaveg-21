@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Grid, Typography, Paper, TextField, Button } from "@material-ui/core";
+import { Grid, Typography, Paper, TextField, Button, InputAdornment } from "@material-ui/core";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import LockIcon from '@material-ui/icons/Lock';
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -57,7 +59,7 @@ export const Login = (props) => {
       className={classes.container}
     >
       <Grid container item direction="row" lg={9} md={9} alignItems="center">
-        <Paper elevation={3} className={classes.paper}>
+        <Paper elevation={6} className={classes.paper}>
           <Grid
             container
             direction="column"
@@ -72,14 +74,29 @@ export const Login = (props) => {
             </Typography>
             <TextField
               label="Webmail ID"
-              variant="filled"
-              size=""
+              variant="outlined"
+              size="medium"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <AccountCircleIcon />
+                  </InputAdornment>
+                ),
+              }}
               onChange={(e) => setWebmail(e.target.value)}
               className={classes.TextFields}
             />
             <TextField
               label="Password"
-              variant="filled"
+              variant="outlined"
+              size="medium"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <LockIcon />
+                  </InputAdornment>
+                ),
+              }}
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               className={classes.TextFields}
