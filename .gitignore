@@ -6,4 +6,3 @@ config.js
 firebase.json
 .firebase/
 logs
-.vscode

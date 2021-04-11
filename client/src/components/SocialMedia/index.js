@@ -1,11 +1,11 @@
-import styles from "./style.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from './style.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faFacebookF,
   faInstagram,
   faMedium,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons'
 
 export const SocialIcons = () => {
   return (
@@ -13,14 +13,14 @@ export const SocialIcons = () => {
       <ul className={styles.ul}>
         <li>
           <a
-            href="https://www.facebook.com/aaveg.nitt/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://www.facebook.com/aaveg.nitt/'
+            target='_blank'
+            rel='noopener noreferrer'
           >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span />
+            <span />
+            <span />
+            <span />
             <span>
               <FontAwesomeIcon icon={faFacebookF} />
             </span>
@@ -28,14 +28,14 @@ export const SocialIcons = () => {
         </li>
         <li>
           <a
-            href="https://www.instagram.com/aaveg.nitt/"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://www.instagram.com/aaveg.nitt/'
+            target='_blank'
+            rel='noopener noreferrer'
           >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span />
+            <span />
+            <span />
+            <span />
             <span>
               <FontAwesomeIcon icon={faInstagram} />
             </span>
@@ -43,14 +43,14 @@ export const SocialIcons = () => {
         </li>
         <li>
           <a
-            href="https://medium.com/aaveg-blog"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://medium.com/aaveg-blog'
+            target='_blank'
+            rel='noopener noreferrer'
           >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span />
+            <span />
+            <span />
+            <span />
             <span>
               <FontAwesomeIcon icon={faMedium} />
             </span>
@@ -58,14 +58,14 @@ export const SocialIcons = () => {
         </li>
         <li>
           <a
-            href="https://www.youtube.com/channel/UC6RY84pojMJ0HP6wHkFeW-A"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://www.youtube.com/channel/UC6RY84pojMJ0HP6wHkFeW-A'
+            target='_blank'
+            rel='noopener noreferrer'
           >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+            <span />
+            <span />
+            <span />
+            <span />
             <span>
               <FontAwesomeIcon icon={faYoutube} />
             </span>
@@ -73,5 +73,5 @@ export const SocialIcons = () => {
         </li>
       </ul>
     </div>
-  );
-};
+  )
+}

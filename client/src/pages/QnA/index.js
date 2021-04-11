@@ -1,1 +1,1 @@
-export { QnAPage} from "./qna";
+export { QnAPage } from './qna'
