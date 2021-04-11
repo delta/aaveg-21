@@ -6,6 +6,9 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
+  title:{
+    height: '10vh',
+  },
   navBar: {
     display: "flex",
     flexDirection: "column",

@@ -5,7 +5,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { Button, FormControlLabel, FormLabel, Radio, RadioGroup, Typography } from '@material-ui/core'
 import './carouselStyles.css'
 import { useStyles } from "./styles";
-import bg from '../../assets/bg.mp4'
+import bgimg  from '../../assets/images/questionPage.png'
 import { BACKEND_API } from "../../config/config";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
@@ -92,9 +92,7 @@ export const QnAPage = () => {
     ) 
     else return(
         <div className={classes.main}>
-            <video autoPlay muted loop className={classes.bgVideo}>
-                <source src={bg} type="video/mp4" />
-            </video>
+            <img src={bgimg} className={classes.bgimg} alt='bgimg'/>
             <ThemeProvider theme={theme}>
                 <div className={classes.container}>
                     <Typography variant="h3" component="h3" color="primary" className={classes.title}>

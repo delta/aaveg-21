@@ -10,6 +10,7 @@ import { BACKEND_API } from "../../config/config";
 import { toast } from "react-toastify";
 import { loginSuccess } from "../../actions/user";
 import logo from '../../assets/images/Aaveg Glyph - Black.png';
+import bgimg  from '../../assets/images/loginPage.png'
 
 export const Login = (props) => {
   const history = useHistory();
@@ -51,6 +52,8 @@ export const Login = (props) => {
   };
 
   return (
+    <>
+    <img src={bgimg} className={classes.bgimg} alt='bgimg'/>
     <Grid
       container
       direction="row"
@@ -114,5 +117,6 @@ export const Login = (props) => {
         </Paper>
       </Grid>
     </Grid>
+    </>
   );
 };

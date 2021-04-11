@@ -2,19 +2,20 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
   paper: {
-    margin: "10%",
+    backgroundColor:'rgba(255,255,255,0.8)',
+    // margin: "10%",
     alignItems: "center",
-    width: "100%",
+    // width: "100%",
     paddingBottom: "5%",
     paddingTop: "5%",
-    [theme.breakpoints.down("md")]: {
+    // [theme.breakpoints.down("md")]: {
       position: "absolute",
       top: "50%",
       margin: "0%",
       left: "9.5%",
       width: "80%",
       transform: "translateY(-50%)"
-    },
+    // },
   },
   title: {
     margin: theme.spacing(2),
@@ -42,4 +43,11 @@ export const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2),
     width: "auto",
   },
+  bgimg:{
+    position: "fixed",
+    width: "100%",
+    height: "100%",
+    bottom: 0,
+    left: 0,
+  }
 }));
