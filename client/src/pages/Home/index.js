@@ -3,6 +3,7 @@ import style from "./style.module.css";
 import { Button } from "@material-ui/core";
 import { useStyles } from "./styles";
 import { useHistory } from "react-router";
+import bgimg  from '../../assets/images/bgImg.png'
 
 export const Home = () => {
   const classes = useStyles();
@@ -10,7 +11,8 @@ export const Home = () => {
   return (
     <section className={style.section}>
       <main role="main" className={style.main_content}>
-        <div className={style.vignette}></div>
+        <div className={style.vignette}/>
+        <img src={bgimg} className={style.bgimg} alt='bgimg'/>
         <div className={style.titleCont}>
           <h1 className={style.main_title}>
             Aaveg, is not just a fest,

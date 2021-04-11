@@ -20,14 +20,12 @@ export const useStyles = makeStyles((theme) => ({
         transform: 'translate(-50%, -50%)',
         minWidth: '100em',
     },
-    bgVideo: {
-        position: 'fixed',
-        right: '0',
-        bottom: '0',
-        minWidth: '100%',
-        minHeight: '100%',
-        zIndex: '-1',
-        opacity: '50%',
+    bgimg:{
+        position: "fixed",
+        width: "100%",
+        height: "100%",
+        bottom: 0,
+        left: 0,
     },
     cover: {
         padding: '40px 30px',

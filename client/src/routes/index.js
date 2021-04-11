@@ -14,7 +14,6 @@ export const Routes = () => {
       // }).then((data) => {
       //     console.warn("token", data)
       // })
-      console.clear()
   })
   return (
     <Switch>
