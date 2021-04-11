@@ -33,7 +33,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Router
-app.use('/api/quiz',quizRoutes);
+app.use('/api/quiz', quizRoutes)
 app.use(studentAuth)
 
 // Production Requirements

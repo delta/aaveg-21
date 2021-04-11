@@ -5,7 +5,7 @@
 	"scripts": {
 		"start": "nodemon server.js",
 		"server-start": "node server.js",
-		"standard": "standard --verbose | snazzy"
+		"postinstall": "cd .. && npm i && cd -"
 	},
 	"keywords": [],
 	"author": "",
@@ -17,11 +17,9 @@
 		"imap-simple": "^5.0.0",
 		"jsonwebtoken": "^8.5.1",
 		"mongoose": "^5.12.0",
-		"snazzy": "^9.0.0",
 		"winston": "^3.3.3"
 	},
 	"devDependencies": {
-		"nodemon": "^2.0.7",
-		"standard": "^16.0.3"
+		"nodemon": "^2.0.7"
 	}
 }

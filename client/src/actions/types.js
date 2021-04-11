@@ -1,3 +1,3 @@
-export const LOGIN = 'LOGIN';
+export const LOGIN = 'LOGIN'
 
-export const NETWORK = "NETWORK";
+export const NETWORK = 'NETWORK'

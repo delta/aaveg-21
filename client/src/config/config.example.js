@@ -1,1 +1,1 @@
-export const BACKEND_API = ``;
+export const BACKEND_API = ''

@@ -1,4 +1,4 @@
-import styles from "./style.module.css";
+import styles from './style.module.css'
 
 export const Footer = () => {
   return (
@@ -7,33 +7,33 @@ export const Footer = () => {
         Made with ️
         <div className={styles.heart}>
           <a
-            href="http://delta.nitt.edu"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='http://delta.nitt.edu'
+            target='_blank'
+            rel='noopener noreferrer'
             className={styles.atag}
           >
             ❤️
           </a>
-        </div>{" "}
-        by{" "}
+        </div>{' '}
+        by{' '}
         <a
-          href="http://delta.nitt.edu"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='http://delta.nitt.edu'
+          target='_blank'
+          rel='noopener noreferrer'
           className={styles.atag}
         >
           <span>Delta Force</span>
-        </a>{" "}
-        and{" "}
+        </a>{' '}
+        and{' '}
         <a
-          href="https://www.behance.net/aavegnitt"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://www.behance.net/aavegnitt'
+          target='_blank'
+          rel='noopener noreferrer'
           className={styles.atag}
         >
           <span> Aaveg Design</span>
         </a>
       </div>
     </footer>
-  );
-};
+  )
+}

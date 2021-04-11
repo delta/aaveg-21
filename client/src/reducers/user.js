@@ -1,10 +1,10 @@
-import { LOGIN } from "../actions/types";
+import { LOGIN } from '../actions/types'
 
-export default function reducer(state = null, action) {
+export default function reducer (state = null, action) {
   switch (action.type) {
     case LOGIN:
-      return action.payload;
+      return action.payload
     default:
-      return state;
+      return state
   }
 }

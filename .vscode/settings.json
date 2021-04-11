@@ -1,0 +1,14 @@
+{
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "javascript.validate.enable": false,
+    "editor.defaultFormatter": "chenxsan.vscode-standardjs",
+    "editor.formatOnSave": true,
+    "javascript.format.enable": false,
+    "standard.enable": true,
+    "standard.autoFixOnSave": true,
+    "standard.validate": [
+      "javascript",
+      "javascriptreact"
+    ]
+}

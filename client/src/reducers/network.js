@@ -1,12 +1,12 @@
-import { NETWORK } from "../actions/types";
+import { NETWORK } from '../actions/types'
 
-const initialState = { network: true };
+const initialState = { network: true }
 
-export default function reducer(state = initialState, action) {
+export default function reducer (state = initialState, action) {
   switch (action.type) {
     case NETWORK:
-      return action.payload;
+      return action.payload
     default:
-      return state;
+      return state
   }
 }
