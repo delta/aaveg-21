@@ -108,9 +108,9 @@ export const QnAPage = () => {
     console.log(values)
 
     axios
-      .post(BACKEND_API + '/api/quiz/saveAnswers', JSON.stringify({ questions: values }))
+      .post(BACKEND_API + '/api/quiz/saveAnswers', { questions: values }, { withCredentials: true, credentials: 'include' })
       .then((res) => {
-        if (res.status_code === 200) {
+        if (res.status === 200) {
           toast.success('logged in/ get from res', {
             position: 'bottom-center'
           })

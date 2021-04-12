@@ -4,10 +4,10 @@ const logger = require('../config/winston')
 
 exports.saveAnswers = async (req, res) => {
   const { questions } = req.body
-  const userId = req.user_id
+  const userId = req.user.id
   // Look for the student id in request
   Student.findOne({ _id: userId })
-    .then((student) => {
+    .then(async (student) => {
       // If quiz already there then update
       if (student.quizId != null) {
         Quiz.findOneAndUpdate(
@@ -31,9 +31,9 @@ exports.saveAnswers = async (req, res) => {
           userId: student._id,
           questions: questions
         })
-        newQuiz.save()
+        await newQuiz.save()
         student.quizId = newQuiz._id
-        student.save()
+        await student.save()
         logger.info(`Answers saved for ${student.rollnumber}`)
         res.status(200)
         res.json({

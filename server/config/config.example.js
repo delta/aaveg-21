@@ -1,5 +1,7 @@
 module.exports = {
-  db: 'mongodb://localhost/[DB NAME]',
-  port: '8000',
-  jwtSecret: 'ffff'
+  db: '',
+  port: '',
+  jwtSecret: '',
+  cookieExpTime: 7200000,
+  adminUsers: ['106119012', '106119052']
 }

@@ -3,15 +3,15 @@ const path = require('path')
 const cors = require('cors')
 const app = express()
 const mongoose = require('mongoose')
-
+const cookieparser = require('cookie-parser')
 const config = require('./config/config.js')
 
-const studentAuth = require('./routes/studentAuth')
+const auth = require('./routes/auth')
 const quizRoutes = require('./routes/quizRoutes')
 
-app.use(cors())
+app.use(cors({ origin: true, credentials: true }))
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*')
+  // res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Credentials', true)
   res.header(
     'Access-Control-Allow-Headers',
@@ -32,9 +32,12 @@ mongoose.connect(config.db, {
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// Cookie Parser
+app.use(cookieparser())
+
 // Router
 app.use('/api/quiz', quizRoutes)
-app.use(studentAuth)
+app.use('/api/auth', auth)
 
 // Production Requirements
 if (process.env.NODE_ENV !== 'production') {
@@ -48,6 +51,6 @@ if (process.env.NODE_ENV !== 'production') {
   })
 }
 
-const PORT = process.env.PORT || config.port
+const PORT = config.port || process.env.PORT
 
 app.listen(PORT, () => console.log(`Server Running in Port: ${PORT}`))
