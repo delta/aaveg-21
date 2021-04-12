@@ -22,14 +22,14 @@
   color: #50acee;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .footer {
     font-size: 16px;
   }
 }
 
 .heart {
-  display:inline-block;
+  display: inline-block;
   animation: animateHeart 1.2s infinite;
 }
 
@@ -37,18 +37,23 @@
   0% {
     transform: scale(0.8);
   }
+
   5% {
     transform: scale(0.9);
   }
+
   10% {
     transform: scale(0.8);
   }
+
   15% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(0.8);
   }
+
   100% {
     transform: scale(0.8);
   }

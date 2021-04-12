@@ -71,6 +71,7 @@ export const useStyles = makeStyles((theme) => ({
     top: '75px',
     left: '15px',
     cursor: 'pointer',
+    zIndex: '2',
     [theme.breakpoints.down(450)]: {
       fontSize: '1.5rem',
       top: '60px',
