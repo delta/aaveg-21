@@ -12,7 +12,7 @@ import { loginSuccess } from '../../actions/user'
 import logo from '../../assets/images/Aaveg Glyph - Black.png'
 import bgimg from '../../assets/images/loginPage.png'
 
-export const Login = (props) => {
+export const Login = () => {
   const history = useHistory()
   const classes = useStyles()
   const dispatch = useDispatch()
@@ -20,11 +20,11 @@ export const Login = (props) => {
   const [webmail, setWebmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const user = useSelector((state) => state.user)
+  // const user = useSelector((state) => state.user)
 
-  if (user !== null) {
-    history.push('/')
-  }
+  // if (user !== null) {
+  //   history.push('/')
+  // }
 
   const handleLogin = () => {
     const loginData = {
