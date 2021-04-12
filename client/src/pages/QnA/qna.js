@@ -2,9 +2,11 @@ import React, { useState, useEffect, useRef } from 'react'
 import Carousel, { consts } from 'react-elastic-carousel'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles'
-import { Button, FormControlLabel, FormLabel, Radio, RadioGroup, Typography } from '@material-ui/core'
+import { Button, FormControlLabel, FormLabel, Radio, RadioGroup, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@material-ui/core'
+import InfoIcon from '@material-ui/icons/Info'
 import './carouselStyles.css'
 import { useStyles } from './styles'
+import logo from '../../assets/images/Aaveg Glyph - Black.png'
 import bgimg from '../../assets/images/questionPage.png'
 import { BACKEND_API } from '../../config/config'
 import { toast } from 'react-toastify'
@@ -17,12 +19,12 @@ import { qList } from './utils/qList'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#8865b1'
+      main: '#42779c'
     },
     secondary: {
-      main: '#8865b1'
+      main: '#ffffffCC'
     },
-    type: 'dark'
+    type: 'light'
   }
 })
 
@@ -31,12 +33,50 @@ export const QnAPage = () => {
   const classes = useStyles()
   const [questions, setQues] = useState([])
   const [values, setValues] = useState([])
+  const [dialogOpen, setDialogOpen] = useState(false)
   const [loading, setLoading] = useState(true)
   const ref = useRef()
 
   const carouselSettings = {
     itemPosition: consts.START,
     focusOnSelect: false
+  }
+
+  const handleInfoOpen = () => {
+    setDialogOpen(true)
+  }
+
+  const InfoDialog = ({ open, setOpen }) => {
+    const handleClose = () => {
+      setOpen(false)
+    }
+
+    return (
+      <Dialog
+        open={open}
+        onClose={handleClose}
+      >
+        <DialogTitle>
+          <div className={classes.dTitle}>
+            Why this questionnaire?
+          </div>
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            <div className={classes.dContent}>
+              Before you are separated into the different teams that you will compete for in Aaveg, we would like to get to know you a little.
+              <br /><br />
+              Fill in your answers based on your gut and remember there are no right answers!
+            </div>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button variant='contained' className={classes.dButton} onClick={handleClose} color='primary'>
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+    )
   }
 
   useEffect(() => {
@@ -96,29 +136,32 @@ export const QnAPage = () => {
       <div className={classes.main}>
         <img src={bgimg} className={classes.bgimg} alt='bgimg' />
         <ThemeProvider theme={theme}>
+          <InfoIcon color='secondary' onClick={handleInfoOpen} fontSize='large' className={classes.infoIcon} />
           <div className={classes.container}>
-            <Typography variant='h3' component='h3' color='primary' className={classes.title}>
-              Teams Sorting
-            </Typography>
+            {/* <Typography variant="h3" component="h3" color="primary" className={classes.title}>
+                      Teams Sorting
+                  </Typography> */}
             <Carousel {...carouselSettings} ref={ref}>
               {questions.map((q, index) => {
                 return (
                   <div key={q.qId}>
                     <div className={classes.cover}>
-                      <FormLabel component='legend'>{q.question}</FormLabel>
-                      <RadioGroup aria-label='quiz' value={values[index]} onChange={handleChange} name='quiz'>
-                        <FormControlLabel value={q.answers[0].ansId} control={<Radio />} label={q.answers[0].answer} />
-                        <FormControlLabel value={q.answers[1].ansId} control={<Radio />} label={q.answers[1].answer} />
-                        <FormControlLabel value={q.answers[2].ansId} control={<Radio />} label={q.answers[2].answer} />
-                        <FormControlLabel value={q.answers[3].ansId} control={<Radio />} label={q.answers[3].answer} />
+                      <img src={logo} className={classes.logo} alt='logo' />
+                      <FormLabel component='legend' className={classes.legend}>{q.question}</FormLabel>
+                      <RadioGroup aria-label='quiz' className={classes.radioGroup} value={values[index]} onChange={handleChange} name='quiz'>
+                        <FormControlLabel className={classes.label} value={q.answers[0].ansId} control={<Radio />} label={q.answers[0].answer} />
+                        <FormControlLabel className={classes.label} value={q.answers[1].ansId} control={<Radio />} label={q.answers[1].answer} />
+                        <FormControlLabel className={classes.label} value={q.answers[2].ansId} control={<Radio />} label={q.answers[2].answer} />
+                        <FormControlLabel className={classes.label} value={q.answers[3].ansId} control={<Radio />} label={q.answers[3].answer} />
                       </RadioGroup>
-                      {index === questions.length - 1 ? <Button disabled={values.findIndex(v => v === null) !== -1} onClick={submitHandler}>Submit</Button> : <Button onClick={() => ref.current.slideNext()}>Next</Button>}
+                      {index === questions.length - 1 ? <Button variant='contained' color='primary' className={classes.button} disabled={values.findIndex(v => v === null) !== -1} onClick={submitHandler}>Submit</Button> : <Button variant='contained' color='primary' className={classes.button} onClick={() => ref.current.slideNext()}>Next</Button>}
                     </div>
                   </div>
                 )
               })}
             </Carousel>
           </div>
+          <InfoDialog open={dialogOpen} setOpen={setDialogOpen} />
         </ThemeProvider>
       </div>
     )

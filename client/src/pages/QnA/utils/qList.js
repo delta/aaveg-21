@@ -1,19 +1,19 @@
 export const qList = [
   {
     qId: '1',
-    question: 'Question statement number 1 njzd rufuwa eijeia fbr aud ekodedug beug?',
+    question: 'You are stuck in the middle of the forest with no memory of how you got there. In front of you, you see three paths: left - towards a jungle, right - towards a beach and straight - towards a ruined castle. Which way do you go?',
     answers: [{
       ansId: '011',
-      answer: 'Answer 1 sfsrgkngksk'
+      answer: 'Left'
     }, {
       ansId: '012',
-      answer: 'Answer 2 sfsrgkngksk'
+      answer: 'Straight'
     }, {
       ansId: '013',
-      answer: 'Answer 3 sfsrgkngksk'
+      answer: 'Right'
     }, {
       ansId: '014',
-      answer: 'Answer 4 sfsrgkngksk'
+      answer: 'Stay where you are'
     }]
   }, {
     qId: '2',
