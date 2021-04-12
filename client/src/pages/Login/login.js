@@ -33,10 +33,10 @@ export const Login = (props) => {
     }
 
     axios
-      .post(BACKEND_API + '/auth/login', JSON.stringify(loginData))
+      .post(BACKEND_API + '/api/auth/login', loginData, { withCredentials: true, credentials: 'include' })
       .then((res) => {
-        if (res.status_code === 200) {
-          dispatch(loginSuccess(res.message))
+        if (res.status === 200) {
+          dispatch(loginSuccess(res.data.message))
           toast.success('logged in/ get from res', {
             position: 'bottom-center'
           })
