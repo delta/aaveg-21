@@ -58,3 +58,9 @@
         width: 100vw;
     }
 }
+
+@media screen and (max-width: 450px) {
+  .rec.rec-arrow {
+    display: none;
+}
+}
