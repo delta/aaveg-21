@@ -20,11 +20,11 @@ export const Login = () => {
   const [webmail, setWebmail] = useState('')
   const [password, setPassword] = useState('')
 
-  // const user = useSelector((state) => state.user)
+  const user = useSelector((state) => state.user)
 
-  // if (user !== null) {
-  //   history.push('/')
-  // }
+  if (user.isLoggedIn === true) {
+    history.push('/quiz')
+  }
 
   const handleLogin = () => {
     const loginData = {
@@ -35,8 +35,9 @@ export const Login = () => {
     axios
       .post(BACKEND_API + '/api/auth/login', loginData, { withCredentials: true, credentials: 'include' })
       .then((res) => {
+        console.log(res.data)
         if (res.status === 200) {
-          dispatch(loginSuccess(res.data.message))
+          dispatch(loginSuccess(res.data))
           toast.success('logged in/ get from res', {
             position: 'bottom-center'
           })

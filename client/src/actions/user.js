@@ -12,7 +12,7 @@ export const loginSuccess = (data) => {
 export const auth = () => async (dispatch) => {
   console.log('here')
   dispatch(authRequest())
-  const data = await axios.post(BACKEND_API + '/api/auth/checkLogin')
+  const data = await axios.post(BACKEND_API + '/api/auth/checkLogin', {}, { withCredentials: true, credentials: 'include' })
   console.log(data)
   dispatch(authSuccess(data))
 }
