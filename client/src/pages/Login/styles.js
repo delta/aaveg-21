@@ -2,24 +2,18 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
   paper: {
-    // margin: '10%',
+    backgroundColor: 'rgba(255,255,255,0.8)',
     alignItems: 'center',
-    // width: '100%',
-    background: 'rgba( 255, 255, 255, 0.45 )',
-    boxShadow: '0 0 12px 10px rgba( 31, 38, 135, 0.37 )',
-    backdropFilter: 'blur( 10.0px )',
-    borderRadius: '10px',
-    border: '1px solid rgba( 255, 255, 255, 0.18 )',
     paddingBottom: '5%',
     paddingTop: '5%',
-    // [theme.breakpoints.down('md')]: {
-    position: 'absolute',
-    top: '50%',
+    position: 'relative',
     margin: '0%',
     left: '9.5%',
     width: '80%',
-    transform: 'translateY(-50%)'
-    // },
+    [theme.breakpoints.down(400)]: {
+      left: '4.5%',
+      width: '90%'
+    }
   },
   title: {
     margin: theme.spacing(2),
@@ -44,6 +38,7 @@ export const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(6)
   },
   container: {
+    height: 'calc(100% - 100px)',
     margin: theme.spacing(2),
     width: 'auto'
   },
@@ -53,5 +48,11 @@ export const useStyles = makeStyles((theme) => ({
     height: '100%',
     bottom: 0,
     left: 0
+  },
+  vpn: {
+    height: 'calc(100vh - 145px)',
+    [theme.breakpoints.down(800)]: {
+      height: 'calc(100vh - 128px)'
+    }
   }
 }))

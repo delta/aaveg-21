@@ -6,18 +6,21 @@ export const useStyles = makeStyles((theme) => ({
     color: 'rgba(255,255,255,0.8)'
   },
   main: {
-    position: 'fixed',
-    backgroundColor: 'black',
+    position: 'relative',
     right: '0',
     bottom: '0',
-    minWidth: '100%',
-    minHeight: '100%'
+    minWidth: '100vh',
+    minHeight: 'calc(100vh - 132px)',
+    [theme.breakpoints.down(800)]: {
+      minHeight: 'calc(100vh - 102px)'
+    },
+    backgroundColor: 'transparent'
   },
   container: {
     textAlign: 'center',
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
+    position: 'relative',
+    top: '50vh',
+    left: '50vw',
     transform: 'translate(-50%, -50%)',
     minWidth: '100em',
     zIndex: 20

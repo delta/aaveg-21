@@ -22,7 +22,7 @@ export const Login = () => {
 
   const user = useSelector((state) => state.user)
 
-  if (user.isLoggedIn === true) {
+  if (user.isAuthenticated === true) {
     history.push('/quiz')
   }
 
@@ -62,7 +62,7 @@ export const Login = () => {
         alignItems='center'
         className={classes.container}
       >
-        <Grid container item direction='row' lg={9} md={9} alignItems='center'>
+        <Grid container className={classes.vpn} item direction='row' lg={9} md={9} alignItems='center'>
           <Paper elevation={6} className={classes.paper}>
             <Grid
               container

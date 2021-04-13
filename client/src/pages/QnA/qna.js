@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useSelector } from 'react-redux'
 import Carousel, { consts } from 'react-elastic-carousel'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { ThemeProvider } from '@material-ui/styles'
@@ -40,6 +41,11 @@ export const QnAPage = () => {
   const carouselSettings = {
     itemPosition: consts.START,
     focusOnSelect: false
+  }
+  const user = useSelector((state) => state.user)
+
+  if (user.loading === 'idle' && user.isLoggedIn === false) {
+    history.push('/login')
   }
 
   const handleInfoOpen = () => {
@@ -133,37 +139,36 @@ export const QnAPage = () => {
     )
   } else {
     return (
-      <div className={classes.main}>
+      <>
         <img src={bgimg} className={classes.bgimg} alt='bgimg' />
-        <ThemeProvider theme={theme}>
-          <InfoIcon color='secondary' onClick={handleInfoOpen} fontSize='large' className={classes.infoIcon} />
-          <div className={classes.container}>
-            {/* <Typography variant="h3" component="h3" color="primary" className={classes.title}>
-                      Teams Sorting
-                  </Typography> */}
-            <Carousel {...carouselSettings} ref={ref}>
-              {questions.map((q, index) => {
-                return (
-                  <div key={q.qId} className={classes.questionBox}>
-                    <div className={classes.cover}>
-                      <img src={logo} className={classes.logo} alt='logo' />
-                      <FormLabel component='legend' className={classes.legend}>{q.question}</FormLabel>
-                      <RadioGroup aria-label='quiz' className={classes.radioGroup} value={values[index]} onChange={handleChange} name='quiz'>
-                        <FormControlLabel className={classes.label} value={q.answers[0].ansId} control={<Radio />} label={q.answers[0].answer} />
-                        <FormControlLabel className={classes.label} value={q.answers[1].ansId} control={<Radio />} label={q.answers[1].answer} />
-                        <FormControlLabel className={classes.label} value={q.answers[2].ansId} control={<Radio />} label={q.answers[2].answer} />
-                        <FormControlLabel className={classes.label} value={q.answers[3].ansId} control={<Radio />} label={q.answers[3].answer} />
-                      </RadioGroup>
-                      {index === questions.length - 1 ? <Button variant='contained' color='primary' className={classes.button} disabled={values.findIndex(v => v === null) !== -1} onClick={submitHandler}>Submit</Button> : <Button variant='contained' color='primary' className={classes.button} onClick={() => ref.current.slideNext()}>Next</Button>}
+        <div className={classes.main}>
+          <ThemeProvider theme={theme}>
+            <InfoIcon color='secondary' onClick={handleInfoOpen} fontSize='large' className={classes.infoIcon} />
+            <div className={classes.container}>
+              <Carousel {...carouselSettings} ref={ref}>
+                {questions.map((q, index) => {
+                  return (
+                    <div key={q.qId}>
+                      <div className={classes.cover}>
+                        <img src={logo} className={classes.logo} alt='logo' />
+                        <FormLabel component='legend' className={classes.legend}>{q.question}</FormLabel>
+                        <RadioGroup aria-label='quiz' className={classes.radioGroup} value={values[index]} onChange={handleChange} name='quiz'>
+                          <FormControlLabel className={classes.label} value={q.answers[0].ansId} control={<Radio />} label={q.answers[0].answer} />
+                          <FormControlLabel className={classes.label} value={q.answers[1].ansId} control={<Radio />} label={q.answers[1].answer} />
+                          <FormControlLabel className={classes.label} value={q.answers[2].ansId} control={<Radio />} label={q.answers[2].answer} />
+                          <FormControlLabel className={classes.label} value={q.answers[3].ansId} control={<Radio />} label={q.answers[3].answer} />
+                        </RadioGroup>
+                        {index === questions.length - 1 ? <Button variant='contained' color='primary' className={classes.button} disabled={values.findIndex(v => v === null) !== -1} onClick={submitHandler}>Submit</Button> : <Button variant='contained' color='primary' className={classes.button} onClick={() => ref.current.slideNext()}>Next</Button>}
+                      </div>
                     </div>
-                  </div>
-                )
-              })}
-            </Carousel>
-          </div>
-          <InfoDialog open={dialogOpen} setOpen={setDialogOpen} />
-        </ThemeProvider>
-      </div>
+                  )
+                })}
+              </Carousel>
+            </div>
+            <InfoDialog open={dialogOpen} setOpen={setDialogOpen} />
+          </ThemeProvider>
+        </div>
+      </>
     )
   }
 }

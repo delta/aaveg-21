@@ -62,6 +62,7 @@ exports.login = async (req, res) => {
         )
         response.APIToken = APIToken
         response.rollnumber = rollnumber
+        response.isFilled = student.isFilled
         res.cookie('auth', APIToken, { maxAge: config.cookieExpTime, httpOnly: true })
         logger.info(`Student ${rollnumber} logged in`)
 

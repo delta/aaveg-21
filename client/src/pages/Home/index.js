@@ -1,43 +1,58 @@
 import React from 'react'
 import style from './style.module.css'
-import { Button } from '@material-ui/core'
-import { useStyles } from './styles'
-import { useHistory } from 'react-router'
+// import { Button } from '@material-ui/core'
+// import { useStyles } from './styles'
+// import { useHistory } from 'react-router'
 import bgimg from '../../assets/images/bgImg.png'
-import {NavBar} from "../../components/NavBar"
-import { SocialIcons } from '../../components/SocialMedia'
-import { Footer } from '../../components/Footer'
+import loginPage from '../../assets/images/loginPage.png'
 
 export const Home = () => {
-  const classes = useStyles()
-  const history = useHistory()
+  React.useEffect(() => {
+    let scy = window.scrollY || 0
+
+    document.getElementById('pic2').style.top = -scy + window.innerHeight + 'px'
+    document.getElementById('pic1').style.top = -window.scrollY + 'px'
+
+    document.addEventListener('scroll', () => {
+      document.getElementById('pic1').style.top = -window.scrollY + 'px'
+      scy = window.scrollY
+      if (window.scrollY > window.innerHeight) {
+        scy = window.innerHeight
+      }
+      document.getElementById('pic2').style.top = -scy + window.innerHeight + 'px'
+    })
+
+    window.addEventListener('resize', () => {
+      document.getElementById('pic1').style.width = window.innerWidth + 'px'
+      document.getElementById('pic2').style.width = window.innerWidth + 'px'
+      document.getElementById('pic1').style.height = window.innerHeight + 'px'
+      document.getElementById('pic2').style.height = window.innerHeight + 'px'
+    })
+
+    // document.getElementById('pic1').style.top = -window.scrollY + 'px'
+    document.getElementById('pic1').style.width = window.innerWidth + 'px'
+    document.getElementById('pic2').style.width = window.innerWidth + 'px'
+    document.getElementById('pic1').style.height = window.innerHeight + 'px'
+    document.getElementById('pic2').style.height = window.innerHeight + 'px'
+  }, [])
   return (
-    <NavBar>
     <section className={style.section}>
-      <main role='main' className={style.main_content}>
-        <div className={style.vignette} />
-        <img src={bgimg} className={style.bgimg} alt='bgimg' />
-        <div className={style.titleCont}>
-          <h1 className={style.main_title}>
-            Aaveg, is not just a fest,
-            <br />
-            <span>but a war</span>
-            <br />
-            <span>between hostels.</span>
-          </h1>
-          <Button
-            variant='contained'
-            className={classes.Button}
-            color='primary'
-            onClick={() => history.push('/login')}
-          >
-            Login To Fill Questionaire
-          </Button>
-        </div>
-      </main>
+      <img src={loginPage} className={style.bgimg} id='pic1' alt='bgimg' />
+      <img src={bgimg} className={style.bgimg} id='pic2' alt='bgimg' />
+      <div className={style.div} id='content'>What is Lorem Ipsum?
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        Why do we use it?
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+        Where does it come from?
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+
+        Where can I get some?
+        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks
+      </div>
     </section>
-    <SocialIcons />
-          <Footer />
-    </NavBar>
-  );
-};
+  )
+}
