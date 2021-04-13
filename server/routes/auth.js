@@ -8,7 +8,10 @@ router.get('/validatejwt', studentAuthController.validateJWT, async (req, res) =
 router.get('/adminonly', studentAuthController.validateJWT, studentAuthController.adminRoute, async (req, res) => {
   res.status(200).json({ admin: true })
 })
-router.post('/checkLogin', studentAuthController.validateJWT, studentAuthController.checkLogin, async (req, res) => {
+router.post('/checkLogin', studentAuthController.validateJWT, async (req, res) => {
   res.status(200).json({ isLoggedIn: true })
 })
+router.get('/info', studentAuthController.validateJWT, studentAuthController.userInfo)
+router.post('/logout', studentAuthController.logout)
+
 module.exports = router

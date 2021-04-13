@@ -6,10 +6,12 @@ const studentSchema = mongoose.Schema({
     required: true
   },
   hostel: {
-    type: String
+    type: String,
+    default: 'Not Allotted'
   },
   isFilled: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   quizId: {
     type: mongoose.Schema.Types.ObjectId,

@@ -35,21 +35,15 @@ exports.login = async (req, res) => {
         if (!student) {
           logger.info(`Creating new db entry for roll number ${rollnumber}`)
 
-          Student.create(
-            {
-              rollnumber: rollnumber,
-              hostel: 'Not Chosen'
-            },
-            function (err, newstudent) {
-              if (err) {
-                logger.error(`Error Creating New Entry ${rollnumber}: ${err}`)
-                return
-              }
-              response.user_id = newstudent.id
-            }
-          )
+          const newStudent = new Student({
+            rollnumber: rollnumber
+          })
+          await newStudent.save()
+          response.user_id = newStudent._id
+          response.isFilled = newStudent.isFilled
         } else {
           response.user_id = student._id
+          response.isFilled = student.isFilled
         }
         const APIToken = await jwt.sign(
           {
@@ -62,8 +56,14 @@ exports.login = async (req, res) => {
         )
         response.APIToken = APIToken
         response.rollnumber = rollnumber
-        response.isFilled = student.isFilled
-        res.cookie('auth', APIToken, { maxAge: config.cookieExpTime, httpOnly: true })
+        res.cookie(
+          'auth',
+          APIToken,
+          {
+            maxAge: config.cookieExpTime,
+            httpOnly: true,
+            signed: true
+          })
         logger.info(`Student ${rollnumber} logged in`)
 
         res.status(200).send(response)
@@ -80,14 +80,12 @@ exports.login = async (req, res) => {
 }
 
 exports.validateJWT = async (req, res, next) => {
-  console.log(req.cookies)
-
-  if (!req.cookies.auth) {
+  if (!req.signedCookies.auth) {
     logger.error('Auth cookie does not exist')
     res.status(400).json({ message: 'Missing API token' })
     return
   }
-  const APIToken = req.cookies.auth
+  const APIToken = req.signedCookies.auth
   console.log(APIToken)
   jwt.verify(
     APIToken,
@@ -101,16 +99,17 @@ exports.validateJWT = async (req, res, next) => {
       } else {
         Student.findById(decoded.user_id, async (err, student) => {
           if (err) {
-            logger(err)
+            logger.error(err)
             res.status(400).json({ message: 'Error Finding user' })
           } else if (!student) {
-            logger(`Could not find ${decoded.user_id}`)
+            logger.info(`Could not find ${decoded.user_id}`)
             res.status(401).json({ message: 'No entry exist for student' })
           } else {
             req.user = {}
             req.user.id = decoded.user_id
             req.user.rollnumber = decoded.rollnumber
             req.user.isAdmin = decoded.isAdmin
+            req.user.isFilled = student.isFilled
             next()
           }
         })
@@ -127,16 +126,13 @@ exports.adminRoute = async (req, res, next) => {
     res.status(403).json({ message: 'Access Forbidden' })
   }
 }
-exports.checkLogin = async (req, res, next) => {
-  logger.silly(req.user)
-  if (req.user == null) {
-    logger.err('User Not logged In')
-    res.status(403).json({ message: 'User not Logged In' })
-  } else {
-    next()
-  }
+
+exports.userInfo = async (req, res) => {
+  res.status(200).send(req.user)
 }
 
 exports.logout = async (req, res) => {
-  res.cookie('auth', '', { maxAge: 0, httpOnly: true })
+  console.log(`${req.signedCookies.auth} Logged Out`)
+  res.clearCookie('auth')
+  res.status(200).json({ message: 'Logged Out' })
 }

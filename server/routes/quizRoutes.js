@@ -5,7 +5,6 @@ const studentAuthController = require('../controllers/authController')
 router.post(
   '/saveAnswers',
   studentAuthController.validateJWT,
-  studentAuthController.checkLogin,
   quizController.saveAnswers
 )
 

@@ -33,14 +33,15 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 // Cookie Parser
-app.use(cookieparser())
+app.use(cookieparser(config.cookieSercret))
 
 // Router
 app.use('/api/quiz', quizRoutes)
 app.use('/api/auth', auth)
 
+console.log(process.env.NODE_ENV)
 // Production Requirements
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('../client/build'))
 
