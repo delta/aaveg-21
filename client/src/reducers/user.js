@@ -1,4 +1,4 @@
-import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE, LOGIN } from '../actions/types'
+import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE, LOGIN, LOGOUT } from '../actions/types'
 
 const initialState = {
   isAuthenticated: false,
@@ -28,6 +28,12 @@ export default function reducer (state = initialState, action) {
       return {
         ...state,
         loading: 'idle',
+        isAuthenticated: false
+      }
+    case LOGOUT:
+      return {
+        ...state,
+        rollNo: null,
         isAuthenticated: false
       }
     default:

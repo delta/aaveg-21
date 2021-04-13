@@ -52,7 +52,7 @@ export const useStyles = makeStyles((theme) => ({
   vpn: {
     height: 'calc(100vh - 145px)',
     [theme.breakpoints.down(800)]: {
-      height: 'calc(100vh - 128px)'
+      height: 'calc(100vh - 120px)'
     }
   }
 }))
