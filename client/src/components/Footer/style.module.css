@@ -4,7 +4,7 @@
   background-color: rgba(17, 17, 17, 0.95);
   color: #eee;
   overflow: hidden;
-  position: absolute;
+  position:fixed;
   bottom: 0;
   width: 100%;
   padding-bottom: 3px;
