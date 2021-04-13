@@ -4,11 +4,14 @@ import { Button } from '@material-ui/core'
 import { useStyles } from './styles'
 import { useHistory } from 'react-router'
 import bgimg from '../../assets/images/bgImg.png'
+import {NavBar} from "../../components/NavBar"
+
 
 export const Home = () => {
   const classes = useStyles()
   const history = useHistory()
   return (
+    <NavBar>
     <section className={style.section}>
       <main role='main' className={style.main_content}>
         <div className={style.vignette} />
@@ -32,5 +35,6 @@ export const Home = () => {
         </div>
       </main>
     </section>
-  )
-}
+    </NavBar>
+  );
+};

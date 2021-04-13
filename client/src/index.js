@@ -17,12 +17,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persist}>
-        <NavBar>
-          <Routes />
+          <Routes/>
           <ToastContainer />
-          <SocialIcons />
-          <Footer />
-        </NavBar>
       </PersistGate>
     </Provider>
   </React.StrictMode>,

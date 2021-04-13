@@ -8,6 +8,16 @@ body {
   animation: fadein 3s;
   overflow: hidden;
 }
+::-webkit-scrollbar {
+  width: 3.9px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(98, 87, 100);
+}
+::-webkit-scrollbar-track {
+  background: rgb(22, 22, 22);
+}
+
 
 @keyframes fadein {
   from {
