@@ -15,6 +15,11 @@
     cursor: inherit;
 }
 
+
+.rec.rec-item-wrapper {
+  height: 100%;
+}
+
 .rec.rec-carousel-wrapper {
     max-width: 800px;
     margin: auto;
@@ -23,9 +28,11 @@
 }
 
 .rec.rec-slider-container {
-    background-color: rgba(255,255,255,0.8);
+    background: rgba( 255, 255, 255, 0.45 );
+    box-shadow: 0 12px 10px 0 rgba( 0, 0, 0, 0.37 );
+    backdrop-filter: blur( 20.0px );
+    border-radius: 10px;
     height: 400px;
-    border-radius: 4px;
     height: inherit;
 }
 

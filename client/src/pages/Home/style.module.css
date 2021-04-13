@@ -28,6 +28,7 @@
 
 .titleCont {
   position: relative;
+  z-index: 20;
 }
 
 .main_title {
@@ -101,4 +102,5 @@
   height: 100%;
   bottom: 0;
   left: 0;
+  z-index:10;
 }

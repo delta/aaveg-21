@@ -144,7 +144,7 @@ export const QnAPage = () => {
             <Carousel {...carouselSettings} ref={ref}>
               {questions.map((q, index) => {
                 return (
-                  <div key={q.qId}>
+                  <div key={q.qId} className={classes.questionBox}>
                     <div className={classes.cover}>
                       <img src={logo} className={classes.logo} alt='logo' />
                       <FormLabel component='legend' className={classes.legend}>{q.question}</FormLabel>

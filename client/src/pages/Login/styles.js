@@ -2,13 +2,17 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
   paper: {
-    backgroundColor: 'rgba(255,255,255,0.8)',
-    // margin: "10%",
+    // margin: '10%',
     alignItems: 'center',
-    // width: "100%",
+    // width: '100%',
+    background: 'rgba( 255, 255, 255, 0.45 )',
+    boxShadow: '0 0 12px 10px rgba( 31, 38, 135, 0.37 )',
+    backdropFilter: 'blur( 10.0px )',
+    borderRadius: '10px',
+    border: '1px solid rgba( 255, 255, 255, 0.18 )',
     paddingBottom: '5%',
     paddingTop: '5%',
-    // [theme.breakpoints.down("md")]: {
+    // [theme.breakpoints.down('md')]: {
     position: 'absolute',
     top: '50%',
     margin: '0%',
