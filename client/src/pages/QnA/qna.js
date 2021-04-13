@@ -121,6 +121,8 @@ export const QnAPage = () => {
             position: 'bottom-center'
           })
           history.push('/submitted')
+        } else if (res.status === 204) {
+          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
         } else {
           toast.error('error/get from res', { position: 'bottom-center' })
         }

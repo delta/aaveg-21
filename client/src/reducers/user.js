@@ -28,7 +28,8 @@ export default function reducer (state = initialState, action) {
       return {
         ...state,
         loading: 'idle',
-        isAuthenticated: false
+        isAuthenticated: false,
+        rollNo: null
       }
     case LOGOUT:
       return {
