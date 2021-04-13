@@ -5,7 +5,8 @@ import { useStyles } from './styles'
 import { useHistory } from 'react-router'
 import bgimg from '../../assets/images/bgImg.png'
 import {NavBar} from "../../components/NavBar"
-
+import { SocialIcons } from '../../components/SocialMedia'
+import { Footer } from '../../components/Footer'
 
 export const Home = () => {
   const classes = useStyles()
@@ -35,6 +36,8 @@ export const Home = () => {
         </div>
       </main>
     </section>
+    <SocialIcons />
+          <Footer />
     </NavBar>
   );
 };
