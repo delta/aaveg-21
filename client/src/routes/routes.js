@@ -1,6 +1,7 @@
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { QnAPage } from '../pages/QnA'
+import { QuizAttempted } from '../pages/QnA-Attempted'
 
 export const publicRoutes = [
   {
@@ -10,6 +11,10 @@ export const publicRoutes = [
   {
     url: '/login',
     component: Login
+  },
+  {
+    url: '/attempted',
+    component: QuizAttempted
   }
 ]
 
