@@ -1,11 +1,14 @@
-.social .ul {
-  z-index:20;
-  position: fixed;
+.ul {
+  position: relative;
   display: flex;
-  right: 25px;
-  bottom: 33px;
+  margin-left: auto;
+  bottom:-13px;
   transform: rotate(0deg) skew(0deg);
   transform-style: preserve-3d;
+  z-index: 20;
+  padding-inline-start: 0px;
+  /* background-color: #091a26; */
+  /* padding:10px ; */
 }
 
 .ul li {
@@ -18,7 +21,7 @@
 
 .ul li:before {
   content: "";
-  position: absolute;
+  position: relative;
   bottom: -10px;
   left: -5px;
   width: 100%;
@@ -29,7 +32,7 @@
 
 .ul li:after {
   content: "";
-  position: absolute;
+  position: relative;
   top: 5px;
   left: -9px;
   width: 9px;
@@ -106,10 +109,6 @@
 }
 
 @media screen and (max-width:800px) {
-  .ul {
-    right: 20px;
-    bottom: 22px;
-  }
 
   .ul li {
     width: 40px;

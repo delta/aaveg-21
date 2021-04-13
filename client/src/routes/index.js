@@ -3,6 +3,7 @@ import { BrowserRouter as Switch, Route } from 'react-router-dom'
 import { publicRoutes, privateRoutes, adminRoutes } from './routes'
 import { useSelector, useDispatch } from 'react-redux'
 import { auth } from '../actions/user'
+// import { P404 } from '../pages/404'
 // import firebase from '../firebase'
 
 export const Routes = () => {
@@ -28,7 +29,6 @@ export const Routes = () => {
   }
   return (
     <Switch>
-      {/* {online ? null : <div>You are offline</div>} */}
       {publicRoutes.map((route) => (
         <Route
           exact
@@ -53,6 +53,7 @@ export const Routes = () => {
           key={route.url}
         />
       ))}
+      {/* <Route component={P404} /> */}
     </Switch>
   )
 }
