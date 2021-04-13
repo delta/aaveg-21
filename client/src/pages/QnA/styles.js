@@ -30,6 +30,10 @@ export const useStyles = makeStyles((theme) => ({
     left: 0,
     zIndex: 10
   },
+  questionBox: {
+    display: 'flex',
+    alignItems: 'center'
+  },
   cover: {
     padding: '40px 30px',
     fontSize: '18px',
