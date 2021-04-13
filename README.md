@@ -3,7 +3,9 @@
 ## installation
 ```sh
 npm i
-npm run post-install
+cd server && npm i 
+cd ..
+cd client && npm i 
 ```
 
 ## dev
