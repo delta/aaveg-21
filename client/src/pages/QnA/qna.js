@@ -132,7 +132,7 @@ export const QnAPage = () => {
     )
   } else {
     return (
-      <>
+      <div className={classes.qna}>
         <img src={bgimg} className={classes.bgimg} alt='bgimg' />
         <div className={classes.main}>
           <InfoIcon color='secondary' onClick={handleInfoOpen} fontSize='large' className={classes.infoIcon} />
@@ -159,7 +159,7 @@ export const QnAPage = () => {
           </div>
           <InfoDialog open={dialogOpen} setOpen={setDialogOpen} />
         </div>
-      </>
+      </div>
     )
   }
 }
