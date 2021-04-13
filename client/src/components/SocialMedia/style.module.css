@@ -1,4 +1,5 @@
-.ul {
+.social .ul {
+  z-index:20;
   position: fixed;
   display: flex;
   right: 25px;

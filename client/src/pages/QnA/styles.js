@@ -19,14 +19,16 @@ export const useStyles = makeStyles((theme) => ({
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    minWidth: '100em'
+    minWidth: '100em',
+    zIndex: 20
   },
   bgimg: {
     position: 'fixed',
     width: '100%',
     height: '100%',
     bottom: 0,
-    left: 0
+    left: 0,
+    zIndex: 10
   },
   cover: {
     padding: '40px 30px',
@@ -71,7 +73,7 @@ export const useStyles = makeStyles((theme) => ({
     top: '75px',
     left: '15px',
     cursor: 'pointer',
-    zIndex: '2',
+    zIndex: '20',
     [theme.breakpoints.down(450)]: {
       fontSize: '1.5rem',
       top: '60px',

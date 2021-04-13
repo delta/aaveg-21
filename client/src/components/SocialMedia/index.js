@@ -9,7 +9,7 @@ import {
 
 export const SocialIcons = () => {
   return (
-    <div>
+    <div className={styles.social}>
       <ul className={styles.ul}>
         <li>
           <a
