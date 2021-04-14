@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
   main: {
-    position: 'relative',
+    position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
@@ -16,6 +16,11 @@ export const useStyles = makeStyles((theme) => ({
     bottom: '0',
     left: '0',
     zIndex: '0'
+  },
+  wrapper: {
+    position: 'relative',
+    width: '100vw',
+    minHeight: '100vh'
   },
   flash: {
     fontSize: '5rem',

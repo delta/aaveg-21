@@ -2,7 +2,6 @@ import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
   paper: {
-    backgroundColor: 'rgba(255,255,255,0.8)',
     alignItems: 'center',
     paddingBottom: '5%',
     paddingTop: '5%',
@@ -10,6 +9,11 @@ export const useStyles = makeStyles((theme) => ({
     margin: '0%',
     left: '9.5%',
     width: '80%',
+    background: 'rgba( 255, 255, 255, 0.45 )',
+    boxShadow: '0 0 12px 10px rgba( 31, 38, 135, 0.37 )',
+    backdropFilter: 'blur( 10.0px )',
+    borderRadius: '10px',
+    border: '1px solid rgba( 255, 255, 255, 0.18 )',
     [theme.breakpoints.down(400)]: {
       left: '4.5%',
       width: '90%'

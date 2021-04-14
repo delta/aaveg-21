@@ -7,12 +7,14 @@ export const QuizAttempted = () => {
 
   return (
     <>
-      <img className={classes.bgimg} src={bgimg} alt='background' />
-      <div className={classes.main}>
-        <div className={classes.sub}>Aaveg 21 Teams</div><br />
-        <div className={classes.flash}>COMING SOON</div><br />
-        <div className={classes.sub}>You have already filled the questionnaire</div><br />
-        <div className={classes.post}>Stay tuned to our handles for the results!</div><br />
+      <div className={classes.wrapper}>
+        <img className={classes.bgimg} src={bgimg} alt='background' />
+        <div className={classes.main}>
+          <div className={classes.sub}>Aaveg 21 Teams</div><br />
+          <div className={classes.flash}>COMING SOON</div><br />
+          <div className={classes.sub}>You have already filled the questionnaire</div><br />
+          <div className={classes.post}>Stay tuned to our handles for the results!</div><br />
+        </div>
       </div>
     </>
   )
