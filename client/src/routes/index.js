@@ -5,6 +5,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { auth } from '../actions/user'
 import { P404 } from '../pages/404'
 import { NavBar } from '../components/NavBar'
+import { ThemeProvider } from '@material-ui/styles'
+import { dark } from '../theme'
+
 // import firebase from '../firebase'
 
 export const Routes = () => {
@@ -29,34 +32,36 @@ export const Routes = () => {
   }
   return (
     <Router>
-      <NavBar />
-      <Switch>
-        {publicRoutes.map((route) => (
-          <Route
-            exact
-            component={route.component}
-            path={route.url}
-            key={route.url}
-          />
-        ))}
-        {isAuth && privateRoutes.map((route) => (
-          <Route
-            exact
-            component={route.component}
-            path={route.url}
-            key={route.url}
-          />
-        ))}
-        {adminRoutes.map((route) => (
-          <Route
-            exact
-            component={route.component}
-            path={route.url}
-            key={route.url}
-          />
-        ))}
-        <Route component={P404} />
-      </Switch>
+      <ThemeProvider theme={dark}>
+        <NavBar />
+        <Switch>
+          {publicRoutes.map((route) => (
+            <Route
+              exact
+              component={route.component}
+              path={route.url}
+              key={route.url}
+            />
+          ))}
+          {isAuth && privateRoutes.map((route) => (
+            <Route
+              exact
+              component={route.component}
+              path={route.url}
+              key={route.url}
+            />
+          ))}
+          {adminRoutes.map((route) => (
+            <Route
+              exact
+              component={route.component}
+              path={route.url}
+              key={route.url}
+            />
+          ))}
+          <Route component={P404} />
+        </Switch>
+      </ThemeProvider>
     </Router>
   )
 }
