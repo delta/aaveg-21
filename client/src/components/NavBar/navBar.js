@@ -22,6 +22,7 @@ export const NavBar = (props) => {
   const clickHandle = () => {
     if (user.isAuthenticated === true) {
       dispatch(logout())
+      history.push('/')
     } else {
       history.push('/login')
     }
