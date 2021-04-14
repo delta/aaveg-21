@@ -16,8 +16,8 @@ export const QuizAttempted = () => {
           <div className={classes.flash}>COMING SOON</div><br />
           <div className={classes.sub}>You have already filled the questionnaire</div><br />
           <div className={classes.post}>Stay tuned to our handles for the results!</div><br />
-          <div className={classes.sub}>Eventhough we take your first response we won't stop from refilling it</div><br /><br />
-          <Button className={classes.button} onClick={() => { history.push('/quiz') }}>Click Here to refill questionnaire</Button>
+          <div className={classes.post}>We took your first response but we won't stop from refilling it</div><br /><br />
+          <Button className={classes.button} onClick={() => { history.push('/quiz') }}>Click here to fill the questionnaire again</Button>
         </div>
       </div>
     </>
