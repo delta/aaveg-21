@@ -16,7 +16,7 @@
   background-size: cover;
 }
 
-.div {
+.div, .topDiv {
   margin-left: 34%;
   margin-right: 35%;
   padding-left: 30px;
@@ -25,6 +25,45 @@
   margin-top: 170vh;
   height: min-content;
   color: #fff;
+}
+
+.topDiv {
+  margin-left: 0%;
+  margin-top: auto;
+}
+
+.team, .topCont {
+  align-content: center;
+  padding: 20px;
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #3b3737;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50%;
+  text-align: center;
+  letter-spacing: 2pt;
+}
+
+.topCont{
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+    0 5px 15px 0 rgba(0,0,0,0.08);
+  background-color: #6966e4;
+}
+
+.moon{
+  display: block;
+  width: 25%; 
+  margin-left: 35% 
+}
+
+.light{
+  display: block;
+  width: 100%; 
+  margin-left: 0% 
 }
 
 @media screen and (max-width: 800px) {
@@ -37,6 +76,33 @@
   .pillar {
     transform: scaleX(1.8);
   }
+  .div {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 43%;
+    margin-top: 130vh;
+    height: min-content;
+    color: #fff;
+  }
+  .team {  
+    padding: 10px;
+    border-radius: 0.5rem;
+    margin-bottom: 60%;
+    margin-left: -30%;
+  }
+  .moon{
+    width: 46%;
+    margin-left: 28%; 
+  }
+  
+  .light{
+    display: block;
+    width: 100%; 
+    margin-left: 0% 
+  }
+  .topDiv{
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -47,11 +113,30 @@
   .pillar {
     transform: scaleX(2);
   }
-}
-
-.team {
-  align-content: center;
-  padding: 20px;
-  margin-bottom: 180px;
-  text-align: center;
+  .div {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 43%;
+    margin-top: 130vh;
+    height: min-content;
+    color: #fff;
+  }
+  .team {
+    margin-left: -30%;
+    padding: 20px;
+    border-radius: 0.5rem;
+    margin-bottom: 36%;
+  }
+  .moon{
+    width: 46%;
+    margin-left: 28%;
+  }
+  
+  .light{
+    width: 200%; 
+    margin-left: -50% 
+  }
+  .topDiv{
+    width: 50%;
+  }
 }
