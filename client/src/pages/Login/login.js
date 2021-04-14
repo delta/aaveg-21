@@ -36,20 +36,23 @@ export const Login = () => {
     axios
       .post(BACKEND_API + '/api/auth/login', loginData, { withCredentials: true, credentials: 'include' })
       .then((res) => {
-        console.log(res.data)
         if (res.status === 200) {
           dispatch(loginSuccess(res.data))
-          toast.success('logged in/ get from res', {
+          toast.success(res.data.message, {
             position: 'bottom-center'
           })
           history.push('/quiz')
         } else {
-          toast.error('error/get from res', { position: 'bottom-center' })
+          toast.error(res.message, { position: 'bottom-center' })
         }
       })
       .catch((err) => {
         console.log(err)
-        toast.error(err.message, { position: 'bottom-center' })
+        if (err.response && (err.response.status === 401 || err.response.status === 500)) {
+          toast.error(err.response.data.message, { position: 'bottom-center' })
+        } else {
+          toast.error('Error Connecting to Server', { position: 'bottom-center' })
+        }
       })
   }
 

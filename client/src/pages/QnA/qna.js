@@ -117,19 +117,24 @@ export const QnAPage = () => {
       .post(BACKEND_API + '/api/quiz/saveAnswers', { questions: values }, { withCredentials: true, credentials: 'include' })
       .then((res) => {
         if (res.status === 200) {
-          toast.success('logged in/ get from res', {
+          toast.success(res.data.message, {
             position: 'bottom-center'
           })
           history.push('/submitted')
         } else if (res.status === 204) {
+          toast.error('You have already filled the form. Here is a surprise.', { position: 'bottom-center' })
           window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
         } else {
-          toast.error('error/get from res', { position: 'bottom-center' })
+          toast.error(res.data.message, { position: 'bottom-center' })
         }
       })
       .catch((err) => {
         console.log(err)
-        toast.error(err.message, { position: 'bottom-center' })
+        if (err.response && err.response.status === 500) {
+          toast.error(err.response.data.message, { position: 'bottom-center' })
+        } else {
+          toast.error('Error Connecting to Server', { position: 'bottom-center' })
+        }
       })
   }
 
