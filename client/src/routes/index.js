@@ -1,9 +1,9 @@
 import React from 'react'
-import { BrowserRouter as Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { publicRoutes, privateRoutes, adminRoutes } from './routes'
 import { useSelector, useDispatch } from 'react-redux'
 import { auth } from '../actions/user'
-// import { P404 } from '../pages/404'
+import { P404 } from '../pages/404'
 // import firebase from '../firebase'
 
 export const Routes = () => {
@@ -28,32 +28,34 @@ export const Routes = () => {
     isAuth = user.isAuthenticated
   }
   return (
-    <Switch>
-      {publicRoutes.map((route) => (
-        <Route
-          exact
-          component={route.component}
-          path={route.url}
-          key={route.url}
-        />
-      ))}
-      {isAuth && privateRoutes.map((route) => (
-        <Route
-          exact
-          component={route.component}
-          path={route.url}
-          key={route.url}
-        />
-      ))}
-      {adminRoutes.map((route) => (
-        <Route
-          exact
-          component={route.component}
-          path={route.url}
-          key={route.url}
-        />
-      ))}
-      {/* <Route component={P404} /> */}
-    </Switch>
+    <Router>
+      <Switch>
+        {publicRoutes.map((route) => (
+          <Route
+            exact
+            component={route.component}
+            path={route.url}
+            key={route.url}
+          />
+        ))}
+        {isAuth && privateRoutes.map((route) => (
+          <Route
+            exact
+            component={route.component}
+            path={route.url}
+            key={route.url}
+          />
+        ))}
+        {adminRoutes.map((route) => (
+          <Route
+            exact
+            component={route.component}
+            path={route.url}
+            key={route.url}
+          />
+        ))}
+        <Route component={P404} />
+      </Switch>
+    </Router>
   )
 }

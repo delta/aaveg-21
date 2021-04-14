@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './style.module.css'
 import { Parallax, ParallaxLayer } from 'react-spring/addons'
 import bgimg from '../../assets/images/loginPage.png'
 import aaveg from '../../assets/images/aaveg.png'
@@ -11,8 +12,20 @@ export class Home extends React.Component {
     return (
       <Parallax ref={ref => (this.parallax = ref)} pages={4.5}>
 
+        <ParallaxLayer offset={0} speed={0.2} style={{ opacity: 1 }}>
+          <div id='stars' />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0} speed={0.2} style={{ opacity: 1 }}>
+          <div id='stars2' />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={0} speed={0.2} style={{ opacity: 1 }}>
+          <div id='stars3' />
+        </ParallaxLayer>
+
         <ParallaxLayer offset={0} speed={0.5} style={{ opacity: 1 }}>
-          <img src={bgimg} alt='cloud' style={{ display: 'block', height: '100vh', width: '100%' }} />
+          <img src={bgimg} alt='cloud' className={styles.bgimg} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={0.8} style={{ opacity: 0.1 }}>
@@ -42,7 +55,7 @@ export class Home extends React.Component {
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.99} speed={0.1} style={{ opacity: 1 }}>
-          <img src={pillar} alt='pillar' style={{ display: 'block', height: '400vh', width: '100%' }} />
+          <img src={pillar} alt='pillar' className={styles.pillar} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.1} speed={-0.1} style={{ pointerEvents: 'none' }}>

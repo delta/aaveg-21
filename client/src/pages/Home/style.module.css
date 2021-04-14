@@ -2,6 +2,17 @@
   position: fixed;
   width: 100%;
   height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.pillar{
+  display: block;
+  height: 400vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
 }
 
 .div{
@@ -13,4 +24,23 @@
   margin-top: 200vh;
   height: min-content;
   color: #fff;
+}
+
+/* Media Queries */
+@media screen and (max-width: 800px) {
+  .bgimg, .pillar{
+    transform:scaleX(1.5);
+  }
+  .pillar{
+    transform:scaleX(1.8);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .bgimg {
+    transform:scaleX(2);
+  }
+  .pillar{
+    transform:scaleX(2);
+  }
 }
