@@ -2,23 +2,33 @@ import { createMuiTheme } from '@material-ui/core'
 
 export const dark = createMuiTheme({
   palette: {
-    type: 'light',
-    secondary: {
-      main: '#B27823',
-      light: '#8C541C',
-      dark: '#5C342C',
+    type: 'dark',
+    primary: {
+      main: '#954135',
+      light: '#6C244C',
+      dark: '#241C38',
       contrastText: '#fff'
     },
-    primary: {
-      main: '#145DA0',
-      light: '#2E8BC0',
-      dark: '#2E154A',
+    secondary: {
+      main: '#241C38',
+      light: '#54244B',
+      dark: '#262626',
       contrastText: '#fff'
     },
     text: {
       primary: '#fff',
-      secondary: '#0000',
-      disabled: 'rgba(255, 255, 255, 0.5)'
+      secondary: '#f2f2f2',
+      disabled: 'rgba(255, 255, 255, 0.5)',
+      hint: 'rgba(255, 255, 255, 0.5)',
+      icon: 'rgba(255, 255, 255, 0.5)'
+    },
+    divider: 'rgba(255, 255, 255, 0.12)',
+    background: {
+      paper: '#54244B',
+      default: '#54244B',
+      dimBg: '#262626',
+      level2: '#333',
+      level1: '#212121'
     }
   }
 })
