@@ -47,9 +47,11 @@ export const Login = () => {
         }
       })
       .catch((err) => {
-        console.log(err)
+        // console.log(err)
         if (err.response && (err.response.status === 401 || err.response.status === 500)) {
           toast.error(err.response.data.message, { position: 'bottom-center' })
+        } else if (err.response && err.response.status === 404 && err.response.data.message === 'Roll number does not belong to first year or admin') {
+          toast.error('does not belong to first year', { position: 'bottom-center' })
         } else {
           toast.error('Error Connecting to Server', { position: 'bottom-center' })
         }

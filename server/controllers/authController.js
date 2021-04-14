@@ -17,7 +17,7 @@ exports.login = async (req, res) => {
 
   if (!regex.test(rollnumber) && !config.adminUsers.includes(rollnumber)) {
     logger.warn(`Roll number ${rollnumber} does not belong to first year or admin`)
-    res.status(400).json({ message: 'Roll number does not belong to first year or admin' })
+    res.status(404).json({ message: 'Roll number does not belong to first year or admin' })
     return
   }
   const response = {}
