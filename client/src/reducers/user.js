@@ -11,7 +11,8 @@ export default function reducer (state = initialState, action) {
     case LOGIN:
       return {
         ...state,
-        rollNo: action.payload.rollnumber
+        rollNo: action.payload.rollnumber,
+        isAuthenticated: true
       }
     case AUTH_SUCCESS:
       return {

@@ -10,7 +10,7 @@ exports.saveAnswers = async (req, res) => {
     .then(async (student) => {
       if (student.isFilled === true) {
         logger.warn(`${req.user.rollnumber} Tried Resubmitting Form`)
-        res.status(204).json({ message: 'Rickroll him' })
+        res.status(204).json({ message: 'Rickroll time' })
       } else {
       // If quiz already there then update
         const newQuiz = new Quiz({
@@ -28,7 +28,6 @@ exports.saveAnswers = async (req, res) => {
         })
       }
     }
-
     )
     .catch((err) => {
       logger.error(`QuizController catch : ${err}`)

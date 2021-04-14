@@ -21,8 +21,8 @@ exports.login = async (req, res) => {
     return
   }
   const response = {}
-
-  if (await authFetch(rollnumber, password) === 1) {
+  const checkCreds = await authFetch(rollnumber, password)
+  if (checkCreds === 1) {
     response.message = 'Login Successful'
     // Find User ID
     Student.findOne(
@@ -64,12 +64,16 @@ exports.login = async (req, res) => {
             httpOnly: true,
             signed: true
           })
-        response.isFilled = student.isFilled
+
         logger.info(`Student ${rollnumber} logged in`)
 
         res.status(200).send(response)
       }
     )
+  } else if (checkCreds === 2) {
+    logger.error('Server has error making requests to webmail')
+    response.message = 'Oops! something went wrong.'
+    res.status(500).send(response)
   } else {
     logger.error(`Invalid Credentials ${rollnumber}`)
 
