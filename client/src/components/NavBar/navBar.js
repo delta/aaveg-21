@@ -9,12 +9,23 @@ import {
 } from '@material-ui/core'
 import { useStyles } from './styles.js'
 import AavegLogo from '../../assets/images/aaveg.png'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { logout } from '../../actions/user'
 
 export const NavBar = (props) => {
   const classes = useStyles()
+  const history = useHistory()
   const dispatch = useDispatch()
+  const user = useSelector(state => state.user)
+
+  const clickHandle = () => {
+    if (user.isAutheticated === true) {
+      dispatch(logout())
+    } else {
+      history.push('/login')
+    }
+  }
 
   return (
     <AppBar
@@ -28,9 +39,9 @@ export const NavBar = (props) => {
           edge='start'
           className={clsx(classes.menuButton)}
         >
-          <div className='imgDiv'><img src={AavegLogo} style={{ width: '80px', height: '30px' }} alt='aaveg' id='aaveg' /></div>
+          <div onClick={() => { history.push('/') }} className='imgDiv'><img src={AavegLogo} style={{ width: '80px', height: '30px' }} alt='aaveg' id='aaveg' /></div>
         </IconButton>
-        <Button key='logout' onClick={() => dispatch(logout())} className={classes.LogButton}>Logout</Button>
+        <Button key='logout' onClick={clickHandle} className={classes.LogButton}>{user.isAutheticated === true ? 'Logout' : 'Login'}</Button>
       </Toolbar>
     </AppBar>
   )
