@@ -1,4 +1,4 @@
-.bgimg{
+.bgimg {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -7,40 +7,51 @@
 }
 
 
-.pillar{
+.pillar {
   display: block;
-  height: 400vh;
+  height: 500vh;
+  /* should be changed according to content*/
   width: 100%;
   background-position: center;
   background-size: cover;
 }
 
-.div{
-  margin-left:35% ;
-  margin-right: 34%;
+.div {
+  margin-left: 34%;
+  margin-right: 35%;
   padding-left: 30px;
   padding-right: 30px;
-  width:30%;
-  margin-top: 200vh;
+  width: 30%;
+  margin-top: 170vh;
   height: min-content;
   color: #fff;
 }
 
-/* Media Queries */
 @media screen and (max-width: 800px) {
-  .bgimg, .pillar{
-    transform:scaleX(1.5);
+
+  .bgimg,
+  .pillar {
+    transform: scaleX(1.5);
   }
-  .pillar{
-    transform:scaleX(1.8);
+
+  .pillar {
+    transform: scaleX(1.8);
   }
 }
 
 @media screen and (max-width: 450px) {
   .bgimg {
-    transform:scaleX(2);
+    transform: scaleX(2);
   }
-  .pillar{
-    transform:scaleX(2);
+
+  .pillar {
+    transform: scaleX(2);
   }
+}
+
+.team {
+  align-content: center;
+  padding: 20px;
+  margin-bottom: 180px;
+  text-align: center;
 }
