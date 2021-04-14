@@ -7,8 +7,6 @@
   transform-style: preserve-3d;
   z-index: 20;
   padding-inline-start: 0px;
-  /* background-color: #091a26; */
-  /* padding:10px ; */
 }
 
 .ul li {
@@ -109,6 +107,10 @@
 }
 
 @media screen and (max-width:800px) {
+
+  .ul {
+    bottom: 20px;
+  }
 
   .ul li {
     width: 40px;

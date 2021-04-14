@@ -25,11 +25,10 @@ export const auth = () => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   await axios.post(BACKEND_API + '/api/auth/logout', {}, { withCredentials: true, credentials: 'include' })
     .then((res) =>
-      dispatch(() => {
-        return {
-          type: LOGOUT
-        }
-      })
+      dispatch({
+        type: LOGOUT
+      }
+      )
     ).catch((e) => {
       console.log(e)
     })

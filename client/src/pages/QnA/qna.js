@@ -107,7 +107,7 @@ export const QnAPage = () => {
           history.push('/attempted')
         } else if (res.status === 204) {
           toast.error('You have already filled the form. Here is a surprise.')
-          setTimeout(() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'), 2000)
+          setTimeout(() => window.open('https://bit.ly/32g9Sw2'), 2000)
         } else {
           toast.error(res.data.message)
         }

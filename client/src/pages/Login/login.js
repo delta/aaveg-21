@@ -45,7 +45,7 @@ export const Login = () => {
       })
       .catch((err) => {
         // console.log(err)
-        if (err.response && (err.response.status === 401 || err.response.status === 500)) {
+        if (err.response && (err.response.status === 401 || err.response.status === 500 || err.response.status === 400)) {
           toast.error(err.response.data.message)
         } else if (err.response && err.response.status === 404 && err.response.data.message === 'Roll number does not belong to first year or admin') {
           toast.error('Very sneaky. Nice try')

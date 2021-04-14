@@ -3,10 +3,11 @@ import { makeStyles } from '@material-ui/core/styles'
 export const useStyles = makeStyles((theme) => ({
   paper: {
     alignItems: 'center',
-    paddingBottom: '5%',
-    paddingTop: '5%',
+    paddingBottom: '20px',
+    paddingTop: '20px',
     position: 'relative',
     margin: '0%',
+    marginTop: '60px',
     left: '9.5%',
     width: '80%',
     background: 'rgba( 255, 255, 255, 0.45 )',
