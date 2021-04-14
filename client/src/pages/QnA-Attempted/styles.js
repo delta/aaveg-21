@@ -33,17 +33,37 @@ export const useStyles = makeStyles((theme) => ({
     WebkitTextFillColor: 'transparent',
     display: 'inline-block',
     animation: '$bgchange 3.5s linear infinite',
-    textShadow: '0 0 10px #ffffffa5'
+    textShadow: '0 0 10px #ffffffa5',
+    [theme.breakpoints.down(1200)]: {
+      fontSize: '3rem'
+    },
+    [theme.breakpoints.down(600)]: {
+      fontSize: '2.5rem',
+      minWidth: '100vw'
+    }
   },
   sub: {
     fontSize: '2rem',
     padding: '5px 10px',
     borderRadius: '4px',
     background: '#00000055',
-    display: 'inline-block'
+    display: 'inline-block',
+    [theme.breakpoints.down(1200)]: {
+      fontSize: '1.5rem'
+      // minWidth: '100%'
+    },
+    [theme.breakpoints.down(600)]: {
+      fontSize: '1rem'
+    }
   },
   post: {
-    fontSize: '1.5rem'
+    fontSize: '1.5rem',
+    [theme.breakpoints.down(1200)]: {
+      fontSize: '1.2rem'
+    },
+    [theme.breakpoints.down(600)]: {
+      fontSize: '0.8rem'
+    }
   },
   button: {
     fontSize: 13,
@@ -52,10 +72,12 @@ export const useStyles = makeStyles((theme) => ({
     background:
       'linear-gradient(to left,rgba(36, 31, 31, 1) 0%,rgba(36, 31, 31, 1) 32%,rgba(74, 71, 70, 1) 100%)',
     boxShadow: '0 3px 5px 2px rgba(255, 235, 235, .8)',
+    [theme.breakpoints.down(1200)]: {
+      fontSize: 10
+    },
     [theme.breakpoints.up('sm')]: {
-      fontSize: 18,
       margin: theme.spacing(4),
-      padding: theme.spacing(2)
+      padding: theme.spacing(1)
     },
     color: 'white'
   },
