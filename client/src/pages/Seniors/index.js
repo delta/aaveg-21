@@ -15,9 +15,9 @@ export const Seniors = () => {
         <main role='main' className={style.main_content}>
           <div className={style.titleCont}>
             <h1 className={style.main_title}>
-              Do you wanna check us seniors, no we won't allow aaveg is all ours
+              Aaveg is all ours seniors. Don't be snooping here please :)
               <br />
-              <span>go back</span>
+              <span>Go back</span>
               <br />
             </h1>
             <Button
