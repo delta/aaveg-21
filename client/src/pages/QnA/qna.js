@@ -8,7 +8,7 @@ import { useStyles } from './styles'
 import logo from '../../assets/images/Aaveg Glyph - Black.png'
 import bgimg from '../../assets/images/questionPage.png'
 import { BACKEND_API } from '../../config/config'
-import { toast } from 'react-toastify'
+import toast, { Toaster } from 'react-hot-toast'
 import { useHistory } from 'react-router-dom'
 
 import axios from 'axios'
@@ -103,23 +103,21 @@ export const QnAPage = () => {
       .post(BACKEND_API + '/api/quiz/saveAnswers', { questions: values }, { withCredentials: true, credentials: 'include' })
       .then((res) => {
         if (res.status === 200) {
-          toast.success(res.data.message, {
-            position: 'bottom-center'
-          })
+          toast.success(res.data.message)
           history.push('/attempted')
         } else if (res.status === 204) {
-          toast.error('You have already filled the form. Here is a surprise.', { position: 'bottom-center' })
+          toast.error('You have already filled the form. Here is a surprise.')
           setTimeout(() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'), 2000)
         } else {
-          toast.error(res.data.message, { position: 'bottom-center' })
+          toast.error(res.data.message)
         }
       })
       .catch((err) => {
         console.log(err)
         if (err.response && err.response.status === 500) {
-          toast.error(err.response.data.message, { position: 'bottom-center' })
+          toast.error(err.response.data.message)
         } else {
-          toast.error('Error Connecting to Server', { position: 'bottom-center' })
+          toast.error('Error Connecting to Server')
         }
       })
   }
@@ -158,6 +156,18 @@ export const QnAPage = () => {
             </Carousel>
           </div>
           <InfoDialog open={dialogOpen} setOpen={setDialogOpen} />
+          <Toaster
+            position='bottom-right'
+            toastOptions={{
+              style: {
+                background: '#262626',
+                color: '#fff'
+              },
+              iconTheme: {
+                secondary: '#262626'
+              }
+            }}
+          />
         </div>
       </div>
     )

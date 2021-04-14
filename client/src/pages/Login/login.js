@@ -8,7 +8,7 @@ import styles from '../Home/style.module.css'
 import { useHistory } from 'react-router-dom'
 import { useStyles } from './styles'
 import { BACKEND_API } from '../../config/config'
-import { toast } from 'react-toastify'
+import toast, { Toaster } from 'react-hot-toast'
 import { loginSuccess } from '../../actions/user'
 import logo from '../../assets/images/Aaveg Glyph - Black.png'
 import bgimg from '../../assets/images/loginPage.png'
@@ -33,27 +33,25 @@ export const Login = () => {
         if (res.status === 200) {
           console.log(res.data)
           dispatch(loginSuccess(res.data))
-          toast.success(res.data.message, {
-            position: 'bottom-center'
-          })
+          toast.success(res.data.message)
           if (!res.data.isFilled) {
             history.push('/quiz')
           } else {
             history.push('/attempted')
           }
         } else {
-          toast.error(res.message, { position: 'bottom-center' })
+          toast.error(res.message)
         }
       })
       .catch((err) => {
         // console.log(err)
         if (err.response && (err.response.status === 401 || err.response.status === 500)) {
-          toast.error(err.response.data.message, { position: 'bottom-center' })
+          toast.error(err.response.data.message)
         } else if (err.response && err.response.status === 404 && err.response.data.message === 'Roll number does not belong to first year or admin') {
-          toast.error('does not belong to first year', { position: 'bottom-center' })
-          history.push('/seniors')
+          toast.error('Very sneaky. Nice try')
+          setTimeout(() => history.push('/seniors'), 2000)
         } else {
-          toast.error('Error Connecting to Server', { position: 'bottom-center' })
+          toast.error('Error Connecting to Server')
         }
       })
   }
@@ -126,6 +124,18 @@ export const Login = () => {
           </Paper>
         </Grid>
       </Grid>
+      <Toaster
+        position='bottom-right'
+        toastOptions={{
+          style: {
+            background: '#262626',
+            color: '#fff'
+          },
+          iconTheme: {
+            secondary: '#262626'
+          }
+        }}
+      />
     </>
   )
 }
