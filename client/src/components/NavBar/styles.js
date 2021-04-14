@@ -61,7 +61,9 @@ export const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     }),
-    backgroundColor: 'transparent'
+    background: 'rgb(255 255 255 / 38%)',
+    boxShadow: '0 0 12px 10px rgb(0 0 0 / 37%)',
+    backdropFilter: 'blur( 15.0px )'
   },
   appBarShift: {
     marginLeft: drawerWidth,
