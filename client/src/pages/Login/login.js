@@ -79,7 +79,7 @@ export const Login = () => {
               <Grid item>
                 <img src={logo} alt='logo' width={150} />
               </Grid>
-              <Typography variant='h2' component='h2' className={classes.title}>
+              <Typography variant='h2' color='textPrimary' component='h2' className={classes.title}>
                 Login
               </Typography>
               <TextField
@@ -87,6 +87,7 @@ export const Login = () => {
                 variant='outlined'
                 size='medium'
                 InputProps={{
+                  shrink: true,
                   endAdornment: (
                     <InputAdornment position='end'>
                       <AccountCircleIcon />
@@ -101,6 +102,7 @@ export const Login = () => {
                 variant='outlined'
                 size='medium'
                 InputProps={{
+                  shrink: true,
                   endAdornment: (
                     <InputAdornment position='end'>
                       <LockIcon />
