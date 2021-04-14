@@ -11,10 +11,6 @@ export const publicRoutes = [
   {
     url: '/login',
     component: Login
-  },
-  {
-    url: '/attempted',
-    component: QuizAttempted
   }
 ]
 
@@ -22,6 +18,10 @@ export const privateRoutes = [
   {
     url: '/quiz',
     component: QnAPage
+  },
+  {
+    url: '/attempted',
+    component: QuizAttempted
   }
 
 ]

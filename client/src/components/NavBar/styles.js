@@ -80,9 +80,14 @@ export const useStyles = makeStyles((theme) => ({
     padding: 10,
     alignContent: 'center',
     position: 'fixed',
-    borderRadius: '30px',
+    borderRadius: '5px',
     right: 20,
-    background: 'white'
+    color: 'white',
+    fontWeight: '600',
+    background: '#419ebe',
+    '&:hover': {
+      background: '#146a8a'
+    }
   },
   list: {
     width: 250
