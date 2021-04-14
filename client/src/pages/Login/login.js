@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Grid, Typography, Paper, TextField, Button, InputAdornment } from '@material-ui/core'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import LockIcon from '@material-ui/icons/Lock'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import axios from 'axios'
 import styles from '../Home/style.module.css'
 import { useHistory } from 'react-router-dom'
@@ -21,12 +21,6 @@ export const Login = () => {
   const [webmail, setWebmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const user = useSelector((state) => state.user)
-
-  if (user.isAuthenticated === true) {
-    history.push('/quiz')
-  }
-
   const handleLogin = () => {
     const loginData = {
       email: webmail,
@@ -37,11 +31,16 @@ export const Login = () => {
       .post(BACKEND_API + '/api/auth/login', loginData, { withCredentials: true, credentials: 'include' })
       .then((res) => {
         if (res.status === 200) {
+          console.log(res.data)
           dispatch(loginSuccess(res.data))
           toast.success(res.data.message, {
             position: 'bottom-center'
           })
-          history.push('/quiz')
+          if (!res.data.isFilled) {
+            history.push('/quiz')
+          } else {
+            history.push('/attempted')
+          }
         } else {
           toast.error(res.message, { position: 'bottom-center' })
         }
@@ -52,6 +51,7 @@ export const Login = () => {
           toast.error(err.response.data.message, { position: 'bottom-center' })
         } else if (err.response && err.response.status === 404 && err.response.data.message === 'Roll number does not belong to first year or admin') {
           toast.error('does not belong to first year', { position: 'bottom-center' })
+          history.push('/seniors')
         } else {
           toast.error('Error Connecting to Server', { position: 'bottom-center' })
         }

@@ -50,7 +50,7 @@ export const useStyles = makeStyles((theme) => ({
   legend: {
     fontSize: '1.5rem',
     marginBottom: '10px',
-    textAlign: 'end',
+    textAlign: 'start',
     minWidth: '620px',
     [theme.breakpoints.down(800)]: {
       fontSize: '1.2rem',

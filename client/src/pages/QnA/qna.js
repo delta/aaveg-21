@@ -106,10 +106,10 @@ export const QnAPage = () => {
           toast.success(res.data.message, {
             position: 'bottom-center'
           })
-          history.push('/submitted')
+          history.push('/attempted')
         } else if (res.status === 204) {
           toast.error('You have already filled the form. Here is a surprise.', { position: 'bottom-center' })
-          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+          setTimeout(() => window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ'), 2000)
         } else {
           toast.error(res.data.message, { position: 'bottom-center' })
         }

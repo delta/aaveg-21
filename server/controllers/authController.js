@@ -64,7 +64,6 @@ exports.login = async (req, res) => {
             httpOnly: true,
             signed: true
           })
-
         logger.info(`Student ${rollnumber} logged in`)
 
         res.status(200).send(response)
