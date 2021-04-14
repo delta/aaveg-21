@@ -21,12 +21,19 @@ export const useStyles = makeStyles((theme) => ({
   },
   container: {
     textAlign: 'center',
-    position: 'relative',
+    position: 'fixed',
     top: '50vh',
     left: '50vw',
     transform: 'translate(-50%, -50%)',
     minWidth: '100em',
+    height: 'inherit',
     zIndex: 20
+  },
+  toolbar: {
+    ...theme.mixins.toolbar,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   bgimg: {
     position: 'fixed',
@@ -48,7 +55,7 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   legend: {
-    fontSize: '1.5rem',
+    fontSize: '1.2rem',
     marginBottom: '10px',
     textAlign: 'start',
     minWidth: '620px',
@@ -62,14 +69,14 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'left'
   },
   label: {
-    fontSize: '1.2rem',
+    fontSize: '1.0rem',
     [theme.breakpoints.down(800)]: {
       fontSize: '1rem'
     }
   },
   logo: {
     marginBottom: '10px',
-    width: '100px',
+    width: '70px',
     [theme.breakpoints.down(600)]: {
       display: 'none'
     }

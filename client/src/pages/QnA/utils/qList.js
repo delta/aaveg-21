@@ -1,131 +1,245 @@
 export const qList = [
   {
     qId: '1',
-    question: 'You are stuck in the middle of the forest with no memory of how you got there. In front of you, you see three paths: left - towards a jungle, right - towards a beach and straight - towards a ruined castle. Which way do you go?',
+    question:
+    [
+      'Which of these alternate endings to Lion King is the most appealing to you?'
+    ],
     answers: [{
       ansId: '011',
-      answer: 'Left'
+      answer: 'Nala defeats Scar and rules Pride Rock'
     }, {
       ansId: '012',
-      answer: 'Straight'
+      answer: 'Simba Starts his own kingdom in the jungle with his new found motto of ‘Hakuna Matata’.'
     }, {
       ansId: '013',
-      answer: 'Right'
+      answer: 'Simba, after the death of mufasa, pretends to recognize Scar as the rightful ruler and poses to be one of his followers. '
     }, {
       ansId: '014',
-      answer: 'Stay where you are'
+      answer: 'Simba spares Scar’s life and forgives his mistakes.'
+    }, {
+      ansId: '015',
+      answer: 'Rafiki, the mandrill, trips while presenting Simba’s and Nala’s newborn cub to the assembled animals and as a result the cub falls from top of pride rock.'
     }]
   }, {
     qId: '2',
-    question: 'Question statement number 2 njzd rufuwa eijeia fbr aud ekodedug beug?',
+    question:
+    [
+      'A stranger, steps on your foot for a long time, and you get hurt. They then apologize to you, how would you respond ?'
+    ],
     answers: [{
       ansId: '021',
-      answer: 'Answer 1 sfsrgkngksk'
+      answer: 'You get really angry and yell  “Sorry? What sorry? Bro, are you blind? I’m barefoot, dude. You wanna see how much it hurts?" '
     }, {
       ansId: '022',
-      answer: 'Answer 2 sfsrgkngksk'
+      answer: '“How can your apologies help? What if I did the same thing to you? “ '
     }, {
       ansId: '023',
-      answer: 'Answer 3 sfsrgkngksk'
+      answer: '“It’s a crowded place , keep your eyes open.”'
     }, {
       ansId: '024',
-      answer: 'Answer 4 sfsrgkngksk'
+      answer: 'You smile and say “Don’t worry, I’m fine.”'
+    }, {
+      ansId: '025',
+      answer: 'You respond sarcastically  “No, it’s fine. It’s totally fine. It’s not your fault. It has happened to me many times cause I’m invisible, you see.”'
     }]
   }, {
     qId: '3',
-    question: 'Question statement number 3 njzd rufuwa eijeia fbr aud ekodedug beug?',
+    question:
+    [
+      'If you were stuck on an island alone and which option would you choose?'
+    ],
     answers: [{
       ansId: '031',
-      answer: 'Answer 1 sfsrgkngksk'
+      answer: 'Lighter'
     }, {
       ansId: '032',
-      answer: 'Answer 2 sfsrgkngksk'
+      answer: 'I will get out of there even if I have to swim to do so.'
     }, {
       ansId: '033',
-      answer: 'Answer 3 sfsrgkngksk'
+      answer: 'Rope and saw'
     }, {
       ansId: '034',
-      answer: 'Answer 4 sfsrgkngksk'
+      answer: 'Map'
+    }, {
+      ansId: '035',
+      answer: 'As long as I have wi-fi and a charger, I don’t need anything else.'
     }]
   }, {
     qId: '4',
-    question: 'Question statement number 4 njzd rufuwa eijeia fbr aud ekodedug beug?',
+    question:
+    [
+      'Which among the following would be most apt for the title of your autobiography?'
+    ],
     answers: [{
       ansId: '041',
-      answer: 'Answer 1 sfsrgkngksk'
+      answer: '  The rise of the phoenix'
     }, {
       ansId: '042',
-      answer: 'Answer 2 sfsrgkngksk'
+      answer: 'Imperfect perfection'
     }, {
       ansId: '043',
-      answer: 'Answer 3 sfsrgkngksk'
+      answer: 'Riding against the current '
     }, {
       ansId: '044',
-      answer: 'Answer 4 sfsrgkngksk'
+      answer: 'The tiny musings of mine'
+    }, {
+      ansId: '045',
+      answer: 'Flying free: a memoir'
     }]
   }, {
     qId: '5',
-    question: 'Question statement number 5 njzd rufuwa eijeia fbr aud ekodedug beug?',
+    question:
+    [
+      'If you could choose one trait from the following, which one would it be?'
+    ],
     answers: [{
       ansId: '051',
-      answer: 'Answer 1 sfsrgkngksk'
+      answer: 'Career'
     }, {
       ansId: '052',
-      answer: 'Answer 2 sfsrgkngksk'
+      answer: 'Money'
     }, {
       ansId: '053',
-      answer: 'Answer 3 sfsrgkngksk'
+      answer: 'Love'
     }, {
       ansId: '054',
-      answer: 'Answer 4 sfsrgkngksk'
+      answer: 'Charity'
+    }, {
+      ansId: '055',
+      answer: 'Fame'
     }]
   }, {
     qId: '6',
-    question: 'Question statement number 6 njzd rufuwa eijeia fbr aud ekodedug beug?',
+    question:
+    [
+      'You are holding a cup of coffee. Someone comes hurling into you, and you end up spilling some of your coffee on your shirt. They start apologising profusely. What do you do?'
+    ],
     answers: [{
       ansId: '061',
-      answer: 'Answer 1 sfsrgkngksk'
+      answer: 'Try deep breathing for a while, fail, and start swearing'
     }, {
       ansId: '062',
-      answer: 'Answer 2 sfsrgkngksk'
+      answer: 'Hand them your business card, and demand them to buy you a new shirt by delivering it to your office.'
     }, {
       ansId: '063',
-      answer: 'Answer 3 sfsrgkngksk'
+      answer: 'Ask them to compensate you by buying another cup of coffee.'
     }, {
       ansId: '064',
-      answer: 'Answer 4 sfsrgkngksk'
+      answer: 'Reassure them that it is alright, and wish them luck with whatever they are rushing into.'
+    }, {
+      ansId: '065',
+      answer: 'You dump the remaining coffee on their shirt.'
     }]
   }, {
     qId: '7',
-    question: 'Question statement number 7 njzd rufuwa eijeia fbr aud ekodedug beug?',
+    question:
+    [
+      'What does your ideal holiday look like?'
+    ],
     answers: [{
       ansId: '071',
-      answer: 'Answer 1 sfsrgkngksk'
+      answer: 'Travel and explore'
     }, {
       ansId: '072',
-      answer: 'Answer 2 sfsrgkngksk'
+      answer: 'Socialise and build your network'
     }, {
       ansId: '073',
-      answer: 'Answer 3 sfsrgkngksk'
+      answer: 'Learn something new'
     }, {
       ansId: '074',
-      answer: 'Answer 4 sfsrgkngksk'
+      answer: 'Help out or contribute to the society'
+    }, {
+      ansId: '075',
+      answer: 'Binge watch movies and series'
     }]
   }, {
     qId: '8',
-    question: 'Question statement number 8 njzd rufuwa eijeia fbr aud ekodedug beug?',
+    question:
+    [
+      'Which Character do you identify with the most from The Bahubali universe?'
+    ],
     answers: [{
       ansId: '081',
-      answer: 'Answer 1 sfsrgkngksk'
+      answer: 'Anushka Shetty - Devasena'
     }, {
       ansId: '082',
-      answer: 'Answer 2 sfsrgkngksk'
+      answer: 'Nasser - Bijjaladeva'
     }, {
       ansId: '083',
-      answer: 'Answer 3 sfsrgkngksk'
+      answer: 'Ramya Krishnan - Shivagami'
     }, {
       ansId: '084',
-      answer: 'Answer 4 sfsrgkngksk'
+      answer: 'Sathya Raj - Kattapa'
+    }, {
+      ansId: '085',
+      answer: 'Ka Kha Ta ja Mbah - Kalakeya'
+    }]
+  }, {
+    qId: '9',
+    question:
+    [
+      'Your house catches fire. Now, what would be your immediate response?'
+    ],
+    answers: [{
+      ansId: '091',
+      answer: ' Let the adrenaline rush take over and bravely attempt to evacuate the other people in the house'
+    }, {
+      ansId: '092',
+      answer: 'Throw your textbooks and notebooks into the fire and run away'
+    }, {
+      ansId: '093',
+      answer: 'Take the pragmatic route and secure the important documents, money, etc.'
+    }, {
+      ansId: '094',
+      answer: 'Keep your cool and sensibly cooperate with the fire fighters.'
+    }, {
+      ansId: '095',
+      answer: 'Escape out as quickly as you can and just stand back and watch the fire in awe '
+    }]
+  }, {
+    qId: '10',
+    question:
+    [
+      'Where would you spend your Saturday evening  ?'
+    ],
+    answers: [{
+      ansId: '101',
+      answer: 'Gym'
+    }, {
+      ansId: '102',
+      answer: 'Art Studio'
+    }, {
+      ansId: '103',
+      answer: 'Library'
+    }, {
+      ansId: '104',
+      answer: 'Museum'
+    }, {
+      ansId: '105',
+      answer: 'Pool Side'
+    }]
+  }, {
+    qId: '11',
+    question:
+    [
+      'If you could choose one superpower, which one would it be ?'
+    ],
+    answers: [{
+      ansId: '111',
+      answer: 'Ability to control fire'
+    }, {
+      ansId: '112',
+      answer: 'Ability to generate lightning'
+    }, {
+      ansId: '113',
+      answer: 'Ability to bend water'
+    }, {
+      ansId: '114',
+      answer: 'Ability to raise mountains'
+    }, {
+      ansId: '115',
+      answer: 'Ability to create tornado'
     }]
   }
 ]
