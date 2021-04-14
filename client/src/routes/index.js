@@ -4,6 +4,7 @@ import { publicRoutes, privateRoutes, adminRoutes } from './routes'
 import { useSelector, useDispatch } from 'react-redux'
 import { auth } from '../actions/user'
 import { P404 } from '../pages/404'
+import { NavBar } from '../components/NavBar'
 // import firebase from '../firebase'
 
 export const Routes = () => {
@@ -22,13 +23,13 @@ export const Routes = () => {
     dispatch(auth())
   }, [dispatch])
   const user = useSelector(state => state.user)
-  console.log(user)
   let isAuth = false
   if (user) {
     isAuth = user.isAuthenticated
   }
   return (
     <Router>
+      <NavBar />
       <Switch>
         {publicRoutes.map((route) => (
           <Route

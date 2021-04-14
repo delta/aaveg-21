@@ -7,7 +7,6 @@ import { Routes } from './routes'
 import store, { persist } from './store'
 import { ThemeProvider } from '@material-ui/styles'
 import { ToastContainer } from 'react-toastify'
-import { NavBar } from './components/NavBar'
 import 'react-toastify/dist/ReactToastify.css'
 import './index.css'
 import { SocialIcons } from './components/SocialMedia'
@@ -20,7 +19,6 @@ ReactDOM.render(
       <PersistGate loading={null} persistor={persist}>
         <Routes />
         <ThemeProvider theme={dark}>
-          <NavBar />
           <SocialIcons />
           <Footer />
         </ThemeProvider>

@@ -20,7 +20,7 @@ export const NavBar = (props) => {
   const user = useSelector(state => state.user)
 
   const clickHandle = () => {
-    if (user.isAutheticated === true) {
+    if (user.isAuthenticated === true) {
       dispatch(logout())
     } else {
       history.push('/login')
@@ -41,7 +41,7 @@ export const NavBar = (props) => {
         >
           <div onClick={() => { history.push('/') }} className='imgDiv'><img src={AavegLogo} style={{ width: '80px', height: '30px' }} alt='aaveg' id='aaveg' /></div>
         </IconButton>
-        <Button key='logout' onClick={clickHandle} color='primary' className={classes.LogButton}>{user.isAutheticated === true ? 'Logout' : 'Login'}</Button>
+        <Button key='logout' onClick={clickHandle} color='primary' className={classes.LogButton}>{user.isAuthenticated === true ? 'Logout' : 'Login'}</Button>
       </Toolbar>
     </AppBar>
   )
