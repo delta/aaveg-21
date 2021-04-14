@@ -133,6 +133,7 @@ export const QnAPage = () => {
   } else {
     return (
       <div className={classes.qna}>
+        <div className={classes.toolbar} />
         <img src={bgimg} className={classes.bgimg} alt='bgimg' />
         <div className={classes.main}>
           <InfoIcon color='secondary' onClick={handleInfoOpen} fontSize='large' className={classes.infoIcon} />
@@ -145,10 +146,9 @@ export const QnAPage = () => {
                       <img src={logo} className={classes.logo} alt='logo' />
                       <FormLabel component='legend' className={classes.legend}>{q.question}</FormLabel>
                       <RadioGroup aria-label='quiz' className={classes.radioGroup} value={values[index]} onChange={handleChange} name='quiz'>
-                        <FormControlLabel className={classes.label} value={q.answers[0].ansId} control={<Radio />} label={q.answers[0].answer} />
-                        <FormControlLabel className={classes.label} value={q.answers[1].ansId} control={<Radio />} label={q.answers[1].answer} />
-                        <FormControlLabel className={classes.label} value={q.answers[2].ansId} control={<Radio />} label={q.answers[2].answer} />
-                        <FormControlLabel className={classes.label} value={q.answers[3].ansId} control={<Radio />} label={q.answers[3].answer} />
+                        {q.answers.map((a, index) => (
+                          <FormControlLabel key={index} className={classes.label} value={a.ansId} control={<Radio />} label={a.answer} />
+                        ))}
                       </RadioGroup>
                       {index === questions.length - 1 ? <Button variant='contained' color='primary' className={classes.button} disabled={values.findIndex(v => v === null) !== -1} onClick={submitHandler}>Submit</Button> : <Button variant='contained' color='primary' className={classes.button} onClick={() => ref.current.slideNext()}>Next</Button>}
                     </div>
