@@ -64,6 +64,7 @@ exports.login = async (req, res) => {
             httpOnly: true,
             signed: true
           })
+        response.isFilled = student.isFilled
         logger.info(`Student ${rollnumber} logged in`)
 
         res.status(200).send(response)

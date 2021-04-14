@@ -16,7 +16,7 @@ export default function reducer (state = initialState, action) {
     case AUTH_SUCCESS:
       return {
         ...state,
-        isAuthenticated: action.payload.data.isLoggedIn,
+        isAuthenticated: action.payload.isLoggedIn,
         loading: 'idle'
       }
     case AUTH_REQUEST:

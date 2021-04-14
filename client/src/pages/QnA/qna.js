@@ -34,7 +34,7 @@ export const QnAPage = () => {
   const classes = useStyles()
   const [questions, setQues] = useState([])
   const [values, setValues] = useState([])
-  const [dialogOpen, setDialogOpen] = useState(false)
+  const [dialogOpen, setDialogOpen] = useState(true)
   const [loading, setLoading] = useState(true)
   const ref = useRef()
 
