@@ -7,12 +7,16 @@
 }
 
 
-.pillar {
+.pillar,
+.muhesh {
   display: block;
-  height: 500vh;
   width: 100%;
   background-position: center;
   background-size: cover;
+}
+
+.muhesh {
+  height: 100%;
 }
 
 .div {
@@ -21,7 +25,7 @@
   padding-left: 30px;
   padding-right: 30px;
   width: 30%;
-  margin-top: 170vh;
+  margin-top: 130vh;
   height: min-content;
   color: #fff;
   font-size: 30px;
@@ -74,7 +78,8 @@
     transform: scaleX(1.5);
   }
 
-  .pillar {
+  .pillar,
+  .muhesh {
     transform: scaleX(1.25);
   }
 
@@ -82,8 +87,8 @@
     padding-left: 10px;
     padding-right: 10px;
     width: 40%;
+    font-size: 25px;
     height: min-content;
-    color: #fff;
     margin-left: 30%;
     margin-right: 30%;
   }
@@ -113,18 +118,23 @@
     transform: scaleX(2);
   }
 
-  .pillar {
+  .pillar,
+  .muhesh {
     transform: scaleX(2.2);
+  }
+
+  .topDiv {
+    margin: auto;
   }
 
   .div {
     padding-left: 10px;
     padding-right: 10px;
     width: 60%;
+    font-size: 20px;
     margin-left: 20%;
     margin-right: 20%;
     height: min-content;
-    color: #fff;
   }
 
   .team {
