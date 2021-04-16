@@ -113,7 +113,7 @@ export const qList = [
     qId: '10',
     question:
     [
-      'Where would you spend your Saturday evening  ?'
+      'Where would you spend your Saturday evening?'
     ],
     answers: [{
       ansId: '101',
@@ -135,7 +135,7 @@ export const qList = [
     qId: '11',
     question:
     [
-      'If you could choose one superpower, which one would it be ?'
+      'If you could choose one superpower, which one would it be?'
     ],
     answers: [{
       ansId: '111',

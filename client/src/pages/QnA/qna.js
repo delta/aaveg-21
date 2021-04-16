@@ -5,7 +5,7 @@ import { Button, FormControlLabel, FormLabel, Radio, RadioGroup, Dialog, DialogT
 import InfoIcon from '@material-ui/icons/Info'
 import './carouselStyles.css'
 import { useStyles } from './styles'
-import logo from '../../assets/images/Aaveg Glyph - Black.png'
+import logo from '../../assets/images/aavegwhite.png'
 import bgimg from '../../assets/images/questionPage.png'
 import { BACKEND_API } from '../../config/config'
 import toast, { Toaster } from 'react-hot-toast'
@@ -47,6 +47,7 @@ export const QnAPage = () => {
       <Dialog
         open={open}
         onClose={handleClose}
+        className={classes.dContainer}
       >
         <DialogTitle>
           <div className={classes.dTitle}>
@@ -142,7 +143,7 @@ export const QnAPage = () => {
                       <FormLabel component='legend' className={classes.legend}>{q.question}</FormLabel>
                       <RadioGroup aria-label='quiz' className={classes.radioGroup} value={values[index]} onChange={handleChange} name='quiz'>
                         {q.answers.map((a, index) => (
-                          <FormControlLabel key={index} className={classes.label} value={a.ansId} control={<Radio />} label={a.answer} />
+                          <FormControlLabel key={index} className={classes.label} value={a.ansId} control={<Radio color='primary' />} label={a.answer} />
                         ))}
                       </RadioGroup>
                       {index === questions.length - 1 ? <Button variant='contained' color='primary' className={classes.button} disabled={values.findIndex(v => v === null) !== -1} onClick={submitHandler}>Submit</Button> : <Button variant='contained' color='primary' className={classes.button} onClick={() => ref.current.slideNext()}>Next</Button>}

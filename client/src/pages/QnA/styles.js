@@ -55,10 +55,11 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   legend: {
-    fontSize: '1.2rem',
+    fontSize: '1.4rem',
     marginBottom: '10px',
-    textAlign: 'start',
     minWidth: '620px',
+    color: '#bbb',
+    textAlign: 'right',
     [theme.breakpoints.down(800)]: {
       fontSize: '1.2rem',
       // textAlign: 'center',
@@ -69,7 +70,8 @@ export const useStyles = makeStyles((theme) => ({
     textAlign: 'left'
   },
   label: {
-    fontSize: '1.0rem',
+    fontSize: '1.1rem',
+    color: '#f2f2f2',
     [theme.breakpoints.down(800)]: {
       fontSize: '1rem'
     }
@@ -87,20 +89,28 @@ export const useStyles = makeStyles((theme) => ({
   },
   infoIcon: {
     position: 'absolute',
-    top: '75px',
+    top: '15px',
     left: '15px',
     cursor: 'pointer',
     zIndex: '20',
     [theme.breakpoints.down(450)]: {
       fontSize: '1.5rem',
-      top: '60px',
+      top: '10px',
       left: '10px'
     }
   },
 
   // For dialog box
+  dContainer: {
+    background: 'rgba( 0, 0, 0, 0.45 )',
+    boxShadow: '0 0 12px 10px rgba( 31, 38, 135, 0.37 )',
+    backdropFilter: 'blur( 10.0px )',
+    borderRadius: '10px',
+    border: '1px solid rgba( 255, 255, 255, 0.28 )'
+  },
   dTitle: {
-    fontSize: '1.5rem'
+    fontSize: '1.5rem',
+    fontWeight: '700'
   },
   dContent: {
     fontSize: '1.2rem',
