@@ -77,7 +77,7 @@ export const Login = () => {
               <Grid item>
                 <img src={logo} alt='logo' width={150} />
               </Grid>
-              <Typography variant='h2' color='textPrimary' component='h2' className={classes.title}>
+              <Typography variant='h2' color='textPrimary' component='h2' className={classes.title + ' heading-font'}>
                 Login
               </Typography>
               <TextField
