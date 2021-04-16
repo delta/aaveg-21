@@ -56,9 +56,9 @@ export const QnAPage = () => {
         <DialogContent>
           <DialogContentText>
             <div className={classes.dContent}>
-              Before you are separated into the different teams that you will compete for in Aaveg, we would like to get to know you a little.
+              Before you answer the call of battle, you must find your true calling by answering this questionnaire.
               <br /><br />
-              Fill in your answers based on your gut and remember there are no right answers!
+              Stay true to yourself and trust your instincts. Beware! One false step and you might wind up where you don’t belong.
             </div>
           </DialogContentText>
         </DialogContent>
@@ -72,18 +72,15 @@ export const QnAPage = () => {
   }
 
   useEffect(() => {
-    // TODO: fetch qIds from backend
-
-    // temporary lists
-    const qIdList = ['1', '2', '3', '4', '5', '7']
-    const val = new Array(qIdList.length).fill(null)
+    const val = new Array(qList.length).fill(null)
     setValues(val)
-    const ques = []
-    qList.forEach(q => {
-      if (qIdList.includes(q.qId)) {
-        ques.push(q)
-      }
-    })
+    const ques = [...qList]
+    for (let i = ques.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1))
+      const temp = ques[i]
+      ques[i] = ques[j]
+      ques[j] = temp
+    }
     setQues(ques)
     setLoading(false)
   }, [])
@@ -134,7 +131,7 @@ export const QnAPage = () => {
         <div className={classes.toolbar} />
         <img src={bgimg} className={classes.bgimg} alt='bgimg' />
         <div className={classes.main}>
-          <InfoIcon color='secondary' onClick={handleInfoOpen} fontSize='large' className={classes.infoIcon} />
+          <InfoIcon color='primary' onClick={handleInfoOpen} fontSize='large' className={classes.infoIcon} />
           <div className={classes.container}>
             <Carousel {...carouselSettings} ref={ref}>
               {questions.map((q, index) => {

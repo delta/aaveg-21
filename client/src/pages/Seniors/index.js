@@ -15,9 +15,7 @@ export const Seniors = () => {
         <main role='main' className={style.main_content}>
           <div className={style.titleCont}>
             <h1 className={style.main_title}>
-              Aaveg is all ours seniors. Don't be snooping here please :)
-              <br />
-              <span>Go back</span>
+              You had your quarrel seniors, now it is time for a real battle. Sit back and enjoy.
               <br />
             </h1>
             <Button
