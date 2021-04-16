@@ -31,7 +31,7 @@ export const Footer = () => {
           rel='noopener noreferrer'
           className={styles.atag}
         >
-          <span> Aaveg Descon</span>
+          <span> Aaveg DesCon</span>
         </a>
       </div>
     </footer>

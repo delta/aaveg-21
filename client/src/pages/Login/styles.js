@@ -10,7 +10,7 @@ export const useStyles = makeStyles((theme) => ({
     marginTop: '60px',
     left: '9.5%',
     width: '80%',
-    background: 'rgba( 255, 255, 255, 0.45 )',
+    background: 'rgba( 0, 0, 0, 0.45 )',
     boxShadow: '0 0 12px 10px rgba( 31, 38, 135, 0.37 )',
     backdropFilter: 'blur( 10.0px )',
     borderRadius: '10px',

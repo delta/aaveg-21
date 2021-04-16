@@ -10,13 +10,12 @@
 .pillar {
   display: block;
   height: 500vh;
-  /* should be changed according to content*/
   width: 100%;
   background-position: center;
   background-size: cover;
 }
 
-.div, .topDiv {
+.div {
   margin-left: 34%;
   margin-right: 35%;
   padding-left: 30px;
@@ -25,20 +24,25 @@
   margin-top: 170vh;
   height: min-content;
   color: #fff;
+  font-size: 30px;
+  text-align: center;
 }
 
 .topDiv {
-  margin-left: 0%;
+  margin-left: 34px;
+  width: 300px;
+  height: min-content;
+  color: white;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
   margin-top: auto;
+  background: rgba(0, 0, 0, .6);
 }
 
-.team, .topCont {
+.topCont {
   align-content: center;
   padding: 20px;
-  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
-    0 5px 15px 0 rgba(0,0,0,0.08);
-  background-color: #3b3737;
-  border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,27 +50,24 @@
   margin-bottom: 50%;
   text-align: center;
   letter-spacing: 2pt;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  background-color: transparent;
 }
 
-.topCont{
-  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
-    0 5px 15px 0 rgba(0,0,0,0.08);
-  background-color: #6966e4;
-}
-
-.moon{
+.moon {
   display: block;
-  width: 25%; 
-  margin-left: 35% 
+  width: 25%;
+  margin-left: 35%
 }
 
-.light{
+.light {
   display: block;
-  width: 100%; 
-  margin-left: 0% 
+  width: 100%;
+  margin-left: 0%
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
 
   .bgimg,
   .pillar {
@@ -74,69 +75,73 @@
   }
 
   .pillar {
-    transform: scaleX(1.8);
+    transform: scaleX(1.25);
   }
+
   .div {
     padding-left: 10px;
     padding-right: 10px;
-    width: 43%;
-    margin-top: 130vh;
+    width: 40%;
     height: min-content;
     color: #fff;
+    margin-left: 30%;
+    margin-right: 30%;
   }
-  .team {  
+
+  .team {
     padding: 10px;
     border-radius: 0.5rem;
     margin-bottom: 60%;
     margin-left: -30%;
   }
-  .moon{
+
+  .moon {
     width: 46%;
-    margin-left: 28%; 
+    margin-left: 28%;
   }
-  
-  .light{
+
+  .light {
     display: block;
-    width: 100%; 
-    margin-left: 0% 
+    width: 100%;
+    margin-left: 0%
   }
-  .topDiv{
-    width: 50%;
-  }
+
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
   .bgimg {
     transform: scaleX(2);
   }
 
   .pillar {
-    transform: scaleX(2);
+    transform: scaleX(2.2);
   }
+
   .div {
     padding-left: 10px;
     padding-right: 10px;
-    width: 43%;
-    margin-top: 130vh;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
     height: min-content;
     color: #fff;
   }
+
   .team {
     margin-left: -30%;
     padding: 20px;
     border-radius: 0.5rem;
     margin-bottom: 36%;
   }
-  .moon{
+
+  .moon {
     width: 46%;
     margin-left: 28%;
   }
-  
-  .light{
-    width: 200%; 
-    margin-left: -50% 
+
+  .light {
+    width: 200%;
+    margin-left: -50%
   }
-  .topDiv{
-    width: 50%;
-  }
+
 }

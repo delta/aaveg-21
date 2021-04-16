@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core'
 import { useStyles } from './styles'
 import { useHistory } from 'react-router'
 import bgimg from '../../assets/images/questionPage.png'
+import meme from '../../assets/images/404.jpeg'
 
 export const P404 = () => {
   const classes = useStyles()
@@ -14,12 +15,8 @@ export const P404 = () => {
       <section className={style.section}>
         <main role='main' className={style.main_content}>
           <div className={style.titleCont}>
-            <h1 className={style.main_title}>
-              Its creepy you are here
-              <br />
-              <span>go back</span>
-              <br />
-            </h1>
+            <img src={meme} width={300} alt='meme' />
+            <br />
             <Button
               variant='contained'
               className={classes.Button}

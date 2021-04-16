@@ -5,7 +5,6 @@ import bgimg from '../../assets/images/loginPage.png'
 import pillar from '../../assets/images/bgImg.png'
 import white from '../../assets/images/white.png'
 import moon from '../../assets/images/moon.png'
-import { content } from './utils/content.js'
 import cloud from '../../assets/images/cloud.svg'
 import aaveg from '../../assets/images/aavegwhite.png'
 
@@ -83,9 +82,11 @@ export const Home = () => {
         <ParallaxLayer offset={0.1} speed={-0.1} style={{ pointerEvents: 'none' }}>
           <div className={styles.topDiv}>
             <div className={styles.topCont}>
-              <h1>BLV LBL ALBLA </h1>
+              <h1>A Pawn's Gambit
+              </h1>
+              <h3>5 Teams. 1 Crown. All Aaveg!</h3>
               <hr />
-              <span>RGLK DFLGJDL KJGDLF KGJLDKF JG</span>
+              <span>a saga set into motion by Aaveg Content <br />Team  &#8482; -‘21 </span>
             </div>
           </div>
         </ParallaxLayer>
@@ -96,15 +97,22 @@ export const Home = () => {
 
         <ParallaxLayer offset={4} speed={-0.7} style={{ pointerEvents: 'none' }} />
         <div className={styles.div}>
-          {content.map((c, index) => {
-            return (
-              <div className={styles.team} key={index}>
-                <h1>{c.name}</h1>
-                <hr />
-                <span>{c.ctx}</span>
-              </div>
-            )
-          })}
+          Every eye glimmered with hope and every heart ached for exuberance and the hustle and bustle of college life. The campus was our promised land, but we were greeted with months of monotony packed with a marathon of classes, assignments, CT’s, deadlines and exams.
+          <br />
+
+          Fret not, for Aaveg is here! We are the harbingers of change and it is about time to rid yourself of the drudgery of routine and unleash your true inner self.
+          <br />
+
+          Ever since the inception of the universe, the mortal realm has been split on the basis of various religion, cultures and languages. Here we present to you Panchalokha : a utopian world where none of this matters. The people of this world are divided into 5 kingdoms but are still united by their common respect to Shakthi, the supreme empress.
+          <br />
+
+          The kind and patient ruler of Panchalokha is firm, yet motherly. She breathes life into all but is unyielding to injustice. She is the omnipresent energy that binds all life. Shakthi guides her people to prosperity and is the epitome of peace.
+          <br />
+
+          With your eyes set on the future, do you have the mettle to experience Panchalokha and seize the opportunity to lead and conquer?
+          <br />
+
+          Find your role in all of this and prepare yourself for a contest of wits and strengths. Which clan will have the privilege of drafting you into their ranks?
         </div>
       </Parallax>
     </>

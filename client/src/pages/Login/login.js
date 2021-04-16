@@ -10,7 +10,7 @@ import { useStyles } from './styles'
 import { BACKEND_API } from '../../config/config'
 import toast, { Toaster } from 'react-hot-toast'
 import { loginSuccess } from '../../actions/user'
-import logo from '../../assets/images/Aaveg Glyph - Black.png'
+import logo from '../../assets/images/aavegwhite.png'
 import bgimg from '../../assets/images/loginPage.png'
 
 export const Login = () => {
@@ -85,13 +85,13 @@ export const Login = () => {
                 variant='outlined'
                 size='medium'
                 InputProps={{
-                  shrink: true,
                   endAdornment: (
                     <InputAdornment position='end'>
                       <AccountCircleIcon />
                     </InputAdornment>
                   )
                 }}
+                autoComplete='webamil'
                 onChange={(e) => setWebmail(e.target.value)}
                 className={classes.TextFields}
               />
@@ -100,7 +100,6 @@ export const Login = () => {
                 variant='outlined'
                 size='medium'
                 InputProps={{
-                  shrink: true,
                   endAdornment: (
                     <InputAdornment position='end'>
                       <LockIcon />
@@ -108,6 +107,7 @@ export const Login = () => {
                   )
                 }}
                 type='password'
+                autoComplete='current-password'
                 onChange={(e) => setPassword(e.target.value)}
                 className={classes.TextFields}
               />
@@ -120,6 +120,7 @@ export const Login = () => {
               >
                 Login
               </Button>
+
             </Grid>
           </Paper>
         </Grid>

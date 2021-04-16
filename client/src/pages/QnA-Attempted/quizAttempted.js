@@ -15,8 +15,8 @@ export const QuizAttempted = () => {
           <div className={classes.sub}>Aaveg 21 Teams</div><br />
           <div className={classes.flash}>COMING SOON</div><br />
           <div className={classes.sub}>You have already filled the questionnaire</div><br />
-          <div className={classes.post}>Stay tuned to our handles for the results!</div><br />
-          <div className={classes.post}>We took your first response but we won't stop from refilling it</div><br /><br />
+          <div className={classes.post}>However, feel free to attempt the questionnaire as many times as you wish. After all, we enjoy redundancy...</div><br />
+          <div className={classes.post}>Bear in mind, only your first attempt shall be considered for evaluation</div><br /><br />
           <Button className={classes.button} onClick={() => { history.push('/quiz') }}>Click here to fill the questionnaire again</Button>
         </div>
       </div>
