@@ -22,7 +22,7 @@ export const Footer = () => {
           rel='noopener noreferrer'
           className={styles.atag}
         >
-          <span>Delta Force</span>
+          <span className='heading-font'>Delta Force</span>
         </a>{' '}
         and{' '}
         <a
@@ -31,7 +31,7 @@ export const Footer = () => {
           rel='noopener noreferrer'
           className={styles.atag}
         >
-          <span> Aaveg DesCon</span>
+          <span className='heading-font'> Aaveg DesCon</span>
         </a>
       </div>
     </footer>

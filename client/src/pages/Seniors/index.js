@@ -14,7 +14,7 @@ export const Seniors = () => {
       <section className={style.section}>
         <main role='main' className={style.main_content}>
           <div className={style.titleCont}>
-            <h1 className={style.main_title}>
+            <h1 className={style.main_title + ' heading-font'}>
               You had your quarrel seniors, now it is time for a real battle. Sit back and enjoy.
               <br />
             </h1>

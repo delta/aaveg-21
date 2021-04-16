@@ -50,7 +50,7 @@ export const QnAPage = () => {
         className={classes.dContainer}
       >
         <DialogTitle>
-          <div className={classes.dTitle}>
+          <div className={classes.dTitle + ' heading-font'}>
             Why this questionnaire?
           </div>
         </DialogTitle>
@@ -140,7 +140,7 @@ export const QnAPage = () => {
                   <div key={q.qId}>
                     <div className={classes.cover}>
                       <img src={logo} className={classes.logo} alt='logo' />
-                      <FormLabel component='legend' className={classes.legend}>{q.question}</FormLabel>
+                      <FormLabel component='legend' className={classes.legend + ' heading-font'}>{q.question}</FormLabel>
                       <RadioGroup aria-label='quiz' className={classes.radioGroup} value={values[index]} onChange={handleChange} name='quiz'>
                         {q.answers.map((a, index) => (
                           <FormControlLabel key={index} className={classes.label} value={a.ansId} control={<Radio color='primary' />} label={a.answer} />
