@@ -3,7 +3,6 @@ import { LOGIN, AUTH_SUCCESS, AUTH_REQUEST, AUTH_FAILURE, LOGOUT } from './types
 import axios from 'axios'
 
 export const loginSuccess = (data) => (dispatch) => {
-  console.log(data)
   dispatch(auth())
   dispatch({
     type: LOGIN,
@@ -17,7 +16,6 @@ export const auth = () => async (dispatch) => {
     .then((res) =>
       dispatch(authSuccess(res.data))
     ).catch((e) => {
-      console.log(e)
       dispatch(authFailure())
     })
 }
