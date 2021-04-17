@@ -39,6 +39,10 @@ app.use(cookieparser(config.cookieSecret))
 app.use('/api/quiz', quizRoutes)
 app.use('/api/auth', auth)
 
+app.get('/api/status', async (req, res) => {
+  res.status(200).json({ message: 'i am alive' })
+})
+
 // Production Requirements
 if (process.env.NODE_ENV === 'production') {
   // Set static folder

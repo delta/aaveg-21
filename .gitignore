@@ -6,3 +6,5 @@ config.js
 firebase.json
 .firebase/
 logs
+.env
+mongodb

@@ -1,0 +1,27 @@
+version: "3.8"
+
+services: 
+  aavegqserver:
+    build: .
+    image: aavegqserver
+    container_name: aavegqserver_21
+    restart: always
+    ports: 
+      - "${SERVER_EXTERNAL_PORT}:8000"
+    depends_on: 
+      - aavegqmongo
+    volumes:
+      - ./server/logs:/usr/src/app/server/logs
+  
+  aavegqmongo:
+    image: mongo:latest
+    container_name: aavegqmongo_21
+    restart: always
+    ports: 
+      - "${DB_EXTERNAL_PORT}:27017"
+    env_file: 
+      - .env
+    volumes: 
+      - ./mongodb/data:/data/db
+
+
