@@ -2,7 +2,7 @@ version: "3.8"
 
 services: 
   aavegqserver:
-    build: .
+    build: server
     image: aavegqserver
     container_name: aavegqserver_21
     restart: always
@@ -13,6 +13,15 @@ services:
     volumes:
       - ./server/logs:/usr/src/app/server/logs
   
+  aavegqclient:
+    build: client
+    image: aavegqclient
+    container_name: aavegqclient_21
+    restart: always
+    ports: 
+      - "${CLIENT_EXTERNAL_PORT}:5000"
+    depends_on: 
+      - aavegqserver
   aavegqmongo:
     image: mongo:latest
     container_name: aavegqmongo_21
