@@ -35,12 +35,27 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: '0px 1px 10px 1px #00000057',
     [theme.breakpoints.up('md')]: {
       width: '30%'
+    },
+    '& label.Mui-focused': {
+      color: 'white'
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'white'
+      },
+      '&:hover fieldset': {
+        borderColor: 'blueviolet'
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'blueviolet'
+      }
     }
   },
   Button: {
     margin: theme.spacing(2),
     paddingLeft: theme.spacing(6),
-    paddingRight: theme.spacing(6)
+    paddingRight: theme.spacing(6),
+    '.MuiButton-containedPrimary': { color: '#fff', backgroundColor: '#6e946e' }
   },
   container: {
     height: 'calc(100% - 100px)',
