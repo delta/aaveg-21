@@ -55,7 +55,10 @@ export const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2),
     paddingLeft: theme.spacing(6),
     paddingRight: theme.spacing(6),
-    '.MuiButton-containedPrimary': { color: '#fff', backgroundColor: '#6e946e' }
+    '.MuiButton-containedPrimary': {
+      color: '#fff',
+      backgroundColor: '#6e946e'
+    }
   },
   container: {
     height: 'calc(100% - 100px)',

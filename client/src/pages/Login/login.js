@@ -115,6 +115,10 @@ export const Login = () => {
                 className={classes.Button}
                 variant='contained'
                 size='large'
+                style={{
+                  backgroundColor: '#6e946e',
+                  color: '#ffffff'
+                }}
                 onClick={handleLogin}
               >
                 Login
