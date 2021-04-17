@@ -1,21 +1,22 @@
 .bgimg {
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 32px);
+  background: rgb(20, 20, 20);
   background-position: center;
   background-size: cover;
 }
 
 
 .pillar,
-.muhesh {
+.kingdom {
   display: block;
   width: 100%;
   background-position: center;
   background-size: cover;
 }
 
-.muhesh {
+.kingdom {
   height: 100%;
 }
 
@@ -25,7 +26,7 @@
   padding-left: 30px;
   padding-right: 30px;
   width: 30%;
-  margin-top: 130vh;
+  margin-top: 140vh;
   height: min-content;
   color: #fff;
   font-size: 30px;
@@ -92,13 +93,12 @@
 
 @media screen and (max-width: 900px) {
 
-  .bgimg,
-  .pillar {
-    transform: scaleX(1.5);
+  .bgimg {
+    width: 200vw;
   }
 
   .pillar,
-  .muhesh {
+  .kingdom {
     transform: scaleX(1.25);
   }
 
@@ -133,12 +133,9 @@
 }
 
 @media screen and (max-width: 650px) {
-  .bgimg {
-    transform: scaleX(2);
-  }
 
   .pillar,
-  .muhesh {
+  .kingdom {
     transform: scaleX(2.2);
   }
 
@@ -213,5 +210,8 @@
 
 .button {
   color: black !important;
-  background: linear-gradient(to right, rgba(230, 231, 31, 1) 0%, rgba(236, 231, 31, 1) 32%, rgba(234, 231, 230, 1) 100%);
+  font-size: 13px !important;
+  font-weight: bold !important;
+  padding: 15px !important;
+  background: linear-gradient(to right, #caac30 0%, #caac30 32%, #ffffffdd 100%);
 }

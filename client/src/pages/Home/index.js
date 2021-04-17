@@ -3,9 +3,9 @@ import styles from './style.module.css'
 import { useHistory } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import { Parallax, ParallaxLayer } from 'react-spring/addons'
-import bgimg from '../../assets/images/loginPage.png'
+import bgimg from '../../assets/images/Temple.png'
 import pillar from '../../assets/images/bgImg1.png'
-import bottom from '../../assets/images/bgImg2.png'
+import kingdom from '../../assets/images/bgImg2.png'
 import white from '../../assets/images/white.png'
 import moon from '../../assets/images/moon.png'
 import cloud from '../../assets/images/cloud.svg'
@@ -20,7 +20,6 @@ export const Home = () => {
       hei = hei / window.innerHeight
       hei += 2.5
       setHeight(hei)
-      console.log(hei)
       document.getElementById('pillar').style.height = (hei - 1.4) * 100 + 'vh'
     }
     const k = () => {
@@ -109,7 +108,7 @@ export const Home = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={height - 0.9} speed={0.1} style={{ opacity: 1 }}>
-          <img src={bottom} alt='pillar' className={styles.muhesh} />
+          <img src={kingdom} alt='pillar' className={styles.kingdom} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.1} speed={-0.1} style={{ pointerEvents: 'none' }}>

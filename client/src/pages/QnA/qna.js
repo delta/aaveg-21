@@ -95,8 +95,6 @@ export const QnAPage = () => {
   }
 
   const submitHandler = () => {
-    console.log(values)
-
     axios
       .post(BACKEND_API + '/api/quiz/saveAnswers', { questions: values }, { withCredentials: true, credentials: 'include' })
       .then((res) => {
@@ -111,7 +109,6 @@ export const QnAPage = () => {
         }
       })
       .catch((err) => {
-        console.log(err)
         if (err.response && err.response.status === 500) {
           toast.error(err.response.data.message)
         } else {

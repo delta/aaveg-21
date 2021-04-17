@@ -90,7 +90,6 @@ exports.validateJWT = async (req, res, next) => {
     return
   }
   const APIToken = req.signedCookies.auth
-  console.log(APIToken)
   jwt.verify(
     APIToken,
     config.jwtSecret,
@@ -136,7 +135,6 @@ exports.userInfo = async (req, res) => {
 }
 
 exports.logout = async (req, res) => {
-  console.log(`${req.signedCookies.auth} Logged Out`)
   res.clearCookie('auth')
   res.status(200).json({ message: 'Logged Out' })
 }

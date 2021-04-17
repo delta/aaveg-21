@@ -31,7 +31,6 @@ export const Login = () => {
       .post(BACKEND_API + '/api/auth/login', loginData, { withCredentials: true, credentials: 'include' })
       .then((res) => {
         if (res.status === 200) {
-          console.log(res.data)
           dispatch(loginSuccess(res.data))
           toast.success(res.data.message)
           if (!res.data.isFilled) {
@@ -44,7 +43,6 @@ export const Login = () => {
         }
       })
       .catch((err) => {
-        // console.log(err)
         if (err.response && (err.response.status === 401 || err.response.status === 500 || err.response.status === 400)) {
           toast.error(err.response.data.message)
         } else if (err.response && err.response.status === 404 && err.response.data.message === 'Roll number does not belong to first year or admin') {
