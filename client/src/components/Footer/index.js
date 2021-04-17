@@ -7,7 +7,7 @@ export const Footer = () => {
         Made with ️
         <div className={styles.heart}>
           <a
-            href='https://bit.ly/3wX2nrZ'
+            href='http://delta.nitt.edu'
             target='_blank'
             rel='noopener noreferrer'
             className={styles.atag}
