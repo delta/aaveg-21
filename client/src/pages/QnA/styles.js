@@ -59,7 +59,7 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: '10px',
     minWidth: '620px',
     color: '#bbb',
-    textAlign: 'right',
+    textAlign: 'center',
     [theme.breakpoints.down(800)]: {
       fontSize: '1.2rem',
       // textAlign: 'center',
