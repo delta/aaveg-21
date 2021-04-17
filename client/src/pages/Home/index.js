@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './style.module.css'
+import { useHistory } from 'react-router-dom'
+import { Button } from '@material-ui/core'
 import { Parallax, ParallaxLayer } from 'react-spring/addons'
 import bgimg from '../../assets/images/loginPage.png'
 import pillar from '../../assets/images/bgImg1.png'
@@ -11,7 +13,7 @@ import aaveg from '../../assets/images/aavegwhite.png'
 
 export const Home = () => {
   const [height, setHeight] = useState(-1)
-
+  const history = useHistory()
   useEffect(() => {
     const l = () => {
       let hei = document.getElementById('content-div').offsetHeight
@@ -106,17 +108,16 @@ export const Home = () => {
           <img src={pillar} alt='pillar' id='pillar' className={styles.pillar} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={height - 1} speed={0.1} style={{ opacity: 1 }}>
+        <ParallaxLayer offset={height - 0.9} speed={0.1} style={{ opacity: 1 }}>
           <img src={bottom} alt='pillar' className={styles.muhesh} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.1} speed={-0.1} style={{ pointerEvents: 'none' }}>
           <div className={styles.topDiv}>
             <div className={styles.topCont}>
-              <h1 className='heading-font'>A Pawn's Gambit</h1>
-              <h3>5 Teams. 1 Crown. All Aaveg!</h3>
-              <hr />
-              <span>A saga set into motion by Aaveg Content <br />Team  &#8482; -‘21 </span>
+              <h1 className={styles.h1 + ' heading-font'}>A Pawn's Gambit</h1>
+              <h3 className={styles.h3}>5 Teams. 1 Crown. All Aaveg!</h3>
+              <span className={styles.credits}>A saga set into motion by Aaveg Content <br />Team <span className={styles.tm}>TM</span> -‘21 </span>
             </div>
           </div>
         </ParallaxLayer>
@@ -150,6 +151,7 @@ export const Home = () => {
           <div>
             Find your role in all of this and prepare yourself for a contest of wits and strengths. Which clan will have the privilege of drafting you into their ranks?
           </div>
+          <div className={styles.btn}><Button className={styles.button} onClick={() => { history.push('/login') }}>Login to Fill Questionnaire</Button></div>
         </div>
       </Parallax>
     </>

@@ -30,11 +30,12 @@
   color: #fff;
   font-size: 30px;
   text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
 .topDiv {
   margin-left: 34px;
-  width: 300px;
+  width: 430px;
   height: min-content;
   color: white;
   box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
@@ -44,9 +45,19 @@
   background: rgba(0, 0, 0, .6);
 }
 
+.h1 {
+  font-size: 43px;
+  padding: 0;
+  margin: 0;
+}
+
+.h3 {
+  font-size: 23px;
+}
+
 .topCont {
   align-content: center;
-  padding: 20px;
+  padding: 13px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,6 +80,14 @@
   display: block;
   width: 100%;
   margin-left: 0%
+}
+
+.credits {
+  font-size: 15px;
+}
+
+.tm {
+  font-size: 10px;
 }
 
 @media screen and (max-width: 900px) {
@@ -130,10 +149,10 @@
   .div {
     padding-left: 10px;
     padding-right: 10px;
-    width: 60%;
+    width: 66%;
     font-size: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 17%;
+    margin-right: 17%;
     height: min-content;
   }
 
@@ -154,4 +173,45 @@
     margin-left: -50%
   }
 
+}
+
+@media screen and (max-width: 450px) {
+  .topDiv {
+    width: 250px;
+  }
+
+  .h1 {
+    font-size: 23px;
+  }
+
+  .h3 {
+    font-size: 14px;
+  }
+
+  .credits {
+    font-size: 8px;
+  }
+
+  .tm {
+    font-size: 6px;
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 6px #ff0000;
+  }
+
+  to {
+    text-shadow: 4px 4px 10px #ff0000;
+  }
+}
+
+.btn {
+  margin: 40px;
+}
+
+.button {
+  color: black !important;
+  background: linear-gradient(to right, rgba(230, 231, 31, 1) 0%, rgba(236, 231, 31, 1) 32%, rgba(234, 231, 230, 1) 100%);
 }
