@@ -15,7 +15,6 @@ ReactDOM.render(
         <Routes />
         <SocialIcons />
         <Footer />
-        {}
       </PersistGate>
     </Provider>
   </React.StrictMode>,
