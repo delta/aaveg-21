@@ -1,12 +1,18 @@
 const cacheName = 'version-1'
 const contentToCache = [
-  // '/favicon.ico',
-  // '/static/js/main.chunk.js',
-  // '/static/js/bundle.js',
-  // '/static/js/vendors~main.chunk.js',
-  // '/index.html',
-  // '/manifest.json',
-]
+  '../src/assets/images/404.jpeg',
+  '../src/assets/images/Aaveg Glpyh-Black.png',
+  '../src/assets/images/aaveg.png',
+  '../src/assets/images/aaveggray.png',
+  '../src/assets/images/aavegwhite.png',
+  '../src/assets/images/bgimg.png',
+  '../src/assets/images/bgimg2.png',
+  '../src/assets/images/cloud.svg',
+  '../src/assets/images/loginPage.png',
+  '../src/assets/images/moon.png',
+  '../src/assets/images/questionPage.png',
+  '../src/assets/images/stacked-peaks-haikei.png',
+  '../src/assets/images/white.png']
 
 const self = this
 
@@ -19,16 +25,14 @@ self.addEventListener('install', (e) => {
 })
 
 self.addEventListener('fetch', (e) => {
-  if (!navigator.onLine) {
-    e.respondWith((async () => {
-      const r = await caches.match(e.request)
-      if (r) { return r }
-      const response = await fetch(e.request)
-      const cache = await caches.open(cacheName)
-      cache.put(e.request, response.clone())
-      return response
-    })())
-  }
+  e.respondWith((async () => {
+    const r = await caches.match(e.request)
+    if (r) { return r }
+    const response = await fetch(e.request)
+    const cache = await caches.open(cacheName)
+    cache.put(e.request, response.clone())
+    return response
+  })())
 })
 
 self.addEventListener('activate', (e) => {
