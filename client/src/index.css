@@ -20,6 +20,7 @@ body {
   -moz-animation: fadein 3s;
   animation: fadein 3s;
   overflow-x: hidden;
+  -webkit-box-shadow: 0 0 0 100px #00000073 inset !important;
 }
 
 @keyframes fadein {
@@ -81,4 +82,19 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #50aceedd;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 100px #00000073 inset !important;
 }
