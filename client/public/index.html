@@ -38,4 +38,13 @@
   </script>
 </body>
 
+<script>
+  if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+  navigator.serviceWorker.register('./serviceworker.js')
+  .catch((err) => console.error("Error ", err))
+  })
+  }
+</script>
+  
 </html>
