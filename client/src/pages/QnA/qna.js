@@ -77,13 +77,14 @@ export const QnAPage = () => {
   useEffect(() => {
     const val = new Array(qList.length).fill(null)
     setValues(val)
-    const ques = [...qList]
+    const ques = qList.splice(0, qList.length - 1)
     for (let i = ques.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
       const temp = ques[i]
       ques[i] = ques[j]
       ques[j] = temp
     }
+    ques.push(qList[qList.length - 1])
     setQues(ques)
     setLoading(false)
   }, [])
