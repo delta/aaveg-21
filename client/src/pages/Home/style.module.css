@@ -7,7 +7,7 @@
   position: fixed;
   width: 100%;
   height: calc(100% - 32px);
-  background: rgb(20, 20, 20);
+  background: rgb(120, 60, 20);
   background-position: center;
   background-size: cover;
 }
@@ -217,13 +217,17 @@
 }
 
 .btn {
-  margin: 40px;
+  margin-top: 40px;
 }
 
 .button {
   color: black !important;
   font-size: 13px !important;
-  font-weight: bold !important;
   padding: 15px !important;
   background: linear-gradient(to right, #caac30 0%, #caac30 32%, #ffffffdd 100%);
+}
+
+.button span {
+  font-family: Raleway !important;
+  font-weight: 700 !important;
 }
