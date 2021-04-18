@@ -20,7 +20,8 @@ body {
   -moz-animation: fadein 3s;
   animation: fadein 3s;
   overflow-x: hidden;
-  -webkit-box-shadow: 0 0 0 100px #00000073 inset !important;
+  -webkit-box-shadow: 0 0 0 100px #563710 inset !important;
+  box-shadow: 0 0 0 100px #563710 inset !important;
 }
 
 @keyframes fadein {
@@ -96,5 +97,6 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus,
 select:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 100px #00000073 inset !important;
+  -webkit-box-shadow: 0 0 0 100px #563710 inset !important;
+  box-shadow: 0 0 0 100px #563710 inset !important;
 }

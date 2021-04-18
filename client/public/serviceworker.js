@@ -12,8 +12,9 @@ const contentToCache = [
   '../src/assets/images/moon.png',
   '../src/assets/images/questionPage.png',
   '../src/assets/images/stacked-peaks-haikei.png',
-  '../src/assets/images/white.png'
-]
+  '../src/assets/images/white.png',
+  'https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700;900&display=swap',
+  'https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap']
 
 const self = this
 
