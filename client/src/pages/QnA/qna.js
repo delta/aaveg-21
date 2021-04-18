@@ -76,15 +76,12 @@ export const QnAPage = () => {
 
   useEffect(() => {
     const val = new Array(qList.length).fill(null)
+    const ques = qList.map((item) => {
+      return { ...item, answers: item.answers.sort(() => 0.5 - Math.random()) }
+    })
+    const lastQuestion = ques.pop()
+    ques.sort(() => 0.5 - Math.random()).push(lastQuestion)
     setValues(val)
-    const ques = qList.splice(0, qList.length - 1)
-    for (let i = ques.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      const temp = ques[i]
-      ques[i] = ques[j]
-      ques[j] = temp
-    }
-    ques.push(qList[qList.length - 1])
     setQues(ques)
     setLoading(false)
   }, [])
@@ -93,7 +90,7 @@ export const QnAPage = () => {
     const val = e.target.value
     const value = values
     const quesId = questions.findIndex((q) => q.qId === String(parseInt(val.substr(0, 2))))
-    value[quesId] = questions[quesId].answers[parseInt(val.substr(2, 1)) - 1].ansId
+    value[quesId] = val
     setValues([...value])
   }
 
