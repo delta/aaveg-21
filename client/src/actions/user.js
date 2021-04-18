@@ -12,7 +12,7 @@ export const loginSuccess = (data) => (dispatch) => {
 
 export const auth = () => async (dispatch) => {
   dispatch(authRequest())
-  await axios.post(BACKEND_API + '/api/auth/checkLogin', {}, { withCredentials: true, credentials: 'include' })
+  await axios.post(BACKEND_API + '/api/auth/checkLogin/', {}, { withCredentials: true, credentials: 'include' })
     .then((res) =>
       dispatch(authSuccess(res.data))
     ).catch((e) => {
@@ -21,7 +21,7 @@ export const auth = () => async (dispatch) => {
 }
 
 export const logout = () => async (dispatch) => {
-  await axios.post(BACKEND_API + '/api/auth/logout', {}, { withCredentials: true, credentials: 'include' })
+  await axios.post(BACKEND_API + '/api/auth/logout/', {}, { withCredentials: true, credentials: 'include' })
     .then((res) =>
       dispatch({
         type: LOGOUT

@@ -24,7 +24,7 @@ export const dark = createMuiTheme({
     },
     divider: 'rgba(255, 255, 255, 0.12)',
     background: {
-      paper: '#54244B',
+      paper: '#000000',
       default: '#54244B',
       dimBg: '#262626',
       level2: '#333',

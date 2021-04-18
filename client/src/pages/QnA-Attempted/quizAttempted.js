@@ -3,6 +3,8 @@ import { useStyles } from './styles'
 import bgimg from '../../assets/images/stacked-peaks-haikei.png'
 import { Button } from '@material-ui/core'
 import { useHistory } from 'react-router'
+import { SocialIcons } from '../../components/SocialMedia'
+import { Footer } from '../../components/Footer'
 
 export const QuizAttempted = () => {
   const classes = useStyles()
@@ -19,6 +21,8 @@ export const QuizAttempted = () => {
           <div className={classes.post}>Bear in mind, only your first attempt shall be considered for evaluation</div><br /><br />
           <Button className={classes.button} onClick={() => { history.push('/quiz') }}>Click here to fill the questionnaire again</Button>
         </div>
+        <SocialIcons />
+        <Footer />
       </div>
     </>
   )

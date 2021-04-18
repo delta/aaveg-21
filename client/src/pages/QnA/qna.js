@@ -49,25 +49,27 @@ export const QnAPage = () => {
         onClose={handleClose}
         className={classes.dContainer}
       >
-        <DialogTitle>
-          <div className={classes.dTitle + ' heading-font'}>
-            Why this questionnaire?
-          </div>
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            <div className={classes.dContent}>
-              Before you answer the call of battle, you must find your true calling by answering this questionnaire.
-              <br /><br />
-              Stay true to yourself and trust your instincts. Beware! One false step and you might wind up where you don’t belong.
+        <div className={classes.dContainer}>
+          <DialogTitle>
+            <div className={classes.dTitle + ' heading-font'}>
+              Why this questionnaire?
             </div>
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button variant='contained' className={classes.dButton} onClick={handleClose} color='primary'>
-            Close
-          </Button>
-        </DialogActions>
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              <div className={classes.dContent}>
+                Before you answer the call of battle, you must find your true calling by answering this questionnaire.
+                <br /><br />
+                Stay true to yourself and trust your instincts. <span style={{ color: 'red' }}>Beware! One false step and you might wind up where you don’t belong.</span>
+              </div>
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button variant='contained' className={classes.dButton} onClick={handleClose} color='primary'>
+              Close
+            </Button>
+          </DialogActions>
+        </div>
       </Dialog>
     )
   }
@@ -96,7 +98,7 @@ export const QnAPage = () => {
 
   const submitHandler = () => {
     axios
-      .post(BACKEND_API + '/api/quiz/saveAnswers', { questions: values }, { withCredentials: true, credentials: 'include' })
+      .post(BACKEND_API + '/api/quiz/saveAnswers/', { questions: values }, { withCredentials: true, credentials: 'include' })
       .then((res) => {
         if (res.status === 200) {
           toast.success(res.data.message)

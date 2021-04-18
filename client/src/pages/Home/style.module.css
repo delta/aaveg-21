@@ -1,3 +1,8 @@
+.totalDiv {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .bgimg {
   position: fixed;
   width: 100%;
@@ -130,6 +135,13 @@
     margin-left: 0%
   }
 
+}
+
+@media screen and (max-width: 800px) {
+  .totalDiv {
+    height: calc(100vh);
+    overflow: hidden;
+  }
 }
 
 @media screen and (max-width: 650px) {
