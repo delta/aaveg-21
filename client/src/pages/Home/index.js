@@ -18,11 +18,15 @@ export const Home = () => {
   const history = useHistory()
   useEffect(() => {
     const l = () => {
-      let hei = document.getElementById('content-div').offsetHeight
-      hei = hei / window.innerHeight
-      hei += 2.5
-      setHeight(hei)
-      document.getElementById('pillar').style.height = (hei - 1.4) * 100 + 'vh'
+      try {
+        let hei = document.getElementById('content-div').offsetHeight
+        hei = hei / window.innerHeight
+        hei += 2.5
+        setHeight(hei)
+        document.getElementById('pillar').style.height = (hei - 1.4) * 100 + 'vh'
+      } catch (e) {
+        console.log(e)
+      }
     }
     const k = () => {
       if (height === -1) {
@@ -52,44 +56,35 @@ export const Home = () => {
         </ParallaxLayer>
 
         <ParallaxLayer offset={0} speed={0.5} style={{ opacity: 1 }}>
-          <img src={bgimg} alt='cloud' className={styles.bgimg} />
+          <img src={bgimg} alt='temple' className={styles.bgimg} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.25} speed={0.8} style={{ opacity: 0.1 }}>
           <img src={cloud} alt='cloud' style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '10%', marginLeft: '15%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={2} speed={0.5} style={{ opacity: 0.1 }}>
           <img src={cloud} alt='cloud' style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '20%', marginLeft: '40%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={2} speed={0.2} style={{ opacity: 0.2 }}>
           <img src={cloud} alt='cloud' style={{ display: 'block', width: '10%', marginLeft: '10%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '20%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={1.85} speed={-0.1} style={{ opacity: 0.4 }}>
           <img src={cloud} alt='cloud' style={{ display: 'block', width: '20%', marginLeft: '70%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '5%', marginLeft: '2%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '10%', marginLeft: '20%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={2} speed={0.4} style={{ opacity: 0.1 }}>
           <img src={cloud} alt='cloud' style={{ display: 'block', width: '20%', marginLeft: '85%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '15%', marginLeft: '10%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={3} speed={0.5} style={{ opacity: 0.1 }}>
           <img src={cloud} alt='cloud' style={{ display: 'block', width: '10%', marginLeft: '25%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '15%', marginLeft: '70%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={3.5} speed={0.6} style={{ opacity: 0.3 }}>
           <img src={cloud} alt='cloud' style={{ display: 'block', width: '10%', marginLeft: '85%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '15%', marginLeft: '20%' }} />
-          <img src={cloud} alt='cloud' style={{ display: 'block', width: '23%', marginLeft: '70%' }} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={3.8} speed={0.1} style={{ opacity: 0.4 }}>

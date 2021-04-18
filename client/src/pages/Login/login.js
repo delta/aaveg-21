@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Grid, Typography, Paper, TextField, Button, InputAdornment } from '@material-ui/core'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import LockIcon from '@material-ui/icons/Lock'
@@ -20,6 +20,24 @@ export const Login = () => {
 
   const [webmail, setWebmail] = useState('')
   const [password, setPassword] = useState('')
+
+  useEffect(() => {
+    axios
+      .get(BACKEND_API + '/api/auth/info/', { withCredentials: true, credentials: 'include' })
+      .then((res) => {
+        if (res.status === 200) {
+          console.log(res.data)
+          if (!res.data.isFilled) {
+            history.push('/quiz')
+          } else {
+            history.push('/attempted')
+          }
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }, [history])
 
   const handleLogin = () => {
     const loginData = {
