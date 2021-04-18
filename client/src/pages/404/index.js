@@ -5,6 +5,8 @@ import { useStyles } from './styles'
 import { useHistory } from 'react-router'
 import bgimg from '../../assets/images/questionPage.png'
 import meme from '../../assets/images/404.jpeg'
+import { Footer } from '../../components/Footer'
+import { SocialIcons } from '../../components/SocialMedia'
 
 export const P404 = () => {
   const classes = useStyles()
@@ -28,6 +30,8 @@ export const P404 = () => {
           </div>
         </main>
       </section>
+      <SocialIcons />
+      <Footer />
     </section>
   )
 }

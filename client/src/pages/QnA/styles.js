@@ -22,7 +22,7 @@ export const useStyles = makeStyles((theme) => ({
   container: {
     textAlign: 'center',
     position: 'fixed',
-    top: '50vh',
+    top: 'calc(50vh + 40px)',
     left: '50vw',
     transform: 'translate(-50%, -50%)',
     minWidth: '100em',
@@ -102,7 +102,7 @@ export const useStyles = makeStyles((theme) => ({
 
   // For dialog box
   dContainer: {
-    background: 'rgba( 0, 0, 0, 0.45 )',
+    background: 'rgba( 0, 0, 0, 0.45 ) !important',
     boxShadow: '0 0 12px 10px rgba( 31, 38, 135, 0.37 )',
     backdropFilter: 'blur( 10.0px )',
     borderRadius: '10px',

@@ -10,6 +10,8 @@ import white from '../../assets/images/white.png'
 import moon from '../../assets/images/moon.png'
 import cloud from '../../assets/images/cloud.svg'
 import aaveg from '../../assets/images/aavegwhite.png'
+import { Footer } from '../../components/Footer'
+import { SocialIcons } from '../../components/SocialMedia'
 
 export const Home = () => {
   const [height, setHeight] = useState(-1)
@@ -32,15 +34,10 @@ export const Home = () => {
       }
     }
     k()
-    window.onresize = () => {
-      setHeight(-1)
-      k()
-    }
   }, [height])
   return (
-    <>
+    <div className={styles.totalDiv}>
       <Parallax pages={height} style={{ position: 'fixed' }}>
-        {/* pages should be changed according to content */}
 
         <ParallaxLayer offset={0} speed={0.2} style={{ opacity: 1 }}>
           <div id='stars' />
@@ -107,8 +104,8 @@ export const Home = () => {
           <img src={pillar} alt='pillar' id='pillar' className={styles.pillar} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={height - 0.9} speed={0.1} style={{ opacity: 1 }}>
-          <img src={kingdom} alt='pillar' className={styles.kingdom} />
+        <ParallaxLayer offset={height - 0.94} speed={0.1} style={{ opacity: 1 }}>
+          <img src={kingdom} alt='kingdom' className={styles.kingdom} />
         </ParallaxLayer>
 
         <ParallaxLayer offset={0.1} speed={-0.1} style={{ pointerEvents: 'none' }}>
@@ -153,6 +150,8 @@ export const Home = () => {
           <div className={styles.btn}><Button className={styles.button} onClick={() => { history.push('/login') }}>Login to Fill Questionnaire</Button></div>
         </div>
       </Parallax>
-    </>
+      <SocialIcons />
+      <Footer />
+    </div>
   )
 }

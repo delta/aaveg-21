@@ -1,13 +1,19 @@
 import { makeStyles } from '@material-ui/core/styles'
 
 export const useStyles = makeStyles((theme) => ({
+  totalDiv: {
+    position: 'relative',
+    width: '100vw',
+    height: 'calc(100vh - 90px)'
+  },
   paper: {
     alignItems: 'center',
     paddingBottom: '20px',
     paddingTop: '20px',
     position: 'relative',
     margin: '0%',
-    marginTop: '60px',
+    marginTop: '90px',
+    marginBottom: '90px',
     left: '9.5%',
     width: '80%',
     background: 'rgba( 0, 0, 0, 0.45 )',
@@ -18,6 +24,10 @@ export const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down(400)]: {
       left: '4.5%',
       width: '90%'
+    },
+    [theme.breakpoints.up(1000)]: {
+      left: '14.5%',
+      width: '70%'
     }
   },
   title: {
@@ -60,22 +70,11 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: '#6e946e'
     }
   },
-  container: {
-    height: 'calc(100% - 100px)',
-    margin: theme.spacing(2),
-    width: 'auto'
-  },
   bgimg: {
     position: 'fixed',
     width: '100%',
     height: '100%',
     bottom: 0,
     left: 0
-  },
-  vpn: {
-    height: 'calc(100vh - 145px)',
-    [theme.breakpoints.down(800)]: {
-      height: 'calc(100vh - 120px)'
-    }
   }
 }))

@@ -4,6 +4,8 @@ import { Button } from '@material-ui/core'
 import { useStyles } from './styles'
 import { useHistory } from 'react-router'
 import bgimg from '../../assets/images/questionPage.png'
+import { Footer } from '../../components/Footer'
+import { SocialIcons } from '../../components/SocialMedia'
 
 export const Seniors = () => {
   const classes = useStyles()
@@ -29,6 +31,8 @@ export const Seniors = () => {
           </div>
         </main>
       </section>
+      <SocialIcons />
+      <Footer />
     </section>
   )
 }

@@ -28,7 +28,7 @@ export const Login = () => {
     }
 
     axios
-      .post(BACKEND_API + '/api/auth/login', loginData, { withCredentials: true, credentials: 'include' })
+      .post(BACKEND_API + '/api/auth/login/', loginData, { withCredentials: true, credentials: 'include' })
       .then((res) => {
         if (res.status === 200) {
           dispatch(loginSuccess(res.data))
@@ -57,75 +57,65 @@ export const Login = () => {
   return (
     <>
       <img src={bgimg} className={classes.bgimg && styles.bgimg} alt='bgimg' />
-      <Grid
-        container
-        direction='row'
-        justify='center'
-        alignItems='center'
-        className={classes.container}
-      >
-        <Grid container className={classes.vpn} item direction='row' lg={9} md={9} alignItems='center'>
-          <Paper elevation={6} className={classes.paper}>
-            <Grid
-              container
-              direction='column'
-              alignItems='center'
-              justify='space-between'
-            >
-              <Grid item>
-                <img src={logo} alt='logo' width={150} />
-              </Grid>
-              <Typography variant='h2' color='textPrimary' component='h2' className={classes.title + ' heading-font'}>
-                Login
-              </Typography>
-              <TextField
-                label='Webmail ID'
-                variant='outlined'
-                size='medium'
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <AccountCircleIcon />
-                    </InputAdornment>
-                  )
-                }}
-                autoComplete='webamil'
-                onChange={(e) => setWebmail(e.target.value)}
-                className={classes.TextFields}
-              />
-              <TextField
-                label='Password'
-                variant='outlined'
-                size='medium'
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position='end'>
-                      <LockIcon />
-                    </InputAdornment>
-                  )
-                }}
-                type='password'
-                autoComplete='current-password'
-                onChange={(e) => setPassword(e.target.value)}
-                className={classes.TextFields}
-              />
-              <Button
-                className={classes.Button}
-                variant='contained'
-                size='large'
-                style={{
-                  backgroundColor: '#6e946e',
-                  color: '#ffffff'
-                }}
-                onClick={handleLogin}
-              >
-                Login
-              </Button>
+      <Paper elevation={6} className={classes.paper}>
+        <Grid
+          container
+          direction='column'
+          alignItems='center'
+          justify='space-between'
+        >
+          <Grid item>
+            <img src={logo} alt='logo' width={150} />
+          </Grid>
+          <Typography variant='h2' color='textPrimary' component='h2' className={classes.title + ' heading-font'}>
+            Login
+          </Typography>
+          <TextField
+            label='Webmail ID'
+            variant='outlined'
+            size='medium'
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position='end'>
+                  <AccountCircleIcon />
+                </InputAdornment>
+              )
+            }}
+            autoComplete='webamil'
+            onChange={(e) => setWebmail(e.target.value)}
+            className={classes.TextFields}
+          />
+          <TextField
+            label='Password'
+            variant='outlined'
+            size='medium'
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position='end'>
+                  <LockIcon />
+                </InputAdornment>
+              )
+            }}
+            type='password'
+            autoComplete='current-password'
+            onChange={(e) => setPassword(e.target.value)}
+            className={classes.TextFields}
+          />
+          <Button
+            className={classes.Button}
+            variant='contained'
+            size='large'
+            style={{
+              backgroundColor: '#6e946e',
+              color: '#ffffff'
+            }}
+            onClick={handleLogin}
+          >
+            Login
+          </Button>
 
-            </Grid>
-          </Paper>
         </Grid>
-      </Grid>
+      </Paper>
       <Toaster
         position='bottom-right'
         toastOptions={{

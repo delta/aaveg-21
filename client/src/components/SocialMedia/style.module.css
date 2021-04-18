@@ -1,5 +1,5 @@
 .ul {
-  position: absolute;
+  position: fixed;
   display: flex;
   margin-left: auto;
   bottom: 40px;
