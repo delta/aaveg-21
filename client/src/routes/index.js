@@ -31,6 +31,7 @@ export const Routes = () => {
     isAuth = user.isAuthenticated
   }
   return (
+    // <Router basename='/demo'>
     <Router>
       <ThemeProvider theme={dark}>
         <NavBar />
