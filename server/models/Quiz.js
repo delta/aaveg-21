@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const quizSchema = mongoose.Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
+  rollnumber: {
+    type: String,
     required: true
   },
   questions: {

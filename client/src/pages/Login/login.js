@@ -4,7 +4,6 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import LockIcon from '@material-ui/icons/Lock'
 import { useDispatch } from 'react-redux'
 import axios from 'axios'
-import styles from '../Home/style.module.css'
 import { useHistory } from 'react-router-dom'
 import { useStyles } from './styles'
 import { BACKEND_API } from '../../config/config'
@@ -74,7 +73,7 @@ export const Login = () => {
 
   return (
     <>
-      <img src={bgimg} className={classes.bgimg && styles.bgimg} alt='bgimg' />
+      <img src={bgimg} className={classes.bgimg} alt='bgimg' />
       <Paper elevation={6} className={classes.paper}>
         <Grid
           container

@@ -76,15 +76,22 @@ export const QnAPage = () => {
 
   useEffect(() => {
     const val = new Array(qList.length).fill(null)
-    const ques = qList.map((item) => {
-      return { ...item, answers: item.answers.sort(() => 0.5 - Math.random()) }
-    })
+    let ques
+    if (!user.isGirl) {
+      ques = qList.map((item) => {
+        return { ...item, answers: item.answers.slice(1, 5).sort(() => 0.5 - Math.random()) }
+      })
+    } else {
+      ques = qList.map((item) => {
+        return { ...item, answers: item.answers.sort(() => 0.5 - Math.random()) }
+      })
+    }
     const lastQuestion = ques.pop()
     ques.sort(() => 0.5 - Math.random()).push(lastQuestion)
     setValues(val)
     setQues(ques)
     setLoading(false)
-  }, [])
+  }, [user])
 
   const handleChange = e => {
     const val = e.target.value

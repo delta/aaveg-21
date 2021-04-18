@@ -97,7 +97,7 @@ exports.login = async (req, res) => {
 exports.validateJWT = async (req, res, next) => {
   if (!req.signedCookies.auth) {
     logger.error('Auth cookie does not exist')
-    res.status(400).json({ message: 'Missing API token' })
+    res.status(206).json({ message: 'Missing API token' })
     return
   }
   const APIToken = req.signedCookies.auth
