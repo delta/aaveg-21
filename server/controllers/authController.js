@@ -3,6 +3,7 @@ const Student = require('../models/Student')
 const config = require('../config/config')
 const logger = require('../config/winston')
 const authFetch = require('../utils/authUtil')
+const girlsRollNumber = require('../config/girlsRollNumber')
 
 exports.login = async (req, res) => {
   logger.silly(req.body)
@@ -12,8 +13,16 @@ exports.login = async (req, res) => {
     return
   }
   const { email, password } = req.body
+  const emailregex = /^[\d]{9}@nitt.edu$/gm
+
+  if (!emailregex.test(email)) {
+    logger.warn(`${email} is not Webmail`)
+    res.status(401).json({ message: 'Please check your Webmail ID' })
+    return
+  }
+
   const rollnumber = email.split('@')[0]
-  const regex = /[\d]{4}20[\d]{3}/gm
+  const regex = /^[\d]{4}20[\d]{3}$/gm
 
   if (!regex.test(rollnumber) && !config.adminUsers.includes(rollnumber)) {
     logger.warn(`Roll number ${rollnumber} does not belong to first year or admin`)
@@ -34,16 +43,19 @@ exports.login = async (req, res) => {
         // If student doesn't exist create a new entry.
         if (!student) {
           logger.info(`Creating new db entry for roll number ${rollnumber}`)
-
+          const isGirl = girlsRollNumber.includes(rollnumber)
           const newStudent = new Student({
-            rollnumber: rollnumber
+            rollnumber: rollnumber,
+            isGirl: isGirl
           })
           await newStudent.save()
           response.user_id = newStudent._id
           response.isFilled = newStudent.isFilled
+          response.isGirl = newStudent.isGirl
         } else {
           response.user_id = student._id
           response.isFilled = student.isFilled
+          response.isGirl = student.isGirl
         }
         const APIToken = await jwt.sign(
           {
@@ -65,7 +77,6 @@ exports.login = async (req, res) => {
             signed: true
           })
         logger.info(`Student ${rollnumber} logged in`)
-
         res.status(200).send(response)
       }
     )
@@ -113,6 +124,7 @@ exports.validateJWT = async (req, res, next) => {
             req.user.rollnumber = decoded.rollnumber
             req.user.isAdmin = decoded.isAdmin
             req.user.isFilled = student.isFilled
+            req.user.isGirl = student.isGirl
             next()
           }
         })

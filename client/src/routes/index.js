@@ -31,8 +31,7 @@ export const Routes = () => {
     isAuth = user.isAuthenticated
   }
   return (
-    // <Router basename='/demo'>
-    <Router>
+    <Router basename={`${process.env.REACT_APP_BASENAME}`}>
       <ThemeProvider theme={dark}>
         <NavBar />
         <Switch>
