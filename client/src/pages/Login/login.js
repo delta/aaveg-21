@@ -7,7 +7,7 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { useStyles } from './styles'
 import { BACKEND_API } from '../../config/config'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { loginSuccess } from '../../actions/user'
 import logo from '../../assets/images/aavegwhite.png'
 import bgimg from '../../assets/images/loginPage.png'
@@ -49,7 +49,7 @@ export const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           dispatch(loginSuccess(res.data))
-          toast.success(res.data.message)
+          toast.success('Login Successful')
           if (!res.data.isFilled) {
             history.push('/quiz')
           } else {
@@ -130,21 +130,8 @@ export const Login = () => {
           >
             Login
           </Button>
-
         </Grid>
       </Paper>
-      <Toaster
-        position='bottom-right'
-        toastOptions={{
-          style: {
-            background: '#262626',
-            color: '#fff'
-          },
-          iconTheme: {
-            secondary: '#262626'
-          }
-        }}
-      />
     </>
   )
 }

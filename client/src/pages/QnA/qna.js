@@ -8,7 +8,7 @@ import { useStyles } from './styles'
 import logo from '../../assets/images/aavegwhite.png'
 import bgimg from '../../assets/images/questionPage.png'
 import { BACKEND_API } from '../../config/config'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { useHistory } from 'react-router-dom'
 
 import axios from 'axios'
@@ -20,7 +20,7 @@ export const QnAPage = () => {
   const classes = useStyles()
   const [questions, setQues] = useState([])
   const [values, setValues] = useState([])
-  const [dialogOpen, setDialogOpen] = useState(true)
+  const [dialogOpen, setDialogOpen] = useState(false)
   const [loading, setLoading] = useState(true)
   const ref = useRef()
 
@@ -75,6 +75,7 @@ export const QnAPage = () => {
   }
 
   useEffect(() => {
+    setDialogOpen(true)
     const val = new Array(qList.length).fill(null)
     let ques
     if (!user.isGirl) {
@@ -107,9 +108,7 @@ export const QnAPage = () => {
       .then((res) => {
         if (res.status === 200) {
           toast.success('We have recieved your response')
-          setTimeout(() => {
-            history.push('/attempted')
-          }, 2000)
+          history.push('/attempted')
         } else if (res.status === 204) {
           toast.error('You have already filled the form. Here is a surprise.')
           setTimeout(() => { window.open('https://bit.ly/32g9Sw2'); history.push('/') }, 2000)
@@ -160,18 +159,6 @@ export const QnAPage = () => {
             </Carousel>
           </div>
           <InfoDialog open={dialogOpen} setOpen={setDialogOpen} />
-          <Toaster
-            position='bottom-right'
-            toastOptions={{
-              style: {
-                background: '#262626',
-                color: '#fff'
-              },
-              iconTheme: {
-                secondary: '#262626'
-              }
-            }}
-          />
         </div>
       </div>
     )

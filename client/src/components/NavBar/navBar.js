@@ -7,7 +7,7 @@ import {
   IconButton,
   Button
 } from '@material-ui/core'
-import toast, { Toaster } from 'react-hot-toast'
+import toast from 'react-hot-toast'
 import { useStyles } from './styles.js'
 import AavegLogo from '../../assets/images/aaveg.png'
 import { useDispatch, useSelector } from 'react-redux'
@@ -54,18 +54,6 @@ export const NavBar = (props) => {
           {location.pathname !== '/login/' && location.pathname !== '/login' ? <Button key='logout' onClick={clickHandle} className={classes.LogButton} color='primary'>{user.isAuthenticated === true ? <><FontAwesomeIcon icon={faSignOutAlt} style={{ paddingRight: '5px' }} />Logout</> : <><FontAwesomeIcon icon={faSignInAlt} style={{ paddingRight: '5px' }} /> Login</>}</Button> : null}
         </Toolbar>
       </AppBar>
-      <Toaster
-        position='bottom-right'
-        toastOptions={{
-          style: {
-            background: '#262626',
-            color: '#fff'
-          },
-          iconTheme: {
-            secondary: '#262626'
-          }
-        }}
-      />
     </>
   )
 }

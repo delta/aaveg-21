@@ -36,7 +36,7 @@
   color: #fff;
   font-size: 30px;
   text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
+  text-shadow: 2px 2px 6px #ff0000;
 }
 
 .topDiv {
@@ -204,16 +204,6 @@
 
   .tm {
     font-size: 6px;
-  }
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 2px 2px 6px #ff0000;
-  }
-
-  to {
-    text-shadow: 4px 4px 10px #ff0000;
   }
 }
 
