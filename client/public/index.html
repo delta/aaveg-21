@@ -58,7 +58,7 @@
   <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('/serviceworker.js').then(
+      navigator.serviceWorker.register('%PUBLIC_URL%/serviceworker.js').then(
         function (registration) {
           console.log(
             'ServiceWorker registration successful with scope: ',
