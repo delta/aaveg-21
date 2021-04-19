@@ -20,8 +20,6 @@ body {
   -moz-animation: fadein 3s;
   animation: fadein 3s;
   overflow-x: hidden;
-  -webkit-box-shadow: 0 0 0 100px #563710 inset !important;
-  box-shadow: 0 0 0 100px #563710 inset !important;
 }
 
 @keyframes fadein {
