@@ -1,48 +1,34 @@
-const cacheName = 'version-1'
 const contentToCache = [
-  '../src/assets/images/404.jpeg',
-  '../src/assets/images/Aaveg Glpyh-Black.png',
-  '../src/assets/images/aaveg.png',
-  '../src/assets/images/aaveggray.png',
-  '../src/assets/images/aavegwhite.png',
-  '../src/assets/images/bgimg.png',
-  '../src/assets/images/bgimg2.png',
-  '../src/assets/images/cloud.svg',
-  '../src/assets/images/loginPage.png',
-  '../src/assets/images/moon.png',
-  '../src/assets/images/questionPage.png',
-  '../src/assets/images/stacked-peaks-haikei.png',
-  '../src/assets/images/white.png',
+  'static/media/404.e9b9c6f8.jpeg',
+  'static/media/aaveg.57a86dd6.png',
+  'static/media/aavegwhite.bb6bfc58.png',
+  'static/media/bgImg1.3c4b07a8.png',
+  'static/media/bgImg2.705904ee.png',
+  'static/media/cloud.ee4c9d85.svg',
+  'static/media/loginPage.a3214445.png',
+  'static/media/moon.6703c2f6.png',
+  'static/media/questionPage.90583f09.png',
+  'static/media/stacked-peaks-haikei.f6562424.png',
+  'static/media/temple-right.fd7812b2.png',
+  'static/media/white.ea25cae0.png',
   'https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;700;900&display=swap',
-  'https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap']
+  'https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap'
+]
 
 const self = this
 
-// Install SW
-self.addEventListener('install', (e) => {
-  e.waitUntil((async () => {
-    const cache = await caches.open(cacheName)
-    await cache.addAll(contentToCache)
-  })())
+self.addEventListener('install', function (event) {
+  event.waitUntil(
+    caches.open('images').then(function (cache) {
+      return cache.addAll(contentToCache)
+    })
+  )
 })
 
-self.addEventListener('fetch', (e) => {
-  e.respondWith((async () => {
-    const r = await caches.match(e.request)
-    if (r) { return r }
-    const response = await fetch(e.request)
-    const cache = await caches.open(cacheName)
-    cache.put(e.request, response.clone())
-    return response
-  })())
-})
-
-self.addEventListener('activate', (e) => {
-  e.waitUntil((async () => {
-    const keyList = await caches.keys()
-    await Promise.all(keyList.map(async (key) => {
-      if (key === cacheName) { return }
-      await caches.delete(key)
-    }))
-  })())
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      return response || fetch(event.request)
+    })
+  )
 })

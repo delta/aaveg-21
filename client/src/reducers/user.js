@@ -3,7 +3,8 @@ import { AUTH_REQUEST, AUTH_SUCCESS, AUTH_FAILURE, LOGIN, LOGOUT } from '../acti
 const initialState = {
   isAuthenticated: false,
   rollNo: null,
-  loading: 'initial'
+  loading: 'initial',
+  isGirl: null
 }
 
 export default function reducer (state = initialState, action) {
@@ -12,6 +13,7 @@ export default function reducer (state = initialState, action) {
       return {
         ...state,
         rollNo: action.payload.rollnumber,
+        isGirl: action.payload.isGirl,
         isAuthenticated: true
       }
     case AUTH_SUCCESS:
@@ -36,6 +38,7 @@ export default function reducer (state = initialState, action) {
       return {
         ...state,
         rollNo: null,
+        isGirl: null,
         isAuthenticated: false
       }
     default:

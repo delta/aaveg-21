@@ -14,8 +14,8 @@ exports.saveAnswers = async (req, res) => {
       } else {
       // If quiz already there then update
         const newQuiz = new Quiz({
-          userId: student._id,
-          questions: questions
+          questions: questions,
+          rollnumber: student.rollnumber
         })
         await newQuiz.save()
         student.quizId = newQuiz._id

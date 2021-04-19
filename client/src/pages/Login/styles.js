@@ -75,6 +75,12 @@ export const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
     bottom: 0,
-    left: 0
+    left: 0,
+    [theme.breakpoints.down(800)]: {
+      transform: 'scaleX(2)'
+    },
+    [theme.breakpoints.down(500)]: {
+      transform: 'scaleX(2.8)'
+    }
   }
 }))

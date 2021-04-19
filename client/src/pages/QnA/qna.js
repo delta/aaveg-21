@@ -76,15 +76,22 @@ export const QnAPage = () => {
 
   useEffect(() => {
     const val = new Array(qList.length).fill(null)
-    const ques = qList.map((item) => {
-      return { ...item, answers: item.answers.sort(() => 0.5 - Math.random()) }
-    })
+    let ques
+    if (!user.isGirl) {
+      ques = qList.map((item) => {
+        return { ...item, answers: item.answers.slice(1, 5).sort(() => 0.5 - Math.random()) }
+      })
+    } else {
+      ques = qList.map((item) => {
+        return { ...item, answers: item.answers.sort(() => 0.5 - Math.random()) }
+      })
+    }
     const lastQuestion = ques.pop()
     ques.sort(() => 0.5 - Math.random()).push(lastQuestion)
     setValues(val)
     setQues(ques)
     setLoading(false)
-  }, [])
+  }, [user])
 
   const handleChange = e => {
     const val = e.target.value
@@ -99,8 +106,10 @@ export const QnAPage = () => {
       .post(BACKEND_API + '/api/quiz/saveAnswers/', { questions: values }, { withCredentials: true, credentials: 'include' })
       .then((res) => {
         if (res.status === 200) {
-          toast.success(res.data.message)
-          history.push('/attempted')
+          toast.success('We have recieved your response')
+          setTimeout(() => {
+            history.push('/attempted')
+          }, 2000)
         } else if (res.status === 204) {
           toast.error('You have already filled the form. Here is a surprise.')
           setTimeout(() => { window.open('https://bit.ly/32g9Sw2'); history.push('/') }, 2000)

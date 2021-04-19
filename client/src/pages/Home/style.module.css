@@ -7,7 +7,7 @@
   position: fixed;
   width: 100%;
   height: calc(100% - 32px);
-  background: rgb(120, 60, 20);
+  background: rgb(10, 10, 30);
   background-position: center;
   background-size: cover;
 }
@@ -100,6 +100,7 @@
 
   .bgimg {
     width: 200vw;
+    left: -100vw;
   }
 
   .pillar,

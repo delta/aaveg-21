@@ -46,11 +46,12 @@ export const NavBar = (props) => {
             color='inherit'
             aria-label='open drawer'
             edge='start'
+            onClick={() => history.push('/')}
             className={clsx(classes.menuButton)}
           >
             <div className='imgDiv'><img src={AavegLogo} style={{ width: '80px', height: '30px' }} alt='aaveg' id='aaveg' /></div>
           </IconButton>
-          {location.pathname !== '/login' ? <Button key='logout' onClick={clickHandle} className={classes.LogButton} color='primary'>{user.isAuthenticated === true ? <><FontAwesomeIcon icon={faSignOutAlt} style={{ paddingRight: '5px' }} />Logout</> : <><FontAwesomeIcon icon={faSignInAlt} style={{ paddingRight: '5px' }} /> Login</>}</Button> : null}
+          {location.pathname !== '/login/' && location.pathname !== '/login' ? <Button key='logout' onClick={clickHandle} className={classes.LogButton} color='primary'>{user.isAuthenticated === true ? <><FontAwesomeIcon icon={faSignOutAlt} style={{ paddingRight: '5px' }} />Logout</> : <><FontAwesomeIcon icon={faSignInAlt} style={{ paddingRight: '5px' }} /> Login</>}</Button> : null}
         </Toolbar>
       </AppBar>
       <Toaster
