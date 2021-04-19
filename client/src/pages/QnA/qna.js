@@ -106,8 +106,10 @@ export const QnAPage = () => {
       .post(BACKEND_API + '/api/quiz/saveAnswers/', { questions: values }, { withCredentials: true, credentials: 'include' })
       .then((res) => {
         if (res.status === 200) {
-          toast.success(res.data.message)
-          history.push('/attempted')
+          toast.success('We have recieved your response')
+          setTimeout(() => {
+            history.push('/attempted')
+          }, 2000)
         } else if (res.status === 204) {
           toast.error('You have already filled the form. Here is a surprise.')
           setTimeout(() => { window.open('https://bit.ly/32g9Sw2'); history.push('/') }, 2000)
