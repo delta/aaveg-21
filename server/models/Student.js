@@ -16,6 +16,10 @@ const studentSchema = mongoose.Schema({
   quizId: {
     type: mongoose.Schema.Types.ObjectId,
     default: null
+  },
+  isGirl: {
+    type: Boolean,
+    required: true
   }
 })
 
