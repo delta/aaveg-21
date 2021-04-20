@@ -128,11 +128,11 @@ export const Home = () => {
           </div>
           <br />
           <div>
-            Ever since the inception of the universe, the mortal realm has been split on the basis of various religion, cultures and languages. Here we present to you Panchalokha : a utopian world where none of this matters. The people of this world are divided into 5 kingdoms but are still united by their common respect to Shakthi, the supreme empress.
+            Ever since the inception of the universe, the mortal realm has been split on the basis of various religions, cultures and languages. Here we present to you Panchalokha : a utopian world where none of this matters. The people of this world are divided into 5 kingdoms but are still united by their devotion to Shakthi, the supreme empress.
           </div>
           <br />
           <div>
-            The kind and patient ruler of Panchalokha is firm, yet motherly. She breathes life into all but is unyielding to injustice. She is the omnipresent energy that binds all life. Shakthi guides her people to prosperity and is the epitome of peace.
+            The kind and patient ruler of Panchalokha is firm, yet motherly. She breathes life into all but is a formidable enemy to any form of injustice. She is the omnipresent energy that binds all life. Shakthi guides her people to prosperity and is the epitome of peace.
           </div>
           <br />
           <div>
