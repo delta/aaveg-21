@@ -47,7 +47,7 @@ export const qList = [
     qId: '3',
     question:
     [
-      'If you could choose one trait from the following, which one would it be?'
+      'If you could choose only on of the following, which one would it be?'
     ],
     answers: [{
       ansId: '031',
