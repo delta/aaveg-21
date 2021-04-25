@@ -3,6 +3,7 @@ import { Login } from '../pages/Login'
 import { QnAPage } from '../pages/QnA'
 import { QuizAttempted } from '../pages/QnA-Attempted'
 import { Seniors } from '../pages/Seniors'
+import { WebmailError } from '../pages/Webmail'
 
 export const publicRoutes = [
   {
@@ -16,6 +17,10 @@ export const publicRoutes = [
   {
     url: '/seniors',
     component: Seniors
+  },
+  {
+    url: '/webmail',
+    component: WebmailError
   }
 ]
 
