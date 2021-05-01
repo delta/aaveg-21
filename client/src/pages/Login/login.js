@@ -26,7 +26,11 @@ export const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           console.log(res.data)
-          history.push('/results')
+          if (!res.data.isFilled) {
+            history.push('/quiz')
+          } else {
+            history.push('/attempted')
+          }
         }
       })
       .catch((err) => {
@@ -46,11 +50,7 @@ export const Login = () => {
         if (res.status === 200) {
           dispatch(loginSuccess(res.data))
           toast.success('Login Successful')
-          if (!res.data.isFilled) {
-            history.push('/quiz')
-          } else {
-            history.push('/attempted')
-          }
+          history.push('/results')
         } else {
           toast.error(res.message)
         }
