@@ -47,7 +47,7 @@ export const Results = () => {
             let highlight = 0x6b00b6
             console.log(res.data.hostel)
             switch (res.data.hostel) {
-              case 'agni':
+              case 'Agni':
                 highlight = 0xd97838
                 setSrc(agni)
                 setCont(['Agni', 'Unleash your flames'])
@@ -56,7 +56,7 @@ export const Results = () => {
                   return prev
                 })
                 break
-              case 'akash':
+              case 'Akash':
                 highlight = 0x7900c0
                 setSrc(akash)
                 setCont(['Akash', 'Venture among the stars'])
@@ -74,7 +74,7 @@ export const Results = () => {
                   return prev
                 })
                 break
-              case 'prithvi':
+              case 'Prithvi':
                 highlight = 0xc06e
                 setSrc(prithvi)
                 setCont(['Prithvi', 'The ground trembles in your wake'])
@@ -83,7 +83,7 @@ export const Results = () => {
                   return prev
                 })
                 break
-              case 'vayu':
+              case 'Vayu':
                 highlight = 0x9ce5ff
                 setSrc(vayu)
                 setCont(['Vayu', 'May the winds guide you'])
