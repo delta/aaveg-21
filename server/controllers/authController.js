@@ -52,10 +52,12 @@ exports.login = async (req, res) => {
           response.user_id = newStudent._id
           response.isFilled = newStudent.isFilled
           response.isGirl = newStudent.isGirl
+          response.hostel = student.hostel
         } else {
           response.user_id = student._id
           response.isFilled = student.isFilled
           response.isGirl = student.isGirl
+          response.hostel = student.hostel
         }
         const APIToken = await jwt.sign(
           {
@@ -125,6 +127,7 @@ exports.validateJWT = async (req, res, next) => {
             req.user.isAdmin = decoded.isAdmin
             req.user.isFilled = student.isFilled
             req.user.isGirl = student.isGirl
+            req.user.hostel = student.hostel
             next()
           }
         })
