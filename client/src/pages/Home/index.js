@@ -142,7 +142,7 @@ export const Home = () => {
           <div>
             Find your role in all of this and prepare yourself for a contest of wits and strengths. Which clan will have the privilege of drafting you into their ranks?
           </div>
-          <div className={styles.btn}><Button className={styles.button} onClick={() => { history.push('/login') }}>Login to Fill Questionnaire</Button></div>
+          <div className={styles.btn}><Button className={styles.button} onClick={() => { history.push('/login') }}>Login To View Your Clan</Button></div>
         </div>
       </Parallax>
       <SocialIcons />

@@ -26,11 +26,7 @@ export const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           console.log(res.data)
-          if (!res.data.isFilled) {
-            history.push('/quiz')
-          } else {
-            history.push('/attempted')
-          }
+          history.push('/results')
         }
       })
       .catch((err) => {
