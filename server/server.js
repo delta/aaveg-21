@@ -1,11 +1,11 @@
 const express = require('express')
-// const path = require('path')
 const cors = require('cors')
 const app = express()
 const mongoose = require('mongoose')
 const cookieparser = require('cookie-parser')
 const config = require('./config/config.js')
-
+const allocation = require('./allocation')
+const Student = require('./models/Student')
 const auth = require('./routes/auth')
 const quizRoutes = require('./routes/quizRoutes')
 
@@ -41,6 +41,18 @@ app.use('/api/auth', auth)
 
 app.get('/api/status', async (req, res) => {
   res.status(200).json({ message: 'i am alive' })
+})
+
+// seed db
+allocation.forEach(async ({ rollnumber, clan }) => {
+  if (clan !== '') {
+    console.log(rollnumber, clan)
+    const a = await Student.findOneAndUpdate(
+      { rollnumber: rollnumber },
+      { hostel: clan },
+      { upsert: true, new: true })
+    console.log(a)
+  }
 })
 
 const PORT = config.port || process.env.PORT
