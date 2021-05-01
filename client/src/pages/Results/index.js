@@ -45,7 +45,6 @@ export const Results = () => {
           if (res.status === 200) {
             setHostel(res.data.hostel)
             let highlight = 0x6b00b6
-            console.log(res.data.hostel)
             switch (res.data.hostel) {
               case 'Agni':
                 highlight = 0xd97838
