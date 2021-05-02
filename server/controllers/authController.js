@@ -2,11 +2,12 @@ const jwt = require('jsonwebtoken')
 const Student = require('../models/Student')
 const config = require('../config/config')
 const logger = require('../config/winston')
-const authFetch = require('../utils/authUtil')
+const { authFetch, authIMAP } = require('../utils/authUtil')
 const girlsRollNumber = require('../config/girlsRollNumber')
 
 exports.login = async (req, res) => {
   logger.silly(req.body)
+  const auth = process.env.NODE_ENV === 'production' ? authIMAP : authFetch
 
   if (!req.body.email || !req.body.password) {
     res.status(400).json({ message: 'Fill email and password' })
@@ -30,7 +31,8 @@ exports.login = async (req, res) => {
     return
   }
   const response = {}
-  const checkCreds = await authFetch(rollnumber, password)
+
+  const checkCreds = await auth(rollnumber, password)
   if (checkCreds === 1) {
     response.message = 'Login Successful'
     // Find User ID
@@ -43,7 +45,8 @@ exports.login = async (req, res) => {
         // If student doesn't exist create a new entry.
         if (!student) {
           logger.info(`Creating new db entry for roll number ${rollnumber}`)
-          const isGirl = girlsRollNumber.includes(rollnumber)
+
+          const isGirl = girlsRollNumber.includes(parseInt(rollnumber))
           const newStudent = new Student({
             rollnumber: rollnumber,
             isGirl: isGirl

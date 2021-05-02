@@ -46,12 +46,10 @@ app.get('/api/status', async (req, res) => {
 // seed db
 allocation.forEach(async ({ rollnumber, clan }) => {
   if (clan !== '') {
-    console.log(rollnumber, clan)
-    const a = await Student.findOneAndUpdate(
+    await Student.findOneAndUpdate(
       { rollnumber: rollnumber },
       { hostel: clan },
       { upsert: true, new: true })
-    console.log(a)
   }
 })
 

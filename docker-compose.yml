@@ -11,7 +11,7 @@ services:
     depends_on: 
       - aavegqmongo
     volumes:
-      - ./server/logs:/usr/src/app/server/logs
+      - ./server/logs:/usr/src/app/logs
   
   aavegqclient:
     build: client
@@ -34,7 +34,7 @@ services:
       - ./mongodb/data:/data/db
   aaveg-mongo-express:
     image: mongo-express
-    container_name: aavegqme_21
+    container_name: aavegqmongoexpress_21
     restart: always
     env_file: 
       - .env
