@@ -50,11 +50,7 @@ export const Login = () => {
         if (res.status === 200) {
           dispatch(loginSuccess(res.data))
           toast.success('Login Successful')
-          if (!res.data.isFilled) {
-            history.push('/quiz')
-          } else {
-            history.push('/attempted')
-          }
+          history.push('/results')
         } else {
           toast.error(res.message)
         }
