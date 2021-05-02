@@ -58,7 +58,7 @@ export const Results = () => {
               case 'Akash':
                 highlight = 0x7900c0
                 setSrc(akash)
-                setCont(['Akash', 'Venture among the stars'])
+                setCont(['Aakash', 'Venture among the stars'])
                 setConfig(prev => {
                   prev.colors = ['#6a2084', '#4e3788', '#7c2f9c', '#260830']
                   return prev
