@@ -19,7 +19,8 @@ const studentSchema = mongoose.Schema({
   },
   isGirl: {
     type: Boolean,
-    required: true
+    required: true,
+    default: false
   }
 })
 

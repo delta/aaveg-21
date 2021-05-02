@@ -52,7 +52,7 @@ exports.login = async (req, res) => {
           response.user_id = newStudent._id
           response.isFilled = newStudent.isFilled
           response.isGirl = newStudent.isGirl
-          response.hostel = student.hostel
+          response.hostel = newStudent.hostel
         } else {
           response.user_id = student._id
           response.isFilled = student.isFilled

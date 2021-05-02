@@ -34,6 +34,7 @@ services:
       - ./mongodb/data:/data/db
   aaveg-mongo-express:
     image: mongo-express
+    container_name: aavegqme_21
     restart: always
     env_file: 
       - .env
