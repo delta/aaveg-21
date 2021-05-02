@@ -12,6 +12,8 @@ import agni from '../../assets/images/agni.png'
 import Jal from '../../assets/images/jal.png'
 import prithvi from '../../assets/images/prithvi.png'
 import vayu from '../../assets/images/vaayu.png'
+import discord from '../../assets/images/discord.png'
+import teams from '../../assets/images/teams.png'
 // import aaveg from '../../assets/images/aavegwhite.png'
 
 export const Results = () => {
@@ -23,6 +25,8 @@ export const Results = () => {
   const [hostel, setHostel] = useState('Not assigned')
   const [cont, setCont] = useState(['', ''])
   const [imgSrc, setSrc] = useState()
+  // const [dis, setdis] = useState()
+  const [msteams, setmsteams] = useState()
   const [confettiConfig, setConfig] = useState({
     angle: 90,
     spread: 360,
@@ -49,47 +53,52 @@ export const Results = () => {
               case 'Agni':
                 highlight = 0xd97838
                 setSrc(agni)
-                setCont(['Agni', 'Unleash your flames'])
+                setCont(['Agni', 'Click below to unleash your flames'])
                 setConfig(prev => {
                   prev.colors = ['#fb6300', '#fb0000', '#fffbe5', '#fb6300']
                   return prev
                 })
+                setmsteams('https://shorturl.at/puLMT')
                 break
               case 'Akash':
                 highlight = 0x7900c0
                 setSrc(akash)
-                setCont(['Aakash', 'Venture among the stars'])
+                setCont(['Aakash', 'Click below to venture among the stars'])
                 setConfig(prev => {
                   prev.colors = ['#6a2084', '#4e3788', '#7c2f9c', '#260830']
                   return prev
                 })
+                setmsteams('https://shorturl.at/jstB0')
                 break
               case 'Jal':
                 highlight = 0x95c0
                 setSrc(Jal)
-                setCont(['Jal', 'Answer the ocean’s call'])
+                setCont(['Jal', 'Click below to answer the ocean’s call'])
                 setConfig(prev => {
                   prev.colors = ['#19b4c3', '#c4f3f1', '#7de7f3', '#73c9d4']
                   return prev
                 })
+                setmsteams('https://shorturl.at/psxDY')
                 break
               case 'Prithvi':
                 highlight = 0xc06e
                 setSrc(prithvi)
-                setCont(['Prithvi', 'The ground trembles in your wake'])
+                setCont(['Prithvi', 'The ground trembles in your wake. Click below to embark on your journey'])
                 setConfig(prev => {
                   prev.colors = ['#227960', '#62c39a', '#0ba093', '#158474']
                   return prev
                 })
+                setmsteams('https://shorturl.at/jqAKP')
                 break
               case 'Vayu':
                 highlight = 0x9ce5ff
                 setSrc(vayu)
-                setCont(['Vayu', 'May the winds guide you'])
+                setCont(['Vayu', 'Click below to let the winds guide you'])
                 setConfig(prev => {
                   prev.colors = ['#d4fcff', '#d4f1ff', '#87d4fa', '#deeefc']
                   return prev
                 })
+                setmsteams('https://shorturl.at/yAF37')
                 break
               default:
                 highlight = 0x6b00b6
@@ -133,10 +142,13 @@ export const Results = () => {
             <Confetti active={confetti} config={confettiConfig} /><br />
           </div>
           <div className={classes.center}>
+
+            <div className={classes.title}>You have been chosen by</div>
             <img className={classes.clanLogo} src={imgSrc} alt='Clan' /><br />
-            <div className={classes.glass}>
-              <div className={classes.title}>You have been chosen by {cont[0]}</div>{cont[1]}
-            </div>
+            <div className={classes.subtitle}>{cont[1]}.</div><br />
+
+            <a href='https://discord.gg/6G9ePBJpJ7' target='_blank' rel='noopener noreferrer'><img className={classes.discord} src={discord} alt='discord' style={{ height: '60px', padding: '30px' }} /></a>
+            <a href={msteams} target='_blank' rel='noopener noreferrer'><img className={classes.teams} src={teams} alt='Clan' style={{ height: '60px', padding: '30px' }} /></a>
           </div>
         </div>
         <SocialIcons />

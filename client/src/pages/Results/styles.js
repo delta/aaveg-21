@@ -14,7 +14,9 @@ export const useStyles = makeStyles((theme) => ({
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    textAlign: 'center'
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 800
   },
   glass: {
     background: 'rgba( 0, 0, 0, 0.45 )',
@@ -24,20 +26,20 @@ export const useStyles = makeStyles((theme) => ({
     padding: '20px',
     color: 'white',
     position: 'relative',
-    top: '-200px',
+    top: '-180px',
     [theme.breakpoints.down(1000)]: {
-      top: '-150px'
+      top: '-130px'
     },
     [theme.breakpoints.down(650)]: {
-      top: '-100px'
+      top: '-80px'
     }
   },
   clanLogo: {
-    height: '800px',
-    width: 'auto',
+    width: '800px',
+    height: 'auto',
     display: 'block',
     [theme.breakpoints.down(1000)]: {
-      height: '600px'
+      width: '600px'
     },
     [theme.breakpoints.down(650)]: {
       width: '90vw',
@@ -45,6 +47,15 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   title: {
-    fontSize: '22px'
+    fontSize: '35px',
+    [theme.breakpoints.down(650)]: {
+      fontSize: '23px'
+    }
+  },
+  subtitle: {
+    fontSize: '23px',
+    [theme.breakpoints.down(650)]: {
+      fontSize: '13px'
+    }
   }
 }))
