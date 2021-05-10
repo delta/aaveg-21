@@ -6,7 +6,7 @@ const { authFetch, authIMAP } = require('../utils/authUtil')
 const girlsRollNumber = require('../config/girlsRollNumber')
 
 exports.login = async (req, res) => {
-  logger.silly(req.body)
+
   const auth = process.env.NODE_ENV === 'production' ? authIMAP : authFetch
 
   if (!req.body.email || !req.body.password) {

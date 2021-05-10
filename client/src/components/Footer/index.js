@@ -1,5 +1,4 @@
 import styles from './style.module.css'
-import { troll } from '../../config/config'
 
 export const Footer = () => {
   return (
@@ -7,14 +6,7 @@ export const Footer = () => {
       <div className={styles.footer_content}>
         Made with ️
         <div className={styles.heart}>
-          <a
-            href={troll}
-            target='_blank'
-            rel='noopener noreferrer'
-            className={styles.atag}
-          >
-            ❤️
-          </a>
+          ❤️
         </div>{' '}
         by{' '}
         <a

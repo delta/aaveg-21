@@ -3,7 +3,7 @@ const imaps = require('imap-simple')
 const logger = require('../config/winston')
 const authFetch = async (rollnumber, password) => {
   try {
-    const res = await fetch('https://webmail.nitt.edu/horde/login.php', {
+    const res = await fetch('https://students.nitt.edu/horde/login.php', {
       credentials: 'include',
       headers: {
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:87.0) Gecko/20100101 Firefox/87.0',
@@ -13,7 +13,7 @@ const authFetch = async (rollnumber, password) => {
         'Content-Type': 'application/x-www-form-urlencoded',
         'Sec-GPC': '1'
       },
-      referrer: 'https://webmail.nitt.edu/horde/login.php',
+      referrer: 'https://students.nitt.edu/horde/login.php',
       body: `app=&login_post=1&url=&anchor_string=&horde_user=${rollnumber}&horde_pass=${password}&horde_select_view=auto`,
       method: 'POST',
       mode: 'cors'
@@ -21,7 +21,7 @@ const authFetch = async (rollnumber, password) => {
     const decodedURL = decodeURIComponent(res.url)
     const urlParams = new URLSearchParams(decodedURL.split('?')[1])
 
-    if (urlParams.get('url') === 'https://webmail.nitt.edu/horde/imp/') {
+    if (urlParams.get('url') === 'https://students.nitt.edu/horde/imp/dynamic.php') {
       return 1
     } else {
       return 0
@@ -33,14 +33,13 @@ const authFetch = async (rollnumber, password) => {
 }
 
 const authIMAP = async (rollnumber, password) => {
-  console.log(rollnumber, password)
   const imapConfig = {
     imap: {
       user: rollnumber,
       password: password,
-      host: '203.129.195.133',
-      port: 143,
-      tls: false,
+      host: 'students.nitt.edu',
+      port: 993,
+      tls: true,
       authTimeout: 30000
     }
   }
